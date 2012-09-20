@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>igor.io</h1>
+
+    <ul>
+        {% for post in posts %}
+        <li>{{ date|date('M d') }} <a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

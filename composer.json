@@ -1,0 +1,14 @@
+{
+    "repositories": [
+        {
+            "type": "git",
+            "url": "../balrog"
+        }
+    ],
+    "require": {
+        "igorw/balrog": "dev-master"
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}

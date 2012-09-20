@@ -1,0 +1,6 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {{ date|date('M d\t\h, Y') }}
+    {{ body|raw }}
+{% endblock %}

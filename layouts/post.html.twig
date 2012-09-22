@@ -1,6 +1,19 @@
 {% extends "base.html.twig" %}
 
+{% block title %}{{ post.title }}{% endblock %}
+
 {% block body %}
-    {{ date|date('M d\t\h, Y') }}
-    {{ body|raw }}
+    <nav>
+        <i class="icon-home"></i> <a href="{{ relativeRoot }}/index.html">home</a>
+    </nav>
+
+    <article>
+        <div class="date pull-right">
+            {{ post.date|date('M dS, Y') }}
+        </div>
+
+        <div class="body">
+            {{ post.body|raw }}
+        </div>
+    </article>
 {% endblock %}

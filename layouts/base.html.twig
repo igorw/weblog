@@ -1,13 +1,17 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>igor.io{% if title %} - {{ title }}{% endif %}</title>
+    <title>{% block title %}igorw{% endblock %}</title>
+    <link rel="stylesheet" href="{{ relativeRoot }}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ relativeRoot }}/css/main.css">
 </head>
 <body>
 
-{% block body %}
-{% endblock %}
+<div class="container-fluid">
+    {% block body %}
+    {% endblock %}
+</div>
 
 </body>
 </html>

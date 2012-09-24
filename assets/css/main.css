@@ -51,6 +51,7 @@ article {
     line-height: 25px;
     text-align: justify;
     text-justify: inter-word;
+    margin-bottom: 300px;
 }
 
 article .date {

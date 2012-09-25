@@ -150,7 +150,7 @@ interpretation of PHP integers.
 * `>>` is a right shift
 
 The main use case for `&` is bitmasks. A bitmask allows you to unset certain
-fields. This is useful to only check the fields you care about, and ignore the
+bits. This is useful to only check the bits you care about, and ignore the
 others.
 
 We determined that the value of `fields` is a number representing `0000 0001

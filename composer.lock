@@ -18,7 +18,7 @@
             "require": {
                 "php": ">=5.3"
             },
-            "time": "2012-01-16 02:36:37",
+            "time": "2012-01-16 03:36:37",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -61,12 +61,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/igorw/balrog",
-                "reference": "f7b0025d7c3abdef52975b0d3738e8e8c4342c6b"
+                "reference": "c44330f8b0c737635258e99ff673c1af66e6042b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/igorw/balrog/zipball/f7b0025d7c3abdef52975b0d3738e8e8c4342c6b",
-                "reference": "f7b0025d7c3abdef52975b0d3738e8e8c4342c6b",
+                "url": "https://github.com/igorw/balrog/zipball/c44330f8b0c737635258e99ff673c1af66e6042b",
+                "reference": "c44330f8b0c737635258e99ff673c1af66e6042b",
                 "shasum": ""
             },
             "require": {
@@ -76,7 +76,7 @@
                 "symfony/yaml": "2.1.*",
                 "twig/twig": "1.9.*"
             },
-            "time": "1348184140",
+            "time": "1348784571",
             "bin": [
                 "bin/balrog"
             ],
@@ -115,7 +115,7 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-08-22 11:48:41",
+            "time": "2012-08-22 13:48:41",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -162,7 +162,7 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-08-22 11:48:41",
+            "time": "2012-08-22 13:48:41",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -209,7 +209,7 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-08-22 11:48:41",
+            "time": "2012-08-22 13:48:41",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -255,7 +255,7 @@
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2012-08-25 15:32:57",
+            "time": "2012-08-25 17:32:57",
             "type": "library",
             "extra": {
                 "branch-alias": {

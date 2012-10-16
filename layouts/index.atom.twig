@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>igorw</title>
+    <subtitle>weblog</subtitle>
+    <link href="https://igor.io/index.atom" rel="self" />
+    <link href="https://igor.io/" />
+    <id>igor.io</id>
+    <updated>{{ latest.date|date('Y-m-d\\TH:i:sP') }}</updated>
+    {% for post in posts %}
+    <entry>
+        <title>{{ post.title }}</title>
+        <link rel="alternate" type="text/html" href="https://igor.io/{{ post.path }}"/>
+        <id>{{ post.path }}</id>
+        <updated>{{ post.date|date('Y-m-d\\TH:i:sP') }}</updated>
+        <author>
+            <name>John Doe</name>
+            <email>johndoe@example.com</email>
+        </author>
+    </entry>
+    {% endfor %}
+</feed>

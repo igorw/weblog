@@ -3,7 +3,7 @@ from fabric.utils import abort
 from fabric.contrib.project import rsync_project
 from fabric.contrib.files import exists
 
-env.hosts = ['root@igor.io']
+env.hosts = ['www-data@igor.io']
 
 project_name = 'igor.io'
 target_dir = '/var/www/'+project_name
@@ -29,7 +29,7 @@ def deploy():
                 exclude=['.git', '*.pyc'],
                 extra_opts=extra_opts,
             )
-    
+
     puts('> Switching changes to live')
     run('mv %s %s' % (target_dir, backup_dir))
     run('mv %s %s' % (staging_dir, target_dir))

@@ -225,7 +225,7 @@ And that's how you parse binary data with PHP.
 * [PHP: Bitwise Operators](http://php.net/operators.bitwise)
 * [PHP: unpack](http://php.net/unpack)
 * [RFC 1035: Domain Names - Implementation and specification](http://www.ietf.org/rfc/rfc1035.txt)
-* [Source code: `React\Dns\Protocol\Parser`](https://github.com/react-php/react/blob/master/src/React/Dns/Protocol/Parser.php)
+* [Source code: `React\Dns\Protocol\Parser`](https://github.com/reactphp/react/blob/master/src/React/Dns/Protocol/Parser.php)
 
 
 

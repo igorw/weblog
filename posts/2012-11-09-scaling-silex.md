@@ -161,8 +161,7 @@ controllers themselves as services by extending the `ControllerResolver`. This
 would eliminate the dependency that the controllers have on the service
 locator, turning it into a real service container. I will not cover that here.
 If you are interested, [read this excellent blog post by Dave
-Marshall](http://davedevelopment.co.uk/2012/10/03/Silex-Controllers-As-
-Services.html).
+Marshall](http://davedevelopment.co.uk/2012/10/03/Silex-Controllers-As-Services.html).
 
 ## Taming the beast
 

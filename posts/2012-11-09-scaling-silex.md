@@ -207,8 +207,8 @@ container, a route builder and some glue to build your own framework with.
 
 The distinction that I want to make here is that Symfony2 has conventions. It
 has a pre-defined directory structure, config files, front controllers. All of
-these conventions are very explicit and will most likely be consistent in most
-Symfony2 projects.
+these conventions are very explicit and will most likely be consistent across
+most Symfony2 projects.
 
 There are many good reasons to have these kind of conventions. The main one is
 human scale. When you have many developers working on the same code base, you
@@ -219,5 +219,5 @@ With silex you need to figure it out on your own.
 ## Summary
 
 * Silex does not prevent you from structuring your code.
-* Silex requires you to make your own architecture decisions.
+* It requires you to make your own architecture decisions.
 * Human scale is the only limiting factor.

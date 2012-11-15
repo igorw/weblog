@@ -3,7 +3,8 @@ from fabric.utils import abort
 from fabric.contrib.project import rsync_project
 from fabric.contrib.files import exists
 
-env.hosts = ['www-data@igor.io']
+if not env.hosts:
+    env.hosts = ['www-data@igor.io']
 
 project_name = 'igor.io'
 target_dir = '/var/www/'+project_name

@@ -122,9 +122,9 @@ Here is an example of what you *might* end up with:
 
 * `Igorw\Store\Storage\ProductRepository`
 * `Igorw\Store\Storage\StatsCollector`
-* `Igorw\View\ProductJsonView`
-* `Igorw\View\ProductTwigView`
-* `Igorw\Suggestor`
+* `Igorw\Store\View\ProductJsonView`
+* `Igorw\Store\View\ProductTwigView`
+* `Igorw\Store\Suggestor`
 
 And a more manageable controller:
 

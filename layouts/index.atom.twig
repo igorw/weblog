@@ -13,8 +13,8 @@
         <id>{{ post.path }}</id>
         <updated>{{ post.date|date('Y-m-d\\TH:i:sP') }}</updated>
         <author>
-            <name>John Doe</name>
-            <email>johndoe@example.com</email>
+            <name>{{ post.author_name|default('Igor Wiedler') }}</name>
+            <email>{{ post.author_name|default('igor@wiedler.ch') }}</email>
         </author>
     </entry>
     {% endfor %}

@@ -1,6 +1,7 @@
 {
     "require": {
-        "igorw/balrog": "dev-master"
+        "igorw/balrog": "dev-lisphp",
+        "lisphp/lisphp": "@dev"
     },
     "config": {
         "bin-dir": "bin"

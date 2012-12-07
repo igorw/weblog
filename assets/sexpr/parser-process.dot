@@ -1,0 +1,8 @@
+digraph parser_process {
+    rankdir=LR;
+
+    lexer [shape=box];
+    parser [shape=box];
+    tokens [label="token stream"];
+    code -> lexer -> tokens -> parser -> ast;
+}

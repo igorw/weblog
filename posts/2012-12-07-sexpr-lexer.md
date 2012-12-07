@@ -151,7 +151,7 @@ Source:
 
 The lexer consumes the input one character at a time. First it checks for
 whitespace, which is simply ignored. Then it detects single-char tokens which
-are pushed onto the token stream array. Finally, it turns all tokens that are
+are pushed onto the token stream array. Finally, it turns all chars that are
 part of an atom into an atom token.
 
 Well, that is already enough to correctly tokenize the above test cases and

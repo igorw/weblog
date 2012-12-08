@@ -1,0 +1,7 @@
+digraph reader {
+    rankdir=LR;
+
+    reader [shape=box];
+    tokens [label="token stream"];
+    tokens -> reader -> ast;
+}

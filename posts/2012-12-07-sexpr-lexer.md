@@ -6,7 +6,8 @@ title: "S-expressions: Lexer"
 # S-expressions: Lexer
 
 ([sexpr](../../../2012/12/06/sexpr.html)
-&nbsp;[**lexer**](../../../2012/12/07/sexpr-lexer.html))
+&nbsp;[**lexer**](../../../2012/12/07/sexpr-lexer.html)
+&nbsp;[reader](../../../2012/12/08/sexpr-reader.html))
 
 In this follow-up post to s-expressions I would like to introduce you to
 lexical analysis.

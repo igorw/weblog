@@ -167,3 +167,4 @@ quite a few more.
 
 * [Improving lexing performance in PHP - nikic](http://nikic.github.com/2011/10/23/Improving-lexing-performance-in-PHP.html)
 * [Source code: `Igorw\Ilias\Lexer`](https://github.com/igorw/ilias/blob/master/src/Igorw/Ilias/Lexer.php)
+* [Source code: `Igorw\Ilias\LexerTest`](https://github.com/igorw/ilias/blob/master/tests/Igorw/Ilias/LexerTest.php)

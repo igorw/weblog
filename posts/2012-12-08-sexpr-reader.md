@@ -7,7 +7,8 @@ title: "S-expressions: Reader"
 
 ([sexpr](../../../2012/12/06/sexpr.html)
 &nbsp;[lexer](../../../2012/12/07/sexpr-lexer.html)
-&nbsp;[**reader**](../../../2012/12/08/sexpr-reader.html))
+&nbsp;[**reader**](../../../2012/12/08/sexpr-reader.html)
+&nbsp;[eval](../../../2012/12/12/sexpr-eval.html))
 
 The previous post discussed the first step of parsing: tokenization. Now I
 want to dive into token parsing. Usually the program that parses the tokens

@@ -288,6 +288,7 @@ Hooray, it works!
 ## Further reading
 
 * [nikic/PHP-Parser](https://github.com/nikic/PHP-Parser)
+* [schmittjoh/parser-lib](https://github.com/schmittjoh/parser-lib)
 * [fabpot/Twig](https://github.com/fabpot/Twig)
 * [Source code: `Igorw\Ilias\Reader`](https://github.com/igorw/ilias/blob/master/src/Igorw/Ilias/Reader.php)
 * [Source code: `Igorw\Ilias\ReaderTest`](https://github.com/igorw/ilias/blob/master/tests/Igorw/Ilias/ReaderTest.php)

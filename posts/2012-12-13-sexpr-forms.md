@@ -9,7 +9,8 @@ title: "S-expressions: Forms"
 &nbsp;[lexer](../../../2012/12/07/sexpr-lexer.html)
 &nbsp;[reader](../../../2012/12/08/sexpr-reader.html)
 &nbsp;[eval](../../../2012/12/12/sexpr-eval.html)
-&nbsp;[**forms**](../../../2012/12/13/sexpr-forms.html))
+&nbsp;[**forms**](../../../2012/12/13/sexpr-forms.html)
+&nbsp;[special-forms](../../../2012/12/14/sexpr-special-forms.html))
 
 The previous post introduced a basic implementation of evaluation that is
 lacking on many fronts. It currently only supports s-expressions which are

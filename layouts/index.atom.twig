@@ -16,6 +16,9 @@
             <name>{{ post.author_name|default('Igor Wiedler') }}</name>
             <email>{{ post.author_name|default('igor@wiedler.ch') }}</email>
         </author>
+        <content type="html" xml:lang="en"><![CDATA[
+            {{ post.body|raw }}
+        ]]></content>
     </entry>
     {% endfor %}
 </feed>

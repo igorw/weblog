@@ -1,4 +1,4 @@
 bin
+static
 vendor
-web
 *.pyc

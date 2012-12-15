@@ -5,12 +5,12 @@ title: "S-expressions: Reader"
 
 # S-expressions: Reader
 
-([sexpr](../../../2012/12/06/sexpr.html)
-&nbsp;[lexer](../../../2012/12/07/sexpr-lexer.html)
-&nbsp;[**reader**](../../../2012/12/08/sexpr-reader.html)
-&nbsp;[eval](../../../2012/12/12/sexpr-eval.html)
-&nbsp;[forms](../../../2012/12/13/sexpr-forms.html)
-&nbsp;[special-forms](../../../2012/12/14/sexpr-special-forms.html))
+([sexpr](/2012/12/06/sexpr.html)
+&nbsp;[lexer](/2012/12/07/sexpr-lexer.html)
+&nbsp;[**reader**](/2012/12/08/sexpr-reader.html)
+&nbsp;[eval](/2012/12/12/sexpr-eval.html)
+&nbsp;[forms](/2012/12/13/sexpr-forms.html)
+&nbsp;[special-forms](/2012/12/14/sexpr-special-forms.html))
 
 The previous post discussed the first step of parsing: tokenization. Now I
 want to dive into token parsing. Usually the program that parses the tokens
@@ -20,7 +20,7 @@ In the context of s-expressions and LISP, it is usually refered to as a
 *reader*, so that is the terminology that I will use.
 
 <center>
-    ![parser process](../../../sexpr/reader.png)
+    ![parser process](/sexpr/reader.png)
 </center>
 
 ## Abstract syntax tree

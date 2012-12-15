@@ -5,12 +5,12 @@ title: "S-expressions: Evaluation"
 
 # S-expressions: Evaluation
 
-([sexpr](../../../2012/12/06/sexpr.html)
-&nbsp;[lexer](../../../2012/12/07/sexpr-lexer.html)
-&nbsp;[reader](../../../2012/12/08/sexpr-reader.html)
-&nbsp;[**eval**](../../../2012/12/12/sexpr-eval.html)
-&nbsp;[forms](../../../2012/12/13/sexpr-forms.html)
-&nbsp;[special-forms](../../../2012/12/14/sexpr-special-forms.html))
+([sexpr](/2012/12/06/sexpr.html)
+&nbsp;[lexer](/2012/12/07/sexpr-lexer.html)
+&nbsp;[reader](/2012/12/08/sexpr-reader.html)
+&nbsp;[**eval**](/2012/12/12/sexpr-eval.html)
+&nbsp;[forms](/2012/12/13/sexpr-forms.html)
+&nbsp;[special-forms](/2012/12/14/sexpr-special-forms.html))
 
 So far this series has mostly been about s-expressions as a data format. I
 would like to start exploring a more advanced space now: Treating

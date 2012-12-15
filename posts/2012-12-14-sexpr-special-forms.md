@@ -5,12 +5,12 @@ title: "S-expressions: Special forms"
 
 # S-expressions: Special forms
 
-([sexpr](../../../2012/12/06/sexpr.html)
-&nbsp;[lexer](../../../2012/12/07/sexpr-lexer.html)
-&nbsp;[reader](../../../2012/12/08/sexpr-reader.html)
-&nbsp;[eval](../../../2012/12/12/sexpr-eval.html)
-&nbsp;[forms](../../../2012/12/13/sexpr-forms.html)
-&nbsp;[**special-forms**](../../../2012/12/14/sexpr-special-forms.html))
+([sexpr](/2012/12/06/sexpr.html)
+&nbsp;[lexer](/2012/12/07/sexpr-lexer.html)
+&nbsp;[reader](/2012/12/08/sexpr-reader.html)
+&nbsp;[eval](/2012/12/12/sexpr-eval.html)
+&nbsp;[forms](/2012/12/13/sexpr-forms.html)
+&nbsp;[**special-forms**](/2012/12/14/sexpr-special-forms.html))
 
 Ilias is quite powerful at this point. It allows arbitrary variables to be
 defined in PHP. These variables can be functions. These functions can be
@@ -339,5 +339,5 @@ And now, for the very first time in history will we witness special forms...
 ## Conclusion
 
 <center>
-    ![world domination](../../../sexpr/world-domination.png)
+    ![world domination](/sexpr/world-domination.png)
 </center>

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Binary parsing with PHP
+tags: [php]
 ---
 
 # Binary parsing with PHP

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Scaling a Silex code base
+tags: [php]
 ---
 
 # Scaling a Silex code base

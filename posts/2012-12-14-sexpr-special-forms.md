@@ -13,6 +13,9 @@ tags: [php]
 &nbsp;[forms](/2012/12/13/sexpr-forms.html)
 &nbsp;[**special-forms**](/2012/12/14/sexpr-special-forms.html))
 
+> **Note:** The terminology of this post was changed from *special form* to
+> *special operator* where appropriate on Dec 28, 2012.
+
 Ilias is quite powerful at this point. It allows arbitrary variables to be
 defined in PHP. These variables can be functions. These functions can be
 called from within LISP.
@@ -100,34 +103,35 @@ the symbol.
 If it tried to evaluate `foo` that would result in an error, since `foo` is
 not defined on the environment yet, as that's what `define` is about to do!
 
-## Special form interface
+## Special operator interface
 
 In order to deal with special forms, they need to be modeled in the form tree.
-The `SpecialFormInterface` gives special forms access to the environment and
-to the unevaluated arguments.
+A special form is a list form whose first element is a special operator. The
+`SpecialOp` interface gives the operator access to the environment and to the
+unevaluated arguments.
 
 I repeat, the *unevaluated arguments*.
 
-    namespace Igorw\Ilias\SpecialForm;
+    namespace Igorw\Ilias\SpecialOp;
 
     use Igorw\Ilias\Environment;
     use Igorw\Ilias\Form\ListForm;
 
-    interface SpecialForm
+    interface SpecialOp
     {
         public function evaluate(Environment $env, ListForm $args);
     }
 
-The form tree builder does not have to be modified. Special forms are simply
-values defined on the environment that have a different behaviour when
-evaluated. The only adjustment needs to be made in `ListForm::evaluate()`,
-since special forms are a special kind of list form.
+The form tree builder does not have to be modified. Special operators are
+simply values defined on the environment that look like functions but have a
+different behaviour when evaluated. The only adjustment needs to be made in
+`ListForm::evaluate()`, since special forms are a special kind of list form.
 
     public function evaluate(Environment $env)
     {
         $func = $this->car()->evaluate($env);
 
-        if ($func instanceof SpecialForm) {
+        if ($func instanceof SpecialOp) {
             return $func->evaluate($env, $this->cdr());
         }
 
@@ -140,15 +144,15 @@ with the `cdr` passed in unevaluated.
 
 ## Define
 
-`define` will be the first special form, implementing the `SpecialForm`
+`define` will be the first special form, implementing the `SpecialOp`
 interface:
 
-    namespace Igorw\Ilias\SpecialForm;
+    namespace Igorw\Ilias\SpecialOp;
 
     use Igorw\Ilias\Environment;
     use Igorw\Ilias\Form\ListForm;
 
-    class DefineForm implements SpecialForm
+    class DefineOp implements SpecialOp
     {
         public function evaluate(Environment $env, ListForm $args)
         {
@@ -173,14 +177,14 @@ standard environment:
         public static function standard()
         {
             return new static([
-                'define'    => new SpecialForm\DefineForm(),
+                'define'    => new SpecialOp\DefineOp(),
 
                 '+'         => new Func\PlusFunc(),
             ]);
         }
     }
 
-That's it, the `define` special form is now available, so this should work:
+That's it, the `define` special operator is now available, so this should work:
 
     (define foo 42)
     foo
@@ -191,9 +195,9 @@ The term lambda describes an anonymous function. It originally was introduced
 as part of *lambda calculus*, a system for representing computation through
 functions.
 
-In LISP, `lambda` is a special form that represents a function as a value. All
-functions are anonymous, the only way of naming them is by assigning them to a
-variable using `define`.
+In LISP, `lambda` is a special operator that represents a function as a value.
+All functions are anonymous, the only way of naming them is by assigning them
+to a variable using `define`.
 
 Here is a lambda with no arguments that always returns 42:
 
@@ -218,16 +222,16 @@ receives:
 
     (define increment (lambda (x) (+ x 1)))
 
-The first argument of the `lambda` special form is a list of symbols
+The first argument to the `lambda` special operator is a list of symbols
 representing argument names. All the following arguments are forms to be
 evaluated when the function gets called, in the context of that function.
 
-    namespace Igorw\Ilias\SpecialForm;
+    namespace Igorw\Ilias\SpecialOp;
 
     use Igorw\Ilias\Environment;
     use Igorw\Ilias\Form\ListForm;
 
-    class LambdaForm implements SpecialForm
+    class LambdaOp implements SpecialOp
     {
         public function evaluate(Environment $env, ListForm $args)
         {
@@ -267,17 +271,17 @@ What is significant is that the function produced by `lambda` evaluates its
 body using a separate environment. The result of the last body form's
 evaluation is returned from the function.
 
-After adding the new `lambda` special form to the enironment it should be able
-to do all those things. Accoding to lambda calculus we can stop now, as
+After adding the new `lambda` special operator to the enironment it should be
+able to do all those things. Accoding to lambda calculus we can stop now, as
 anything can be represented using lambdas alone. But we will continue
 nevertheless.
 
 ## If
 
-Finally, the `if` special form takes three arguments: a predicate, a true-form
-and an else-form. The predicate is evaluated. If the result of that evaluation
-is truthy, then the true-form is evaluated. If it is falsy, the else-form is
-evaluated. The result of the evaluated form is returned.
+Finally, the `if` special operator takes three arguments: a predicate, a true-
+form and an else-form. The predicate is evaluated. If the result of that
+evaluation is truthy, then the true-form is evaluated. If it is falsy, the
+else-form is evaluated. The result of the evaluated form is returned.
 
 This is what an example usage looks like:
 
@@ -285,12 +289,12 @@ This is what an example usage looks like:
 
 The implementation:
 
-    namespace Igorw\Ilias\SpecialForm;
+    namespace Igorw\Ilias\SpecialOp;
 
     use Igorw\Ilias\Environment;
     use Igorw\Ilias\Form\ListForm;
 
-    class IfForm implements SpecialForm
+    class IfOp implements SpecialOp
     {
         public function evaluate(Environment $env, ListForm $args)
         {

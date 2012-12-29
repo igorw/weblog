@@ -239,12 +239,12 @@ by invoking them:
 
     public function evaluate(Environment $env, ListForm $args)
     {
-        $expanded = $this->expandOne($args, $env);
+        $expanded = $this->expandOne($env, $args);
 
         return $expanded->evaluate($env);
     }
 
-    public function expandOne(Form $form, Environment $env)
+    public function expandOne(Environment $env, Form $form)
     {
         $transformForm = new LambdaOp();
         $transformFormArgs = new ListForm([

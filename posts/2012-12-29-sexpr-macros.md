@@ -133,7 +133,6 @@ Actually, that function does not exist yet, so let's define it:
 
     namespace Igorw\Ilias\Func;
 
-    use Igorw\Ilias\FormTreeBuilder;
     use Igorw\Ilias\Form\ListForm;
 
     class ListFunc

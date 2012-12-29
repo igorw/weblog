@@ -11,7 +11,8 @@ tags: [php]
 &nbsp;[reader](/2012/12/08/sexpr-reader.html)
 &nbsp;[eval](/2012/12/12/sexpr-eval.html)
 &nbsp;[forms](/2012/12/13/sexpr-forms.html)
-&nbsp;[**special-forms**](/2012/12/14/sexpr-special-forms.html))
+&nbsp;[**special-forms**](/2012/12/14/sexpr-special-forms.html)
+&nbsp;[macros](/2012/12/29/sexpr-macros.html))
 
 > **Note:** The terminology of this post was changed from *special form* to
 > *special operator* where appropriate on Dec 28, 2012.

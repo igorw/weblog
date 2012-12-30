@@ -1,0 +1,8 @@
+digraph walker {
+    rankdir=LR;
+
+    walker [shape=box];
+    eval [shape=box];
+    expanded_ast [label="expanded ast"];
+    ast -> walker -> expanded_ast -> eval -> result;
+}

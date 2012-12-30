@@ -12,7 +12,8 @@ tags: [php]
 &nbsp;[eval](/2012/12/12/sexpr-eval.html)
 &nbsp;[forms](/2012/12/13/sexpr-forms.html)
 &nbsp;[special-forms](/2012/12/14/sexpr-special-forms.html)
-&nbsp;[macros](/2012/12/29/sexpr-macros.html))
+&nbsp;[macros](/2012/12/29/sexpr-macros.html)
+&nbsp;[walker](/2012/12/30/sexpr-walker.html))
 
 The previous post discussed the first step of parsing: tokenization. Now I
 want to dive into token parsing. Usually the program that parses the tokens

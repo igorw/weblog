@@ -139,8 +139,7 @@ macro, we recur the `expand` call.
 You will notice that the `ListForm` has a new `nth` method, which is a
 convenience method for accessing an element of the list by index.
 
-This walker already handles many cases. The following is already expanded
-correctly.
+This walker already handles many cases. The following is expanded correctly.
 
 Single level macro:
 
@@ -209,7 +208,7 @@ And with this adjustment in place it will correctly expand the sub-list:
     =>
     (+ 1 (+ 2 3))
 
-Even if they are inside a lambda expression:
+Even if it is inside a lambda expression:
 
     (lambda (a b) (plus a b))
     =>
@@ -243,14 +242,15 @@ The second issue is that the walker will try to expand the body in this case,
 even though `plus` is a lexical variable of the lambda. This happens because
 it is not aware of lexical scoping rules.
 
-But the `plus` macro only takes two arguments, so this extra argument of `5`
+Also, the `plus` macro only takes two arguments, so this extra argument of `5`
 will make it blow up. If the macro system provided access to all of the
 arguments as a list, it would not blow up, but it would still expand, which is
 not what we want here.
 
 In order to fix those two issues, the walker needs to be aware of special
 forms, in this case the `lambda` special form, and handle the argument list
-and the bound parameters inside the lambda body specially.
+and the bound parameters inside the lambda body in a different way than normal
+lists.
 
     public function expand(Environment $env, Form $form)
     {

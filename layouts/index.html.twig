@@ -5,10 +5,12 @@
 
     <ul class="unstyled post-list">
         {% for post in posts %}
-        <li class="row-fluid">
-            <span class="span2 date">{{ post.date|date('M d') }}</span>
-            <span class="span10"><a href="{{ post.path }}">{{ post.title }}</a></span>
-        </li>
+            {% set year_switch = (prev|default and (prev.date|date('Y') != post.date|date('Y'))) %}
+            <li class="row-fluid {% if year_switch|default %}year-switch{% endif %}">
+                <span class="span2 date">{{ post.date|date('M d') }}</span>
+                <span class="span10"><a href="{{ post.path }}">{{ post.title }}</a></span>
+            </li>
+            {% set prev = post %}
         {% endfor %}
     </ul>
 {% endblock %}

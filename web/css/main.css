@@ -46,6 +46,11 @@ body {
     color: #aaa;
 }
 
+.post-list li.year-switch {
+    border-top: 1px #CCC solid;
+    padding-top: 10px;
+}
+
 article {
     font-size: 17px;
     line-height: 25px;

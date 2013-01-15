@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Composer Versioning
-tags: [php, composer]
+tags: [php, composer, symfony]
 ---
 
 # Composer Versioning

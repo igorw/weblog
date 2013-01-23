@@ -81,7 +81,7 @@ But instead of just complaining, I have a few suggestions that would greatly
 improve the way we deal with autoloading today, by introducing a sane amount
 of brevity.
 
-It would allow the path to be shortened to `src/Programm.php`.
+It would allow the path to be shortened to `src/Program.php`.
 
 ## Proposal
 

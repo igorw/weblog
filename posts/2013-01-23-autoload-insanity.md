@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Autoload path depth insanity
-tags: [php]
+tags: [php, symfony]
 ---
 
 # Autoload path depth insanity

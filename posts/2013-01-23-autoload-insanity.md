@@ -127,6 +127,15 @@ Based on the feedback I receive I may write up a more detailed spec and a
 proof-of-concept implementation for submission to the PHP
 [FIG](http://www.php-fig.org/).
 
+<center style="margin-top: 25px;">
+    <big>
+        <a  href="https://gist.github.com/4600419"
+            style="background: white; border: 2px #d14 solid; border-radius: 5px; padding: 10px; color: #d14;">
+            Please leave a comment!
+        </a>
+    </big>
+</center>
+
 ## FAQ
 
 * **Why not just use classmap?**

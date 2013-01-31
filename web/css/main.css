@@ -40,15 +40,37 @@ body {
 .post-list {
     font-size: 20px;
     margin-top: 20px;
+    margin-bottom: 0;
 }
 
 .post-list .date {
     color: #aaa;
+    white-space: nowrap;
 }
 
 .post-list li.year-switch {
     border-top: 1px #CCC solid;
     padding-top: 10px;
+}
+
+.author {
+    border-top: 1px #CCC solid;
+    padding-top: 10px;
+    height: 100px;
+    font-size: 17px;
+}
+
+.author .avatar {
+    float: right;
+    border: 1px solid #777;
+}
+
+.author .details {
+    margin-top: 15px;
+}
+
+.author .details p {
+    margin-top: 20px;
 }
 
 article {

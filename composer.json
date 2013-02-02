@@ -1,6 +1,7 @@
 {
     "require": {
         "igorw/balrog": "dev-master",
+        "michelf/php-markdown": "@dev",
         "lisphp/lisphp": "@dev",
         "silex/silex": "@dev"
     },

@@ -22,11 +22,13 @@ Rack seems the closest to what Symfony2 brings to the PHP world.
 So what is Rack all about? Here's a basic hello world from [Introducing
 Rack](http://chneukirchen.org/blog/archive/2007/02/introducing-rack.html):
 
-    class HelloWorld
-      def call(env)
-        [200, {"Content-Type" => "text/plain"}, ["Hello world!"]]
-      end
-    end
+~~~ruby
+class HelloWorld
+  def call(env)
+    [200, {"Content-Type" => "text/plain"}, ["Hello world!"]]
+  end
+end
+~~~
 
 First and foremost, it is a specification. A spec that defines how a webserver
 interacts with a Ruby application. It defines three major components:
@@ -67,15 +69,17 @@ specific information.
 In addition to that, the gem ships with a set of general-purpose Rack apps
 which act as decorators. That means they all follow this pattern:
 
-    class EmptyDecorator
-      def initialize(app)
-        @app = app
-      end
+~~~ruby
+class EmptyDecorator
+  def initialize(app)
+    @app = app
+  end
 
-      def call(env)
-        @app.call(env)
-      end
-    end
+  def call(env)
+    @app.call(env)
+  end
+end
+~~~
 
 The beauty of this is that you get to run custom code before and after the app
 runs, and you get to change the request and response values. Without modifying
@@ -85,14 +89,18 @@ This also means that you can stack these *middlewares* to extend an app. And
 since constructing a nested object graph is tedious, Rack ships with
 `Rack::Builder`, which allows you to express this in a more natural way:
 
-    builder = Rack::Builder.new
-    builder.use Rack::CommonLogger
-    builder.use Rack::ShowExceptions
-    builder.run(app)
+~~~ruby
+builder = Rack::Builder.new
+builder.use Rack::CommonLogger
+builder.use Rack::ShowExceptions
+builder.run(app)
+~~~
 
 What this does behind the scenes is:
 
-    app = Rack::CommonLogger.new(Rack::ShowExceptions.new(app))
+~~~ruby
+app = Rack::CommonLogger.new(Rack::ShowExceptions.new(app))
+~~~
 
 Don't tell anyone, but these are applied design patterns in Ruby.
 
@@ -128,11 +136,13 @@ It's quite amazing that something with such a ridiculously long name is
 supposed to be the rack of PHP:
 `Symfony\Component\HttpKernel\HttpKernelInterface`.
 
-    interface HttpKernelInterface
-    {
-        /** @return Response */
-        public function handle(Request $request, $type = self::MASTER_REQUEST, $catch = true);
-    }
+~~~php
+interface HttpKernelInterface
+{
+    /** @return Response */
+    public function handle(Request $request, $type = self::MASTER_REQUEST, $catch = true);
+}
+~~~
 
 What's different about `HttpKernelInterface` (compared to Rack) is that it
 does not have a specification. Also, it is coupled to a framework, which means
@@ -167,83 +177,91 @@ webserver level.
 By applying the decorator pattern, you can create an `HttpKernel` that wraps
 another one, delegates `handle` calls, and does some logging.
 
-    namespace Igorw\Middleware;
+~~~php
+namespace Igorw\Middleware;
 
-    use Psr\Log\LoggerInterface;
-    use Symfony\Component\HttpFoundation\Request;
-    use Symfony\Component\HttpKernel\HttpKernelInterface;
+use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 
-    class Logger implements HttpKernelInterface
+class Logger implements HttpKernelInterface
+{
+    private $app;
+    private $logger;
+
+    public function __construct(HttpKernelInterface $app, LoggerInterface $logger)
     {
-        private $app;
-        private $logger;
-
-        public function __construct(HttpKernelInterface $app, LoggerInterface $logger)
-        {
-            $this->app = $app;
-            $this->logger = $logger;
-        }
-
-        public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
-        {
-            $response = $this->app->handle($request, $type, $catch);
-
-            $this->logger->info(sprintf('%s "%s %s %s" %d',
-                $request->getHost(),
-                $request->getMethod(),
-                $request->getRequestUri(),
-                $request->server->get('SERVER_PROTOCOL'),
-                $response->getStatusCode()));
-
-            return $response;
-        }
+        $this->app = $app;
+        $this->logger = $logger;
     }
+
+    public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
+    {
+        $response = $this->app->handle($request, $type, $catch);
+
+        $this->logger->info(sprintf('%s "%s %s %s" %d',
+            $request->getHost(),
+            $request->getMethod(),
+            $request->getRequestUri(),
+            $request->server->get('SERVER_PROTOCOL'),
+            $response->getStatusCode()));
+
+        return $response;
+    }
+}
+~~~
 
 This logger middleware can be composed with *any* `HttpKernel` and with *any*
 PSR-3 logger. For example, you could now use it with Silex and Monolog:
 
-    $app = new Silex\Application();
+~~~php
+$app = new Silex\Application();
 
-    $app->get('/', function () {
-        return "Hello World!\n";
-    });
+$app->get('/', function () {
+    return "Hello World!\n";
+});
 
-    $app = new Igorw\Middleware\Logger(
-        $app,
-        new Monolog\Logger('app')
-    );
+$app = new Igorw\Middleware\Logger(
+    $app,
+    new Monolog\Logger('app')
+);
 
-    $request = Request::createFromGlobals();
-    $app->handle($request)->send();
+$request = Request::createFromGlobals();
+$app->handle($request)->send();
+~~~
 
 Instead of Silex you could use a Symfony2 app. Or a Laravel4 app. Or you can
 make your own `HttpKernel`, like this one:
 
-    namespace Igorw\Middleware;
+~~~php
+namespace Igorw\Middleware;
 
-    use Symfony\Component\HttpFoundation\Request;
-    use Symfony\Component\HttpKernel\HttpKernelInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 
-    class CallableHttpKernel implements HttpKernelInterface
+class CallableHttpKernel implements HttpKernelInterface
+{
+    private $callable;
+
+    public function __construct(callable $callable)
     {
-        private $callable;
-
-        public function __construct(callable $callable)
-        {
-            $this->callable = $callable;
-        }
-
-        public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
-        {
-            return call_user_func($this->callable, $request, $type, $catch);
-        }
+        $this->callable = $callable;
     }
+
+    public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
+    {
+        return call_user_func($this->callable, $request, $type, $catch);
+    }
+}
+~~~
 
 Which can be used by passing a callable to the constructor:
 
-    $app = new CallableHttpKernel(function (Request $request) {
-        return new Response("Hello World!\n");
-    });
+~~~php
+$app = new CallableHttpKernel(function (Request $request) {
+    return new Response("Hello World!\n");
+});
+~~~
 
 As long as you have an object that implements the `HttpKernelInterface`, it
 can be used with this logger.
@@ -257,21 +275,23 @@ that. So let's try it.
 And in fact the `HttpCache` middleware is already using the decorator pattern,
 so it composes extremely well with what we already have:
 
-    use Igorw\Middleware\CallableKernel;
-    use Symfony\Component\HttpKernel\HttpCache\Store;
+~~~php
+use Igorw\Middleware\CallableKernel;
+use Symfony\Component\HttpKernel\HttpCache\Store;
 
-    $app = new CallableHttpKernel(function (Request $request) {
-        return (new Response("Hello World!\n"))
-            ->setCache(['s_maxage' => 20]);
-    });
+$app = new CallableHttpKernel(function (Request $request) {
+    return (new Response("Hello World!\n"))
+        ->setCache(['s_maxage' => 20]);
+});
 
-    $app = new Igorw\Middleware\Logger(
-        new Symfony\Component\HttpKernel\HttpCache\HttpCache(
-            $app,
-            new Store(__DIR__.'/cache')
-        ),
-        new Monolog\Logger('app')
-    );
+$app = new Igorw\Middleware\Logger(
+    new Symfony\Component\HttpKernel\HttpCache\HttpCache(
+        $app,
+        new Store(__DIR__.'/cache')
+    ),
+    new Monolog\Logger('app')
+);
+~~~
 
 Once you start nesting those middlewares, the construction logic starts to
 become a bit hairy though. Wouldn't it be great to have an API that looks more
@@ -279,11 +299,13 @@ like pushing middlewares onto a stack?
 
 Ideally something like this:
 
-    $stack = new Stack($app);
-    $stack->push('Igorw\Middleware\Logger', new Monolog\Logger('app'));
-    $stack->push('Symfony\Component\HttpKernel\HttpCache\HttpCache', new Store(__DIR__.'/cache'));
+~~~php
+$stack = new Stack($app);
+$stack->push('Igorw\Middleware\Logger', new Monolog\Logger('app'));
+$stack->push('Symfony\Component\HttpKernel\HttpCache\HttpCache', new Store(__DIR__.'/cache'));
 
-    $app = $stack->resolve();
+$app = $stack->resolve();
+~~~
 
 Well, that's easy enough to implement. [Take a look at the `Stack` on
 GitHub](https://github.com/igorw/middleware/blob/master/src/Igorw/Middleware/Stack.php).

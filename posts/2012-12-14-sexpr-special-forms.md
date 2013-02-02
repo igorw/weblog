@@ -32,48 +32,52 @@ Before we look into that, let's simplify the usage of the toolchain. It now
 includes: Lexer, Reader, FormTreeBuilder. How about a class that packages
 those steps up. I will call it `Program`:
 
-    namespace Igorw\Ilias;
+~~~php
+namespace Igorw\Ilias;
 
-    class Program
+class Program
+{
+    private $lexer;
+    private $reader;
+    private $builder;
+
+    public function __construct(Lexer $lexer, Reader $reader, FormTreeBuilder $builder)
     {
-        private $lexer;
-        private $reader;
-        private $builder;
-
-        public function __construct(Lexer $lexer, Reader $reader, FormTreeBuilder $builder)
-        {
-            $this->lexer = $lexer;
-            $this->reader = $reader;
-            $this->builder = $builder;
-        }
-
-        public function evaluate(Environment $env, $code)
-        {
-            $tokens = $this->lexer->tokenize($code);
-            $ast = $this->reader->parse($tokens);
-            $forms = $this->builder->parseAst($ast);
-
-            $value = null;
-            foreach ($forms as $form) {
-                $value = $form->evaluate($env);
-            }
-            return $value;
-        }
+        $this->lexer = $lexer;
+        $this->reader = $reader;
+        $this->builder = $builder;
     }
+
+    public function evaluate(Environment $env, $code)
+    {
+        $tokens = $this->lexer->tokenize($code);
+        $ast = $this->reader->parse($tokens);
+        $forms = $this->builder->parseAst($ast);
+
+        $value = null;
+        foreach ($forms as $form) {
+            $value = $form->evaluate($env);
+        }
+        return $value;
+    }
+}
+~~~
 
 It lexes, then parses, then builds a form tree. Finally it evaluates all forms
 and returns the result of the last one.
 
 Usage:
 
-    $program = new Program(
-        new Lexer(),
-        new Reader(),
-        new FormTreeBuilder()
-    );
+~~~php
+$program = new Program(
+    new Lexer(),
+    new Reader(),
+    new FormTreeBuilder()
+);
 
-    $env = Environment::standard();
-    var_dump($program->evaluate($env, '(+ 1 2)'));
+$env = Environment::standard();
+var_dump($program->evaluate($env, '(+ 1 2)'));
+~~~
 
 That's a lot easier to use. Back to world domination.
 
@@ -114,32 +118,36 @@ unevaluated arguments.
 
 I repeat, the *unevaluated arguments*.
 
-    namespace Igorw\Ilias\SpecialOp;
+~~~php
+namespace Igorw\Ilias\SpecialOp;
 
-    use Igorw\Ilias\Environment;
-    use Igorw\Ilias\Form\ListForm;
+use Igorw\Ilias\Environment;
+use Igorw\Ilias\Form\ListForm;
 
-    interface SpecialOp
-    {
-        public function evaluate(Environment $env, ListForm $args);
-    }
+interface SpecialOp
+{
+    public function evaluate(Environment $env, ListForm $args);
+}
+~~~
 
 The form tree builder does not have to be modified. Special operators are
 simply values defined on the environment that look like functions but have a
 different behaviour when evaluated. The only adjustment needs to be made in
 `ListForm::evaluate()`, since special forms are a special kind of list form.
 
-    public function evaluate(Environment $env)
-    {
-        $func = $this->car()->evaluate($env);
+~~~php
+public function evaluate(Environment $env)
+{
+    $func = $this->car()->evaluate($env);
 
-        if ($func instanceof SpecialOp) {
-            return $func->evaluate($env, $this->cdr());
-        }
-
-        $args = $this->evaluateArgs($env, $this->cdr());
-        return call_user_func_array($func, $args);
+    if ($func instanceof SpecialOp) {
+        return $func->evaluate($env, $this->cdr());
     }
+
+    $args = $this->evaluateArgs($env, $this->cdr());
+    return call_user_func_array($func, $args);
+}
+~~~
 
 If the function in an list form evaluation is a special form, it is evaluated
 with the `cdr` passed in unevaluated.
@@ -149,19 +157,21 @@ with the `cdr` passed in unevaluated.
 `define` will be the first special form, implementing the `SpecialOp`
 interface:
 
-    namespace Igorw\Ilias\SpecialOp;
+~~~php
+namespace Igorw\Ilias\SpecialOp;
 
-    use Igorw\Ilias\Environment;
-    use Igorw\Ilias\Form\ListForm;
+use Igorw\Ilias\Environment;
+use Igorw\Ilias\Form\ListForm;
 
-    class DefineOp implements SpecialOp
+class DefineOp implements SpecialOp
+{
+    public function evaluate(Environment $env, ListForm $args)
     {
-        public function evaluate(Environment $env, ListForm $args)
-        {
-            $name = $args->car()->getSymbol();
-            $env[$name] = $args->cdr()->car()->evaluate($env);
-        }
+        $name = $args->car()->getSymbol();
+        $env[$name] = $args->cdr()->car()->evaluate($env);
     }
+}
+~~~
 
 It's trivial. The first argument is a symbol representing the name. Instead of
 evaluating it, the symbol is fetched and used as a key.
@@ -172,19 +182,21 @@ It is fetched by getting the `car` of the `cdr` of the arguments.
 To make `define` available to the world, it just needs to be part of the
 standard environment:
 
-    namespace Igorw\Ilias;
+~~~php
+namespace Igorw\Ilias;
 
-    class Environment extends \ArrayObject
+class Environment extends \ArrayObject
+{
+    public static function standard()
     {
-        public static function standard()
-        {
-            return new static([
-                'define'    => new SpecialOp\DefineOp(),
+        return new static([
+            'define'    => new SpecialOp\DefineOp(),
 
-                '+'         => new Func\PlusFunc(),
-            ]);
-        }
+            '+'         => new Func\PlusFunc(),
+        ]);
     }
+}
+~~~
 
 That's it, the `define` special operator is now available, so this should work:
 
@@ -228,46 +240,48 @@ The first argument to the `lambda` special operator is a list of symbols
 representing argument names. All the following arguments are forms to be
 evaluated when the function gets called, in the context of that function.
 
-    namespace Igorw\Ilias\SpecialOp;
+~~~php
+namespace Igorw\Ilias\SpecialOp;
 
-    use Igorw\Ilias\Environment;
-    use Igorw\Ilias\Form\ListForm;
+use Igorw\Ilias\Environment;
+use Igorw\Ilias\Form\ListForm;
 
-    class LambdaOp implements SpecialOp
+class LambdaOp implements SpecialOp
+{
+    public function evaluate(Environment $env, ListForm $args)
     {
-        public function evaluate(Environment $env, ListForm $args)
-        {
-            $symbols = $args->car()->toArray();
-            $argNames = $this->getMappedSymbols($symbols);
+        $symbols = $args->car()->toArray();
+        $argNames = $this->getMappedSymbols($symbols);
 
-            $bodyForms = $args->cdr()->toArray();
+        $bodyForms = $args->cdr()->toArray();
 
-            return function () use ($env, $argNames, $bodyForms) {
-                $subEnv = clone $env;
+        return function () use ($env, $argNames, $bodyForms) {
+            $subEnv = clone $env;
 
-                $vars = array_combine($argNames, func_get_args());
-                foreach ($vars as $name => $value) {
-                    $subEnv[$name] = $value;
-                }
+            $vars = array_combine($argNames, func_get_args());
+            foreach ($vars as $name => $value) {
+                $subEnv[$name] = $value;
+            }
 
-                $value = null;
-                foreach ($bodyForms as $form) {
-                    $value = $form->evaluate($subEnv);
-                }
-                return $value;
-            };
-        }
-
-        private function getMappedSymbols(array $symbols)
-        {
-            return array_map(
-                function ($symbol) {
-                    return $symbol->getSymbol();
-                },
-                $symbols
-            );
-        }
+            $value = null;
+            foreach ($bodyForms as $form) {
+                $value = $form->evaluate($subEnv);
+            }
+            return $value;
+        };
     }
+
+    private function getMappedSymbols(array $symbols)
+    {
+        return array_map(
+            function ($symbol) {
+                return $symbol->getSymbol();
+            },
+            $symbols
+        );
+    }
+}
+~~~
 
 What is significant is that the function produced by `lambda` evaluates its
 body using a separate environment. The result of the last body form's
@@ -291,23 +305,25 @@ This is what an example usage looks like:
 
 The implementation:
 
-    namespace Igorw\Ilias\SpecialOp;
+~~~php
+namespace Igorw\Ilias\SpecialOp;
 
-    use Igorw\Ilias\Environment;
-    use Igorw\Ilias\Form\ListForm;
+use Igorw\Ilias\Environment;
+use Igorw\Ilias\Form\ListForm;
 
-    class IfOp implements SpecialOp
+class IfOp implements SpecialOp
+{
+    public function evaluate(Environment $env, ListForm $args)
     {
-        public function evaluate(Environment $env, ListForm $args)
-        {
-            $predicate = $args->car();
-            $trueForm  = $args->cdr()->car();
-            $elseForm  = $args->cdr()->cdr()->car();
+        $predicate = $args->car();
+        $trueForm  = $args->cdr()->car();
+        $elseForm  = $args->cdr()->cdr()->car();
 
-            $form = ($predicate->evaluate($env)) ? $trueForm : $elseForm;
-            return $form ? $form->evaluate($env) : null;
-        }
+        $form = ($predicate->evaluate($env)) ? $trueForm : $elseForm;
+        return $form ? $form->evaluate($env) : null;
     }
+}
+~~~
 
 Easy.
 

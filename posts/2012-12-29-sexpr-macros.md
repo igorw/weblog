@@ -57,16 +57,18 @@ Imagine a program with a lot of conditional logic. For each condition there
 are a number of statements that need to be executed. In fact, let's introduce
 a `begin` function in order to correctly represent this:
 
-    namespace Igorw\Ilias\Func;
+~~~php
+namespace Igorw\Ilias\Func;
 
-    class BeginFunc
+class BeginFunc
+{
+    public function __invoke()
     {
-        public function __invoke()
-        {
-            $args = array_values(func_get_args());
-            return end($args);
-        }
+        $args = array_values(func_get_args());
+        return end($args);
     }
+}
+~~~
 
 Of course it also needs to be added to the standard environment as `begin`.
 
@@ -132,17 +134,19 @@ function which produces a list form from its arguments.
 
 Actually, that function does not exist yet, so let's define it:
 
-    namespace Igorw\Ilias\Func;
+~~~php
+namespace Igorw\Ilias\Func;
 
-    use Igorw\Ilias\Form\ListForm;
+use Igorw\Ilias\Form\ListForm;
 
-    class ListFunc
+class ListFunc
+{
+    public function __invoke()
     {
-        public function __invoke()
-        {
-            return new ListForm(func_get_args());
-        }
+        return new ListForm(func_get_args());
     }
+}
+~~~
 
 As always, this also needs to go into the standard environment.
 
@@ -150,21 +154,23 @@ Going back to `defmacro`, it is basically just a special form that constructs
 a macro function and assigns it to the environment. It will be represented by
 a `DefMacroOp` and is relatively straight-forward to implement:
 
-    namespace Igorw\Ilias\SpecialOp;
+~~~php
+namespace Igorw\Ilias\SpecialOp;
 
-    use Igorw\Ilias\Environment;
-    use Igorw\Ilias\Form\ListForm;
+use Igorw\Ilias\Environment;
+use Igorw\Ilias\Form\ListForm;
 
-    class DefMacroOp implements SpecialOp
+class DefMacroOp implements SpecialOp
+{
+    public function evaluate(Environment $env, ListForm $args)
     {
-        public function evaluate(Environment $env, ListForm $args)
-        {
-            $name = $args->car()->getSymbol();
-            $macroArgs = $args->cdr()->car();
-            $macroBody = $args->cdr()->cdr()->car();
-            $env[$name] = new MacroOp($macroArgs, $macroBody);
-        }
+        $name = $args->car()->getSymbol();
+        $macroArgs = $args->cdr()->car();
+        $macroBody = $args->cdr()->cdr()->car();
+        $env[$name] = new MacroOp($macroArgs, $macroBody);
     }
+}
+~~~
 
 The macro function itself will be an instance of `MacroOp`, and this is in
 fact the first time that a special form is being constructed dynamically. So
@@ -196,27 +202,29 @@ Then evaluates that and returns the result.
 The macro operator has two constructor arguments as seen in `DefMacroOp`: A
 list of arguments and a list form representing the body.
 
-    namespace Igorw\Ilias\SpecialOp;
+~~~php
+namespace Igorw\Ilias\SpecialOp;
 
-    use Igorw\Ilias\Environment;
-    use Igorw\Ilias\Form\ListForm;
+use Igorw\Ilias\Environment;
+use Igorw\Ilias\Form\ListForm;
 
-    class MacroOp implements SpecialOp
+class MacroOp implements SpecialOp
+{
+    private $macroArgs;
+    private $macroBody;
+
+    public function __construct(ListForm $macroArgs, ListForm $macroBody)
     {
-        private $macroArgs;
-        private $macroBody;
-
-        public function __construct(ListForm $macroArgs, ListForm $macroBody)
-        {
-            $this->macroArgs = $macroArgs;
-            $this->macroBody = $macroBody;
-        }
-
-        public function evaluate(Environment $env, ListForm $args)
-        {
-            ...
-        }
+        $this->macroArgs = $macroArgs;
+        $this->macroBody = $macroBody;
     }
+
+    public function evaluate(Environment $env, ListForm $args)
+    {
+        ...
+    }
+}
+~~~
 
 There is one issue has not been discussed yet. And that is recursive
 expansion. If a macro call returns a new macro call, then that new macro call
@@ -238,25 +246,27 @@ the logic is already defined in `LambdaOp` and can be re-used. And because
 macros are expanded at runtime, they expand recursively automatically, simply
 by invoking them:
 
-    public function evaluate(Environment $env, ListForm $args)
-    {
-        $expanded = $this->expandOne($env, $args);
+~~~php
+public function evaluate(Environment $env, ListForm $args)
+{
+    $expanded = $this->expandOne($env, $args);
 
-        return $expanded->evaluate($env);
-    }
+    return $expanded->evaluate($env);
+}
 
-    public function expandOne(Environment $env, Form $form)
-    {
-        $transformForm = new LambdaOp();
-        $transformFormArgs = new ListForm([
-            $this->macroArgs,
-            $this->macroBody,
-        ]);
+public function expandOne(Environment $env, Form $form)
+{
+    $transformForm = new LambdaOp();
+    $transformFormArgs = new ListForm([
+        $this->macroArgs,
+        $this->macroBody,
+    ]);
 
-        $transformFn = $transformForm->evaluate($env, $transformFormArgs);
+    $transformFn = $transformForm->evaluate($env, $transformFormArgs);
 
-        return call_user_func_array($transformFn, $form->toArray());
-    }
+    return call_user_func_array($transformFn, $form->toArray());
+}
+~~~
 
 Indeed, this is all it takes to implement runtime macro expansion.
 

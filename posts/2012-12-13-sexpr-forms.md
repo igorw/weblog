@@ -51,50 +51,54 @@ behaviour or functionality of an AST node.
 This abstraction can be encoded into a `Form` interface that all forms must
 implement:
 
-    namespace Igorw\Ilias\Form;
+~~~php
+namespace Igorw\Ilias\Form;
 
-    use Igorw\Ilias\Environment;
+use Igorw\Ilias\Environment;
 
-    interface Form
-    {
-        public function evaluate(Environment $env);
-    }
+interface Form
+{
+    public function evaluate(Environment $env);
+}
+~~~
 
 With this interface it is easy to create separate form classes for the
 different types of forms. To match the functionality of the previous post's
 `evaluate` function, there must be a `ListForm`:
 
-    namespace Igorw\Ilias\Form;
+~~~php
+namespace Igorw\Ilias\Form;
 
-    use Igorw\Ilias\Environment;
+use Igorw\Ilias\Environment;
 
-    class ListForm implements Form
+class ListForm implements Form
+{
+    private $forms;
+
+    public function __construct(array $forms)
     {
-        private $forms;
-
-        public function __construct(array $forms)
-        {
-            $this->forms = $forms;
-        }
-
-        public function evaluate(Environment $env)
-        {
-            $fn = $this->car();
-            $args = $this->cdr();
-
-            return call_user_func_array($env[$fn], $args);
-        }
-
-        public function car()
-        {
-            return $this->forms[0];
-        }
-
-        public function cdr()
-        {
-            return new static(array_slice($this->forms, 1));
-        }
+        $this->forms = $forms;
     }
+
+    public function evaluate(Environment $env)
+    {
+        $fn = $this->car();
+        $args = $this->cdr();
+
+        return call_user_func_array($env[$fn], $args);
+    }
+
+    public function car()
+    {
+        return $this->forms[0];
+    }
+
+    public function cdr()
+    {
+        return new static(array_slice($this->forms, 1));
+    }
+}
+~~~
 
 This is exactly the same as the `evaluate`, `car` and `cdr` functions, but
 they are now encapsulated within an object.
@@ -118,24 +122,26 @@ the value.
 
 The implementation of `SymbolForm` is trivial:
 
-    namespace Igorw\Ilias\Form;
+~~~php
+namespace Igorw\Ilias\Form;
 
-    use Igorw\Ilias\Environment;
+use Igorw\Ilias\Environment;
 
-    class SymbolForm implements Form
+class SymbolForm implements Form
+{
+    private $symbol;
+
+    public function __construct($symbol)
     {
-        private $symbol;
-
-        public function __construct($symbol)
-        {
-            $this->symbol = $symbol;
-        }
-
-        public function evaluate(Environment $env)
-        {
-            return $env[$this->symbol];
-        }
+        $this->symbol = $symbol;
     }
+
+    public function evaluate(Environment $env)
+    {
+        return $env[$this->symbol];
+    }
+}
+~~~
 
 That solves the the `car` problem, since it can now be any form. It gets
 evaluated when the `ListForm` is evaluated.
@@ -148,59 +154,63 @@ list of forms, each of which is evaluated before the function is applied.
 
 This means that literals need to be represented as forms as well:
 
-    namespace Igorw\Ilias\Form;
+~~~php
+namespace Igorw\Ilias\Form;
 
-    use Igorw\Ilias\Environment;
+use Igorw\Ilias\Environment;
 
-    class LiteralForm implements Form
+class LiteralForm implements Form
+{
+    private $value;
+
+    public function __construct($value)
     {
-        private $value;
-
-        public function __construct($value)
-        {
-            $this->value = $value;
-        }
-
-        public function evaluate(Environment $env)
-        {
-            return $this->value;
-        }
+        $this->value = $value;
     }
+
+    public function evaluate(Environment $env)
+    {
+        return $this->value;
+    }
+}
+~~~
 
 Going back to the `ListForm`, here is the adjusted version which calls
 `evaluate` on `car` and each element of `cdr` before applying the function:
 
-    use Igorw\Ilias\Environment;
+~~~php
+use Igorw\Ilias\Environment;
 
-    class ListForm implements Form
+class ListForm implements Form
+{
+    ...
+
+    public function evaluate(Environment $env)
     {
-        ...
+        $func = $this->car()->evaluate($env);
+        $args = $this->evaluateArgs($env, $this->cdr());
 
-        public function evaluate(Environment $env)
-        {
-            $func = $this->car()->evaluate($env);
-            $args = $this->evaluateArgs($env, $this->cdr());
-
-            return call_user_func_array($func, $args);
-        }
-
-        ...
-
-        public function toArray()
-        {
-            return $this->forms;
-        }
-
-        private function evaluateArgs(Environment $env, ListForm $args)
-        {
-            return array_map(
-                function ($arg) use ($env) {
-                    return $arg->evaluate($env);
-                },
-                $args->toArray()
-            );
-        }
+        return call_user_func_array($func, $args);
     }
+
+    ...
+
+    public function toArray()
+    {
+        return $this->forms;
+    }
+
+    private function evaluateArgs(Environment $env, ListForm $args)
+    {
+        return array_map(
+            function ($arg) use ($env) {
+                return $arg->evaluate($env);
+            },
+            $args->toArray()
+        );
+    }
+}
+~~~
 
 This form tree should eliminate the problems of the previous `evaluate`
 implementation. The only step left is constructing the forms.
@@ -217,66 +227,78 @@ object shall be called `FormTreeBuilder`.
 
 For a sample input of:
 
-    [['+', 1, 2]]
+~~~php
+[['+', 1, 2]]
+~~~
 
 The tree builder should return:
 
-    [
-        new Form\ListForm([
-            new Form\SymbolForm('+'),
-            new Form\LiteralForm(1),
-            new Form\LiteralForm(2),
-        ])
-    ]
+~~~php
+[
+    new Form\ListForm([
+        new Form\SymbolForm('+'),
+        new Form\LiteralForm(1),
+        new Form\LiteralForm(2),
+    ])
+]
+~~~
 
 Implementing such a builder is quite trivial. The interface will be a method
 named `parseAst`:
 
-    namespace Igorw\Ilias;
+~~~php
+namespace Igorw\Ilias;
 
-    class FormTreeBuilder
-    {
-        public function parseAst(array $ast);
-    }
+class FormTreeBuilder
+{
+    public function parseAst(array $ast);
+}
+~~~
 
 The AST is an array of s-expressions, `parseAst` will parse each one of them
 and return an array of forms:
 
-    public function parseAst(array $ast)
-    {
-        return array_map([$this, 'parseSexpr'], $ast);
-    }
+~~~php
+public function parseAst(array $ast)
+{
+    return array_map([$this, 'parseSexpr'], $ast);
+}
+~~~
 
 An s-expression is either a list of s-expressions or an atom. Atoms are
 handled by `parseAtom`. Lists are recursively parsed into a `ListForm`. Each
 element of a list is a fully parsed form.
 
-    public function parseSexpr($sexpr)
-    {
-        if (!is_array($sexpr)) {
-            return $this->parseAtom($sexpr);
-        }
-
-        $list = $this->parseAst($sexpr);
-        return new Form\ListForm($list);
+~~~php
+public function parseSexpr($sexpr)
+{
+    if (!is_array($sexpr)) {
+        return $this->parseAtom($sexpr);
     }
+
+    $list = $this->parseAst($sexpr);
+    return new Form\ListForm($list);
+}
+~~~
 
 An atom is either a quoted value, a symbol or a literal. A quoted values
 becomes `QuoteForm`, a symbol becomes a `SymbolForm` and a literal becomes a
 `LiteralForm`.
 
-    private function parseAtom($atom)
-    {
-        if ($atom instanceof Ast\QuotedValue) {
-            return new Form\QuoteForm($atom);
-        }
-
-        if (is_string($atom)) {
-            return new Form\SymbolForm($atom);
-        }
-
-        return new Form\LiteralForm($atom);
+~~~php
+private function parseAtom($atom)
+{
+    if ($atom instanceof Ast\QuotedValue) {
+        return new Form\QuoteForm($atom);
     }
+
+    if (is_string($atom)) {
+        return new Form\SymbolForm($atom);
+    }
+
+    return new Form\LiteralForm($atom);
+}
+~~~
 
 That is already enough to construct the form tree correctly. It's just a dumb
 mapping from AST nodes to form objects.
@@ -293,32 +315,36 @@ adding convenience factory methods that create pre-set environments. The
 previous `environment` function can be replaced with a `standard` factory
 method that returns an Environment which has all the core methods on it.
 
-    namespace Igorw\Ilias;
+~~~php
+namespace Igorw\Ilias;
 
-    class Environment extends \ArrayObject
+class Environment extends \ArrayObject
+{
+    public static function standard()
     {
-        public static function standard()
-        {
-            return new static([
-                '+' => new Func\PlusFunc(),
-            ]);
-        }
+        return new static([
+            '+' => new Func\PlusFunc(),
+        ]);
     }
+}
+~~~
 
 Finally, the `plus` function should be moved to a `PlusFunc` class so that it
 can be autoloaded. If PHP supported function autoloading this would not be
 necessary. Using the `__invoke` magic method, the "function object" can
 pretend to be a function.
 
-    namespace Igorw\Ilias\Func;
+~~~php
+namespace Igorw\Ilias\Func;
 
-    class PlusFunc
+class PlusFunc
+{
+    public function __invoke()
     {
-        public function __invoke()
-        {
-            return array_sum(func_get_args());
-        }
+        return array_sum(func_get_args());
     }
+}
+~~~
 
 As you can see, the implementation is identical to `plus`. It behaves the same
 way.
@@ -330,33 +356,37 @@ Phew.
 This new evaluation process should be able to evaluate literals, nested
 applications and symbols. Here is how the pieces are put together:
 
-    $ast = [['+', 1, 2]];
-    $env = Environment::standard();
+~~~php
+$ast = [['+', 1, 2]];
+$env = Environment::standard();
 
-    $builder = new FormTreeBuilder();
-    $forms = $builder->parseAst($ast);
+$builder = new FormTreeBuilder();
+$forms = $builder->parseAst($ast);
 
-    foreach ($forms as $form) {
-        var_dump($form->evaluate($env));
-    }
+foreach ($forms as $form) {
+    var_dump($form->evaluate($env));
+}
+~~~
 
 This correctly returns `3`.
 
 Let's try some more complex examples with nested `car` and `cdr`:
 
-    $ast = [
-        ['+', 1, ['+', 2, 3]],
-        [['get-plus-func'], 1, 2],
-        ['get-random-number'],
-    ];
+~~~php
+$ast = [
+    ['+', 1, ['+', 2, 3]],
+    [['get-plus-func'], 1, 2],
+    ['get-random-number'],
+];
 
-    $env = Environment::standard();
-    $env['get-plus-func'] = function () use ($env) {
-        return $env['+'];
-    };
-    $env['get-random-number'] = function () {
-        return 4;
-    };
+$env = Environment::standard();
+$env['get-plus-func'] = function () use ($env) {
+    return $env['+'];
+};
+$env['get-random-number'] = function () {
+    return 4;
+};
+~~~
 
 And sure enough, these correctly evaluate to `6`, `3` and `4` respectively.
 Ça marche!

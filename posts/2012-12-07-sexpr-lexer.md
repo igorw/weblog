@@ -106,55 +106,59 @@ The lexer will be a class with a single `tokenize` method.
 
 Usage:
 
-    $lexer = new Lexer();
-    $tokens = $lexer->tokenize($code);
+~~~php
+$lexer = new Lexer();
+$tokens = $lexer->tokenize($code);
+~~~
 
 Source:
 
-    namespace Igorw\Ilias;
+~~~php
+namespace Igorw\Ilias;
 
-    class Lexer
+class Lexer
+{
+    private $whitespace = [' ', "\t", "\r", "\n"];
+    private $nonAtom = ['(', ')', ' ', "\t", "\r", "\n"];
+
+    public function tokenize($code)
     {
-        private $whitespace = [' ', "\t", "\r", "\n"];
-        private $nonAtom = ['(', ')', ' ', "\t", "\r", "\n"];
+        $tokens = [];
 
-        public function tokenize($code)
-        {
-            $tokens = [];
+        for ($i = 0, $length = strlen($code); $i < $length; $i++) {
+            $char = $code[$i];
 
-            for ($i = 0, $length = strlen($code); $i < $length; $i++) {
-                $char = $code[$i];
-
-                // kill whitespace
-                if (in_array($char, $this->whitespace)) {
-                    continue;
-                }
-
-                // parens are single tokens
-                if (in_array($char, ['(', ')'])) {
-                    $tokens[] = $char;
-                    continue;
-                }
-
-                // quote token (just the quote character)
-                if ("'" === $char) {
-                    $tokens[] = $char;
-                    continue;
-                }
-
-                // atom token
-                $atom = '';
-                $next = $char;
-                do {
-                    $atom .= $next;
-                    $next = ($length > $i+1) ? $code[$i+1] : null;
-                } while (null !== $next && !in_array($next, $this->nonAtom) && ++$i);
-                $tokens[] = $atom;
+            // kill whitespace
+            if (in_array($char, $this->whitespace)) {
+                continue;
             }
 
-            return $tokens;
+            // parens are single tokens
+            if (in_array($char, ['(', ')'])) {
+                $tokens[] = $char;
+                continue;
+            }
+
+            // quote token (just the quote character)
+            if ("'" === $char) {
+                $tokens[] = $char;
+                continue;
+            }
+
+            // atom token
+            $atom = '';
+            $next = $char;
+            do {
+                $atom .= $next;
+                $next = ($length > $i+1) ? $code[$i+1] : null;
+            } while (null !== $next && !in_array($next, $this->nonAtom) && ++$i);
+            $tokens[] = $atom;
         }
+
+        return $tokens;
     }
+}
+~~~
 
 The lexer consumes the input one character at a time. First it checks for
 whitespace, which is simply ignored. Then it detects single-char tokens which

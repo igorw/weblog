@@ -37,7 +37,9 @@ addition of two numbers:
 
 In the AST, that expression is represented as:
 
-    [['+', 1, 2]]
+~~~php
+[['+', 1, 2]]
+~~~
 
 The resulting computation of when translating this function call to PHP would
 be:
@@ -48,7 +50,9 @@ It turns out that in LISP you can pass more than two arguments to `+`, and it
 will return the sum of all of them. With that in mind, perhaps this is a more
 accurate PHP equivalent:
 
-    array_sum([1, 2])
+~~~php
+array_sum([1, 2])
+~~~
 
 Which in fact maps better to the way LISP works because `+` is no longer a
 special construct. It is just a function.
@@ -59,14 +63,16 @@ The starting point for implementing this is the AST. It is an array of sexprs
 that should be evaluated. Each evaluated sexpr returns a value and the value
 of the last evaluation should be returned.
 
-    function evaluateAst(array $ast, array $env)
-    {
-        $value = null;
-        foreach ($ast as $sexpr) {
-            $value = evaluate($sexpr, $env);
-        }
-        return $value;
+~~~php
+function evaluateAst(array $ast, array $env)
+{
+    $value = null;
+    foreach ($ast as $sexpr) {
+        $value = evaluate($sexpr, $env);
     }
+    return $value;
+}
+~~~
 
 The environment represents the context of this evaluation and will become
 useful later on.
@@ -85,15 +91,17 @@ historical reasons but are in wide use.
 
 Here are their implementations:
 
-    function car(array $list)
-    {
-        return $list[0];
-    }
+~~~php
+function car(array $list)
+{
+    return $list[0];
+}
 
-    function cdr(array $list)
-    {
-        return array_slice($list, 1);
-    }
+function cdr(array $list)
+{
+    return array_slice($list, 1);
+}
+~~~
 
 For the sexpr `(+ 1 2)`, the `car` is `+` and the `cdr` is `(1 2)`. Which
 happen to be the function name and the arguments.
@@ -102,13 +110,15 @@ Now, instead of hard-coding the possible functions like `+` into `evaluate`,
 it would be better to store them in the environment. After a simple lookup,
 the function can be applied to the given arguments.
 
-    function evaluate($sexpr, array $env)
-    {
-        $fn = car($sexpr);
-        $args = cdr($sexpr);
+~~~php
+function evaluate($sexpr, array $env)
+{
+    $fn = car($sexpr);
+    $args = cdr($sexpr);
 
-        return call_user_func_array($env[$fn], $args);
-    }
+    return call_user_func_array($env[$fn], $args);
+}
+~~~
 
 The last piece of the puzzle is producing an environment that actually
 contains the `+` function.
@@ -118,34 +128,42 @@ functionality. However, because `array_sum` takes an array of arguments, it
 needs to be wrapped in a new `plus` function that uses `func_get_args` to get
 all passed arguments as opposed to one array argument.
 
-    array_sum([1, 2])
-    plus(1, 2)
+~~~php
+array_sum([1, 2])
+plus(1, 2)
+~~~
 
 The plus function:
 
-    namespace Igorw\Ilias;
+~~~php
+namespace Igorw\Ilias;
 
-    function plus(/* $numbers... */)
-    {
-        return array_sum(func_get_args());
-    }
+function plus(/* $numbers... */)
+{
+    return array_sum(func_get_args());
+}
+~~~
 
 Finally, why not provide some sort of default environment which contains the
 core functions. It's simply an array which maps from function name symbols to
 actual PHP functions:
 
-    function environment()
-    {
-        return [
-            '+' => 'Igorw\Ilias\plus',
-        ];
-    }
+~~~php
+function environment()
+{
+    return [
+        '+' => 'Igorw\Ilias\plus',
+    ];
+}
+~~~
 
 This should be enough to evaluate `(+ 1 2)`:
 
-    $ast = [['+', 1, 2]];
-    $env = environment();
-    var_dump(evaluateAst($ast, $env));
+~~~php
+$ast = [['+', 1, 2]];
+$env = environment();
+var_dump(evaluateAst($ast, $env));
+~~~
 
 And sure enough, this returns `3`. Just to be extra sure, how about
 `(+ 1 2 3)`? It returns `6`, as expected.

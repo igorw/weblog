@@ -52,31 +52,33 @@ since it is the glue that loops through the forms and evaluates them. The
 `Walker` class will have an `expand` method that translates a form. Here are
 the additions to `Program`:
 
-    namespace Igorw\Ilias;
+~~~php
+namespace Igorw\Ilias;
 
-    class Program
+class Program
+{
+    ...
+    private $walker;
+
+    public function __construct(..., Walker $walker)
     {
         ...
-        private $walker;
-
-        public function __construct(..., Walker $walker)
-        {
-            ...
-            $this->walker = $walker;
-        }
-
-        public function evaluate(Environment $env, $code)
-        {
-            ...
-
-            foreach ($forms as $form) {
-                $expanded = $this->walker->expand($env, $form);
-                $value = $expanded->evaluate($env);
-            }
-
-            ...
-        }
+        $this->walker = $walker;
     }
+
+    public function evaluate(Environment $env, $code)
+    {
+        ...
+
+        foreach ($forms as $form) {
+            $expanded = $this->walker->expand($env, $form);
+            $value = $expanded->evaluate($env);
+        }
+
+        ...
+    }
+}
+~~~
 
 ## Basic recursive expansion
 
@@ -88,53 +90,55 @@ This is relatively easy to do, since we can just use the existing
 `MacroOp::expandOne()` method. And since that call can return yet another
 macro, we recur the `expand` call.
 
-    namespace Igorw\Ilias;
+~~~php
+namespace Igorw\Ilias;
 
-    use Igorw\Ilias\Form\Form;
-    use Igorw\Ilias\Form\SymbolForm;
-    use Igorw\Ilias\Form\ListForm;
+use Igorw\Ilias\Form\Form;
+use Igorw\Ilias\Form\SymbolForm;
+use Igorw\Ilias\Form\ListForm;
 
-    class Walker
+class Walker
+{
+    public function expand(Environment $env, Form $form)
     {
-        public function expand(Environment $env, Form $form)
-        {
-            if (!$this->isExpandable($env, $form)) {
-                return $form;
-            }
-
-            if (!$this->isMacroCall($env, $form)) {
-                return $form;
-            }
-
-            $macro = $this->getMacroOp($env, $form);
-            $args = $form->cdr();
-            $expanded = $macro->expandOne($env, $args);
-
-            return $this->expand($env, $expanded);
+        if (!$this->isExpandable($env, $form)) {
+            return $form;
         }
 
-        private function isExpandable(Environment $env, Form $form)
-        {
-            return $form instanceof ListForm;
+        if (!$this->isMacroCall($env, $form)) {
+            return $form;
         }
 
-        private function isMacroCall(Environment $env, ListForm $form)
-        {
-            return $this->isFormOfType($env, $form, 'Igorw\Ilias\SpecialOp\MacroOp');
-        }
+        $macro = $this->getMacroOp($env, $form);
+        $args = $form->cdr();
+        $expanded = $macro->expandOne($env, $args);
 
-        private function isFormOfType(Environment $env, ListForm $form, $type)
-        {
-            return $form->nth(0) instanceof SymbolForm
-                && $form->nth(0)->existsInEnv($env)
-                && $form->nth(0)->evaluate($env) instanceof $type;
-        }
-
-        private function getMacroOp(Environment $env, ListForm $form)
-        {
-            return $form->nth(0)->evaluate($env);
-        }
+        return $this->expand($env, $expanded);
     }
+
+    private function isExpandable(Environment $env, Form $form)
+    {
+        return $form instanceof ListForm;
+    }
+
+    private function isMacroCall(Environment $env, ListForm $form)
+    {
+        return $this->isFormOfType($env, $form, 'Igorw\Ilias\SpecialOp\MacroOp');
+    }
+
+    private function isFormOfType(Environment $env, ListForm $form, $type)
+    {
+        return $form->nth(0) instanceof SymbolForm
+            && $form->nth(0)->existsInEnv($env)
+            && $form->nth(0)->evaluate($env) instanceof $type;
+    }
+
+    private function getMacroOp(Environment $env, ListForm $form)
+    {
+        return $form->nth(0)->evaluate($env);
+    }
+}
+~~~
 
 You will notice that the `ListForm` has a new `nth` method, which is a
 convenience method for accessing an element of the list by index.
@@ -169,38 +173,40 @@ Instead of just returning non-macro list forms directly, expansion must recur
 on their sub-lists. And sure enough, with a few small changes this can be
 done.
 
-    public function expand(Environment $env, Form $form)
-    {
-        ...
+~~~php
+public function expand(Environment $env, Form $form)
+{
+    ...
 
-        if (!$this->isMacroCall($env, $form)) {
-            return $this->expandSubLists($env, $form);
-        }
-
-        ...
+    if (!$this->isMacroCall($env, $form)) {
+        return $this->expandSubLists($env, $form);
     }
 
-    private function expandSubLists(Environment $env, ListForm $form)
-    {
-        if (!count($form->toArray())) {
-            return $form;
-        }
+    ...
+}
 
-        return new ListForm(array_merge(
-            [$form->nth(0)],
-            $this->expandList($env, $form->cdr())
-        ));
+private function expandSubLists(Environment $env, ListForm $form)
+{
+    if (!count($form->toArray())) {
+        return $form;
     }
 
-    private function expandList(Environment $env, ListForm $form)
-    {
-        return array_map(
-            function ($form) use ($env) {
-                return $this->expand($env, $form);
-            },
-            $form->toArray()
-        );
-    }
+    return new ListForm(array_merge(
+        [$form->nth(0)],
+        $this->expandList($env, $form->cdr())
+    ));
+}
+
+private function expandList(Environment $env, ListForm $form)
+{
+    return array_map(
+        function ($form) use ($env) {
+            return $this->expand($env, $form);
+        },
+        $form->toArray()
+    );
+}
+~~~
 
 And with this adjustment in place it will correctly expand the sub-list:
 
@@ -252,36 +258,38 @@ forms, in this case the `lambda` special form, and handle the argument list
 and the bound parameters inside the lambda body in a different way than normal
 lists.
 
-    public function expand(Environment $env, Form $form)
-    {
-        if (!$this->isExpandable($env, $form)) {
-            return $form;
-        }
-
-        if ($this->isLambdaForm($env, $form)) {
-            return $this->expandLambdaForm($env, $form);
-        }
-
-        ...
+~~~php
+public function expand(Environment $env, Form $form)
+{
+    if (!$this->isExpandable($env, $form)) {
+        return $form;
     }
 
-    private function isLambdaForm(Environment $env, ListForm $form)
-    {
-        return $this->isFormOfType($env, $form, 'Igorw\Ilias\SpecialOp\LambdaOp');
+    if ($this->isLambdaForm($env, $form)) {
+        return $this->expandLambdaForm($env, $form);
     }
 
-    private function expandLambdaForm(Environment $env, ListForm $form)
-    {
-        $subEnv = clone $env;
-        foreach ($form->nth(1)->toArray() as $argName) {
-            $subEnv[$argName->getSymbol()] = null;
-        }
+    ...
+}
 
-        return new ListForm(array_merge(
-            [$form->nth(0), $form->nth(1)],
-            $this->expandList($subEnv, $form->cdr()->cdr())
-        ));
+private function isLambdaForm(Environment $env, ListForm $form)
+{
+    return $this->isFormOfType($env, $form, 'Igorw\Ilias\SpecialOp\LambdaOp');
+}
+
+private function expandLambdaForm(Environment $env, ListForm $form)
+{
+    $subEnv = clone $env;
+    foreach ($form->nth(1)->toArray() as $argName) {
+        $subEnv[$argName->getSymbol()] = null;
     }
+
+    return new ListForm(array_merge(
+        [$form->nth(0), $form->nth(1)],
+        $this->expandList($subEnv, $form->cdr()->cdr())
+    ));
+}
+~~~
 
 All that this does is:
 

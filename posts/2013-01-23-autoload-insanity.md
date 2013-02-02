@@ -117,11 +117,13 @@ Here are some examples:
 The composer configuration could be something along these lines, the class
 prefix can be used both matching and for constructing the directory prefix:
 
-    {
-        "autoload": {
-            "psr-n": { "Igorw\\Ilias": "src" }
-        }
+~~~json
+{
+    "autoload": {
+        "psr-n": { "Igorw\\Ilias": "src" }
     }
+}
+~~~
 
 Based on the feedback I receive I may write up a more detailed spec and a
 proof-of-concept implementation for submission to the PHP

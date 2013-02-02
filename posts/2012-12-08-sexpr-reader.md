@@ -66,7 +66,9 @@ level of the sexpr can contain many lists like so:
 
 Which would result in:
 
-    [["foo"], ["bar"], ["baz"]]
+~~~php
+[["foo"], ["bar"], ["baz"]]
+~~~
 
 Also note that the parser will already make some type distinctions. If an atom
 looks like a number, it will be represented as an integer.
@@ -78,41 +80,45 @@ method which takes the token stream as an argument and returns the AST.
 
 Usage:
 
-    $reader = new Reader();
-    $ast = $reader->parse($tokens);
+~~~php
+$reader = new Reader();
+$ast = $reader->parse($tokens);
+~~~
 
 Source:
 
-    namespace Igorw\Ilias;
+~~~php
+namespace Igorw\Ilias;
 
-    class Reader
+class Reader
+{
+    public function parse(array $tokens)
     {
-        public function parse(array $tokens)
-        {
-            $ast = [];
+        $ast = [];
 
-            for ($i = 0, $length = count($tokens); $i < $length; $i++) {
-                $token = $tokens[$i];
+        for ($i = 0, $length = count($tokens); $i < $length; $i++) {
+            $token = $tokens[$i];
 
-                // extract atoms
-                if (!in_array($token, ['(', ')'])) {
-                    $ast[] = $this->normalizeAtom($token);
-                    continue;
-                }
-
-                // parse list recursively
-                if ('(' === $token) {
-                    list($listTokens, $i) = $this->extractListTokens($tokens, $i);
-                    $ast[] = $this->parse($listTokens);
-                    continue;
-                }
+            // extract atoms
+            if (!in_array($token, ['(', ')'])) {
+                $ast[] = $this->normalizeAtom($token);
+                continue;
             }
 
-            return $ast;
+            // parse list recursively
+            if ('(' === $token) {
+                list($listTokens, $i) = $this->extractListTokens($tokens, $i);
+                $ast[] = $this->parse($listTokens);
+                continue;
+            }
         }
 
-        ...
+        return $ast;
     }
+
+    ...
+}
+~~~
 
 If you recall the different implicit token types: `T_OPEN`, `T_CLOSE`,
 `T_ATOM` and `T_QUOTE`. And I will ignore quoting for now.
@@ -121,14 +127,16 @@ Any token that is not an opening or closing brace is an atom. Atoms are
 normalized, then appended to the AST. Normalization just detects the atom type
 and casts it accordingly.
 
-    private function normalizeAtom($atom)
-    {
-        if (is_numeric($atom)) {
-            return (int) $atom;
-        }
-
-        return $atom;
+~~~php
+private function normalizeAtom($atom)
+{
+    if (is_numeric($atom)) {
+        return (int) $atom;
     }
+
+    return $atom;
+}
+~~~
 
 If the reader finds an open token, it must read all tokens until it finds a
 matching close token and then parse the whole range into a list. That list can
@@ -138,30 +146,32 @@ The method for finding the matching brace and extracting the tokens simply
 needs to keep track of the nesting level and stop when the nesting level goes
 back to zero.
 
-    private function extractListTokens(array $tokens, $i)
-    {
-        $level = 0;
-        $init = $i;
+~~~php
+private function extractListTokens(array $tokens, $i)
+{
+    $level = 0;
+    $init = $i;
 
-        for ($length = count($tokens); $i < $length; $i++) {
-            $token = $tokens[$i];
+    for ($length = count($tokens); $i < $length; $i++) {
+        $token = $tokens[$i];
 
-            if ('(' === $token) {
-                $level++;
-            }
+        if ('(' === $token) {
+            $level++;
+        }
 
-            if (')' === $token) {
-                $level--;
-            }
+        if (')' === $token) {
+            $level--;
+        }
 
-            if (0 === $level) {
-                return [
-                    array_slice($tokens, $init + 1, $i - ($init + 1)),
-                    $i,
-                ];
-            }
+        if (0 === $level) {
+            return [
+                array_slice($tokens, $init + 1, $i - ($init + 1)),
+                $i,
+            ];
         }
     }
+}
+~~~
 
 The reader is designed to be stateless, which is why it does not store the
 tokens or the parsing position in member variables.
@@ -178,60 +188,66 @@ way though: encapsulating quoted values within `QuotedValue` objects.
 
 The `QuotedValue` class just wraps around a value to mark it as quoted:
 
-    namespace Igorw\Ilias;
+~~~php
+namespace Igorw\Ilias;
 
-    class QuotedValue
+class QuotedValue
+{
+    private $value;
+
+    public function __construct($value)
     {
-        private $value;
-
-        public function __construct($value)
-        {
-            $this->value = $value;
-        }
-
-        public function getValue()
-        {
-            return $this->value;
-        }
+        $this->value = $value;
     }
+
+    public function getValue()
+    {
+        return $this->value;
+    }
+}
+~~~
 
 Now, in order to parse these quoted values correctly we need to detect the
 `T_QUOTE` token:
 
-    // wrap quoted value
-    if ("'" === $token) {
-        list($parsedToken, $i) = $this->parseQuotedToken($tokens, $i);
-        $ast[] = $parsedToken;
-        continue;
-    }
+~~~php
+// wrap quoted value
+if ("'" === $token) {
+    list($parsedToken, $i) = $this->parseQuotedToken($tokens, $i);
+    $ast[] = $parsedToken;
+    continue;
+}
+~~~
 
 The quoted value is either an atom or a list. Since lists consist of multiple
 tokens, the reader needs to do some extra work here to completely extract all
 of the tokens:
 
-    private function parseQuotedToken(array $tokens, $i)
-    {
-        // skip past quote char
-        $i++;
+~~~php
+private function parseQuotedToken(array $tokens, $i)
+{
+    // skip past quote char
+    $i++;
 
-        // quoted atom
-        if ('(' !== $tokens[$i]) {
-            $atom = $this->normalizeAtom($tokens[$i]);
-            return [
-                new QuotedValue($atom),
-                $i,
-            ];
-        }
-
-        // quoted list
-        list($listTokens, $i) = $this->extractListTokens($tokens, $i);
-        $list = $this->parse($listTokens);
-
+    // quoted atom
+    if ('(' !== $tokens[$i]) {
+        $atom = $this->normalizeAtom($tokens[$i]);
         return [
-            new QuotedValue($list),
+            new QuotedValue($atom),
             $i,
         ];
     }
+
+    // quoted list
+    list($listTokens, $i) = $this->extractListTokens($tokens, $i);
+    $list = $this->parse($listTokens);
+
+    return [
+        new QuotedValue($list),
+        $i,
+    ];
+}
+~~~
 
 And that's it, the reader is now correctly parsing quoted values as well.
 
@@ -255,12 +271,14 @@ then the reader would be able to give the user more meaningful error messages.
 
 This is what the token data structure could look like:
 
-    Token {
-        int type;
-        string source;
-        int line;
-        int offset;
-    }
+~~~c
+Token {
+    int type;
+    string source;
+    int line;
+    int offset;
+}
+~~~
 
 But I will keep it simple for now.
 
@@ -269,16 +287,18 @@ But I will keep it simple for now.
 With the lexer and the parser in place, they can now be combined to parse
 s-expressions into an AST:
 
-    $code = '(+ 1 2)';
+~~~php
+$code = '(+ 1 2)';
 
-    $lexer  = new Lexer();
-    $reader = new Reader();
+$lexer  = new Lexer();
+$reader = new Reader();
 
-    $tokens = $lexer->tokenize($code);
-    $ast    = $reader->parse($tokens);
+$tokens = $lexer->tokenize($code);
+$ast    = $reader->parse($tokens);
 
-    var_dump($ast);
-    // [["+", 1, 2]]
+var_dump($ast);
+// [["+", 1, 2]]
+~~~
 
 Hooray, it works!
 

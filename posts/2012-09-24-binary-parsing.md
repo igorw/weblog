@@ -38,9 +38,11 @@ sequence of bits, and a string is an array of chars.
 
 Let's look at an example:
 
-    char *hello = "Hello World";
-    printf("char: %c\n", hello[0]);
-    printf("ascii: %i\n", hello[0]);
+~~~c
+char *hello = "Hello World";
+printf("char: %c\n", hello[0]);
+printf("ascii: %i\n", hello[0]);
+~~~
 
 We are accessing the first character `H` and printing out two representations
 of it. The first is the char representation (`%c`), the second is the integer
@@ -58,9 +60,11 @@ decide how to interpret it.
 One of the main reasons why this is different in PHP is the fact that string
 is a completely different type. Let's explore what PHP does:
 
-    $hello = "Hello World";
-    var_dump($hello[0]);
-    var_dump(ord($hello[0]));
+~~~php
+$hello = "Hello World";
+var_dump($hello[0]);
+var_dump(ord($hello[0]));
+~~~
 
 To get the ascii code of a character in PHP, you need to call `ord` on a
 character (which is really not a character, but a one-character string, as
@@ -87,21 +91,23 @@ As an example I will use the header of a DNS packet. The header consists of 12
 bytes. Those 12 bytes are divided into 6 fields, each consisting of 2 bytes.
 Here is the format as defined by RFC 1035:
 
-                                    1  1  1  1  1  1
-      0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5
-    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-    |                      ID                       |
-    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-    |QR|   Opcode  |AA|TC|RD|RA|   Z    |   RCODE   |
-    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-    |                    QDCOUNT                    |
-    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-    |                    ANCOUNT                    |
-    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-    |                    NSCOUNT                    |
-    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-    |                    ARCOUNT                    |
-    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+<div class="ascii-table"><pre>
+                                1  1  1  1  1  1
+  0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|                      ID                       |
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|QR|   Opcode  |AA|TC|RD|RA|   Z    |   RCODE   |
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|                    QDCOUNT                    |
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|                    ANCOUNT                    |
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|                    NSCOUNT                    |
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+|                    ARCOUNT                    |
++--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+</pre></div>
 
 All fields except the second are to be read as full numbers. The second one is
 special, because it fits many values into those 2 bytes.
@@ -115,7 +121,9 @@ which is defined as  `unsigned short (always 16 bit, big endian byte order)`.
 Unpack allows repeating a format as a pattern by appending a `*`, so we can
 simply unpack by using:
 
-    list($id, $fields, $qdCount, $anCount, $nsCount, $arCount) = array_values(unpack('n*', $header));
+~~~php
+list($id, $fields, $qdCount, $anCount, $nsCount, $arCount) = array_values(unpack('n*', $header));
+~~~
 
 It converts the string of bytes into 6 numbers, each based on two bytes. We
 call `array_values` because the value returned by `unpack` is a 1-indexed
@@ -124,7 +132,9 @@ array. In order to use `list` we need a 0-indexed array.
 Here is the data of the DNS header, represented as hexadecimal. Two digits
 correspond to one byte. Two bytes are one field.
 
-    72 62 01 00 00 01 00 00 00 00 00 00
+<div class="ascii-table"><pre>
+72 62 01 00 00 01 00 00 00 00 00 00
+</pre></div>
 
 This means that the values are:
 
@@ -159,15 +169,19 @@ We determined that the value of `fields` is a number representing `0000 0001
 is `rcode`, and it is 4 bits in length. This means that we need to ignore
 everything but the last 4 bits. We can do that by applying a bitmask:
 
-    value:          0000 0001 0000 0000
-    bitmask:        0000 0000 0000 1111
-    result of & op: 0000 0000 0000 0000
+<div class="ascii-table"><pre>
+value:          0000 0001 0000 0000
+bitmask:        0000 0000 0000 1111
+result of & op: 0000 0000 0000 0000
+</pre></div>
 
 The `&` operator sets those bits that are `1` in both the value and the
 bitmask. Since there is no match in this case, the result is `0`. In PHP code,
 the same operation looks like this:
 
-    $rcode = $fields & bindec('1111');
+~~~php
+$rcode = $fields & bindec('1111');
+~~~
 
 > Note: We are using `bindec` to get an integer representing the binary
 > `1111`, because bitwise operators act on numbers. Since PHP 5.4 it is
@@ -184,34 +198,42 @@ binary, and shift it to the left or to the right. Shifting to the right
 destroys the bits on the far right, as they're shifted "over the edge". In
 this case we want to shift it to the right, and we want to do that 4 times.
 
-    value:          0000 0001 0000 0000
-    result of >> 4:      0000 0001 0000
+<div class="ascii-table"><pre>
+value:          0000 0001 0000 0000
+result of >> 4:      0000 0001 0000
+</pre></div>
 
 Now we can use a bitmask on this value to extract the last 3 bits to get the
 `z` value.
 
-    value:          0000 0001 0000 0000
-    result of >> 4:      0000 0001 0000
-    bitmask:        0000 0000 0000 0111
-    result of & op:      0000 0000 0000
+<div class="ascii-table"><pre>
+value:          0000 0001 0000 0000
+result of >> 4:      0000 0001 0000
+bitmask:        0000 0000 0000 0111
+result of & op:      0000 0000 0000
+</pre></div>
 
 And the same in PHP code:
 
-    $z = ($fields >> 4) & bindec('111');
+~~~php
+$z = ($fields >> 4) & bindec('111');
+~~~
 
 You can re-apply this technique over and over, in order to parse the whole
 header. When you do that, you will end up with this:
 
-    list($id, $fields, $qdCount, $anCount, $nsCount, $arCount) = array_values(unpack('n*', $header));
+~~~php
+list($id, $fields, $qdCount, $anCount, $nsCount, $arCount) = array_values(unpack('n*', $header));
 
-    $rcode = $fields & bindec('1111');
-    $z = ($fields >> 4) & bindec('111');
-    $ra = ($fields >> 7) & 1;
-    $rd = ($fields >> 8) & 1;
-    $tc = ($fields >> 9) & 1;
-    $aa = ($fields >> 10) & 1;
-    $opcode = ($fields >> 11) & bindec('1111');
-    $qr = ($fields >> 15) & 1;
+$rcode = $fields & bindec('1111');
+$z = ($fields >> 4) & bindec('111');
+$ra = ($fields >> 7) & 1;
+$rd = ($fields >> 8) & 1;
+$tc = ($fields >> 9) & 1;
+$aa = ($fields >> 10) & 1;
+$opcode = ($fields >> 11) & bindec('1111');
+$qr = ($fields >> 15) & 1;
+~~~
 
 And that's how you parse binary data with PHP.
 

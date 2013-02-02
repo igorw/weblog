@@ -60,13 +60,15 @@ But with a branch name like `master` which produces a version named
 great article on aliasing](http://getcomposer.org/doc/articles/aliases.md)
 that explains how branch aliases can be defined:
 
-    {
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
+~~~json
+{
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
         }
     }
+}
+~~~
 
 This maps the `dev-master` version to a `1.0.x-dev` alias. Which essentially
 means that you can require the package with a `1.0.*@dev` constraint. The nice

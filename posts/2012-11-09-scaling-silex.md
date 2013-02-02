@@ -17,40 +17,44 @@ point, but they are by no means the limit of what is possible.
 
 The first experience with silex will most likely be something like this:
 
-    $app->get('/', function () {
-        return 'Hi';
-    });
+~~~php
+$app->get('/', function () {
+    return 'Hi';
+});
+~~~
 
 Cute. Now fast-forward a few months, and it is looking more like this:
 
-    $app->get('/', function (Request $request) use ($app) {
-        $products = $app['db']->fetchAll('SELECT * FROM products');
+~~~php
+$app->get('/', function (Request $request) use ($app) {
+    $products = $app['db']->fetchAll('SELECT * FROM products');
 
-        $suggestions = [];
-        $token = $app['security']->getToken();
-        if (null !== $token) {
-            $user = $token->getUser();
+    $suggestions = [];
+    $token = $app['security']->getToken();
+    if (null !== $token) {
+        $user = $token->getUser();
 
-            $friends = $app['db']->fetchAll('SELECT u.* FROM users u JOIN purchases pu ON pu.user_id = user.id WHERE pu.product_id IN (SELECT product_id FROM purchases WHERE user_id = ?)', [(int) $user->getId()]);
+        $friends = $app['db']->fetchAll('SELECT u.* FROM users u JOIN purchases pu ON pu.user_id = user.id WHERE pu.product_id IN (SELECT product_id FROM purchases WHERE user_id = ?)', [(int) $user->getId()]);
 
-            $sql = sprintf('SELECT p.* FROM products p JOIN purchases pu ON pu.product_id = p.id WHERE pu.user_id IN (%s)', implode(',', array_map(function ($friend) { return (int) $friend['id']; }, $friends)));
-            $suggestions = $app['db']->fetchAll($sql);
-        }
+        $sql = sprintf('SELECT p.* FROM products p JOIN purchases pu ON pu.product_id = p.id WHERE pu.user_id IN (%s)', implode(',', array_map(function ($friend) { return (int) $friend['id']; }, $friends)));
+        $suggestions = $app['db']->fetchAll($sql);
+    }
 
-        $app['predis']->incr('pageviews');
-        $app['predis']->incr('pageviews:index');
+    $app['predis']->incr('pageviews');
+    $app['predis']->incr('pageviews:index');
 
-        $data = [
-            'products'      => $products,
-            'suggestions'   => $suggestions,
-        ];
+    $data = [
+        'products'      => $products,
+        'suggestions'   => $suggestions,
+    ];
 
-        if ('application/json' === $request->headers->get('Accept')) {
-            return $app->json($data);
-        }
+    if ('application/json' === $request->headers->get('Accept')) {
+        return $app->json($data);
+    }
 
-        return $app['twig']->render('index.html.twig', $data);
-    });
+    return $app['twig']->render('index.html.twig', $data);
+});
+~~~
 
 This is a vastly simplified example, but you get the idea. Imagine 20-30 of
 these inline controllers. Even if you extract everything into services, you
@@ -69,39 +73,45 @@ requests that will document the feature properly and appropriately.
 
 This is how it is done:
 
-    namespace Igorw\Shop\Controller;
+~~~php
+namespace Igorw\Shop\Controller;
 
-    use Silex\Application;
-    use Symfony\Component\HttpFoundation\Request;
+use Silex\Application;
+use Symfony\Component\HttpFoundation\Request;
 
-    class ShopController
+class ShopController
+{
+    public function indexAction(Request $request, Application $app)
     {
-        public function indexAction(Request $request, Application $app)
-        {
-            ...
-        }
+        ...
     }
+}
+~~~
 
 And now the routing looks like this:
 
-    $app->get('/',          'Igorw\Shop\Controller\ShopController::indexAction');
-    $app->match('/login',   'Igorw\Shop\Controller\ShopController::loginAction');
-    $app->get('/product',   'Igorw\Shop\Controller\ShopController::productAction');
+~~~php
+$app->get('/',          'Igorw\Shop\Controller\ShopController::indexAction');
+$app->match('/login',   'Igorw\Shop\Controller\ShopController::loginAction');
+$app->get('/product',   'Igorw\Shop\Controller\ShopController::productAction');
+~~~
 
 And if those class names are too damn long, relax. You can easily write a
 function to shorten them. Did you know that it is okay to write functions in
 PHP? It is!
 
-    function controller($shortName)
-    {
-        list($shortClass, $shortMethod) = explode('/', shortName, 2);
+~~~php
+function controller($shortName)
+{
+    list($shortClass, $shortMethod) = explode('/', shortName, 2);
 
-        return sprintf('Igorw\Shop\Controller\%sController::%sAction', ucfirst($shortClass), $shortMethod);
-    }
+    return sprintf('Igorw\Shop\Controller\%sController::%sAction', ucfirst($shortClass), $shortMethod);
+}
 
-    $app->get('/', controller('shop/index'));
-    $app->match('/login', controller('shop/login'));
-    $app->get('/product', controller('shop/product'));
+$app->get('/', controller('shop/index'));
+$app->match('/login', controller('shop/login'));
+$app->get('/product', controller('shop/product'));
+~~~
 
 It is worth noting that although we specified the controller name as a string
 here, it will *not* call the method statically (unless it is a static method),
@@ -129,33 +139,35 @@ Here is an example of what you *might* end up with:
 
 And a more manageable controller:
 
-    class ShopController
+~~~php
+class ShopController
+{
+    public function indexAction(Request $request, Application $app)
     {
-        public function indexAction(Request $request, Application $app)
-        {
-            $products = $app['repo.product']->findAll();
+        $products = $app['repo.product']->findAll();
 
-            $user = $this->getUser($app);
-            $suggestions = ($user) ? $app['suggestor']->suggestProducts($user) : [];
+        $user = $this->getUser($app);
+        $suggestions = ($user) ? $app['suggestor']->suggestProducts($user) : [];
 
-            $app['stats']->pageview('index');
+        $app['stats']->pageview('index');
 
-            $data = [
-                'products'      => $products,
-                'suggestions'   => $suggestions,
-            ];
+        $data = [
+            'products'      => $products,
+            'suggestions'   => $suggestions,
+        ];
 
-            return $app['view_factory']
-                ->create($request, $data)
-                ->render();
-        }
-
-        private function getUser(Application $app)
-        {
-            $token = $app['security']->getToken();
-            return $token ? $token->getUser() : null;
-        }
+        return $app['view_factory']
+            ->create($request, $data)
+            ->render();
     }
+
+    private function getUser(Application $app)
+    {
+        $token = $app['security']->getToken();
+        return $token ? $token->getUser() : null;
+    }
+}
+~~~
 
 Is there room for improvement? Certainly. The next step would be to define the
 controllers themselves as services by extending the `ControllerResolver`. This

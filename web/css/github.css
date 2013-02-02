@@ -76,7 +76,7 @@ pre .regexp {
   color: #009926
 }
 
-pre .class {
+pre .class .title {
   color: #458;
   font-weight: bold
 }

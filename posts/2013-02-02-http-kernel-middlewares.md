@@ -264,7 +264,7 @@ $app = new CallableHttpKernel(function (Request $request) {
 ~~~
 
 As long as you have an object that implements the `HttpKernelInterface`, it
-can be used with this logger.
+can be used with this logger middleware.
 
 ## Stack
 

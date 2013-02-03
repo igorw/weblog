@@ -86,7 +86,7 @@ This function application is represented as a list whose first element is a
 that function.
 
 In LISP the first element of a list is called the `car`, the rest of the list
-is called  the`cdr` (pronounced "cudder"). These crazy names exist for
+is called the `cdr` (pronounced "cudder"). These crazy names exist for
 historical reasons but are in wide use.
 
 Here are their implementations:

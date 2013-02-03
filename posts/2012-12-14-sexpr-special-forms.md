@@ -287,8 +287,8 @@ What is significant is that the function produced by `lambda` evaluates its
 body using a separate environment. The result of the last body form's
 evaluation is returned from the function.
 
-After adding the new `lambda` special operator to the enironment it should be
-able to do all those things. Accoding to lambda calculus we can stop now, as
+After adding the new `lambda` special operator to the environment it should be
+able to do all those things. According to lambda calculus we can stop now, as
 anything can be represented using lambdas alone. But we will continue
 nevertheless.
 

@@ -134,7 +134,7 @@ HttpFoundation.
 
 It's quite amazing that something with such a ridiculously long name is
 supposed to be the rack of PHP:
-`Symfony\Component\HttpKernel\HttpKernelInterface`.
+<code>Symfony\Component\HttpKernel\<wbr>HttpKernelInterface</code>.
 
 ~~~php
 interface HttpKernelInterface

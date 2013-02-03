@@ -77,7 +77,7 @@ You cannot change an existing value object, but you can create a new one with
 your changes applied.
 
 HttpFoundation's `Request` and `Response` were not designed to be immutable,
-but they comes surprisingly close. And even if they technically aren't, it
+but they come surprisingly close. And even if they technically aren't, it
 helps to think about these objects as value objects, because it clarifies
 their role in the system.
 

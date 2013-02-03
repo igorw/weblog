@@ -81,7 +81,7 @@ but they comes surprisingly close. And even if they technically aren't, it
 helps to think about these objects as value objects, because it clarifies
 their role in the system.
 
-The hold the value of what came from the wire and what will go onto the wire.
+They hold the value of what came from the wire and what will go onto the wire.
 
 In case you are wondering about huge request and response bodies and how a
 value object can possibly represent a stream of partial values, this could

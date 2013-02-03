@@ -45,7 +45,6 @@ body {
 
 .post-list .date {
     color: #aaa;
-    white-space: nowrap;
 }
 
 .post-list li.year-switch {

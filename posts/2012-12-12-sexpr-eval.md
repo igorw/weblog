@@ -202,3 +202,14 @@ fix the mentioned shortcomings and introduce some new concepts.
 ## Further reading
 
 * [Source code: Ilias `examples/basic-eval.php`](https://github.com/igorw/ilias/blob/master/examples/basic-eval.php)
+
+<hr />
+
+([sexpr](/2012/12/06/sexpr.html)
+&nbsp;[lexer](/2012/12/07/sexpr-lexer.html)
+&nbsp;[reader](/2012/12/08/sexpr-reader.html)
+&nbsp;[**eval**](/2012/12/12/sexpr-eval.html)
+&nbsp;[forms](/2012/12/13/sexpr-forms.html)
+&nbsp;[special-forms](/2012/12/14/sexpr-special-forms.html)
+&nbsp;[macros](/2012/12/29/sexpr-macros.html)
+&nbsp;[walker](/2012/12/30/sexpr-walker.html))

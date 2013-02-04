@@ -193,10 +193,10 @@ controllers into separate classes. At that point it is basically a PHP API for
 a `routing.yml` file with some extra bells and whistles.
 
 The technical issues of growing a silex code base have been addressed. They're
-gone. In this case we ended up with something that is quite similar to full-
-stack Symfony2 in many ways. It is not using any static configuration files,
-and is lacking many of the features that the full-stack framework has. The
-main difference is something completely different though.
+gone. In this case we ended up with something that is quite similar to
+full-stack Symfony2 in many ways. It is not using any static configuration
+files, and is lacking many of the features that the full-stack framework has.
+The main difference is something completely different though.
 
 ## Silex vs Symfony2
 

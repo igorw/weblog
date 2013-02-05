@@ -91,7 +91,7 @@ incrementally. As a matter of fact, that's exactly what Rack does.
 ## HttpKernel is a function
 
 To look at those messages in the context of an application, the kernel is a
-function that converts requests to responses.
+*function* that converts requests to responses.
 
 <center>
     ![HttpKernel as a function](/img/http_kernel_function.png)

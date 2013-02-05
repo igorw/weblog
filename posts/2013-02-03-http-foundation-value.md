@@ -112,9 +112,9 @@ application.
 ## Conclusion
 
 The request and response objects from HttpFoundation do not give you much new
-functionality over what PHP itself already provides. You do give much better
-APIs though, which goes an extremely long way if you are a professional HTTP
-snob.
+functionality over what PHP itself already provides. They do give you much
+better APIs though, which goes an extremely long way if you are a professional
+HTTP snob.
 
 The main benefit however is that you get an obvious way to isolate yourself
 from HTTP. This not only allows that code to run in a CLI or testing context,

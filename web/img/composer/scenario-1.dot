@@ -1,0 +1,7 @@
+digraph scenario_1 {
+    rankdir=LR;
+
+    A [label="A:dev-master"];
+    B [label="B:dev-master"];
+    root -> A -> B;
+}

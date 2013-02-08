@@ -353,6 +353,11 @@ at the HTTP level. It would rewrite the HTML source to the minified versions.
 middleware. If the redirect depends on app-specific context it makes sense to
 not have the webserver do it.
 
+**Error handling**. If all of the inside `handle` calls are done with `$catch`
+set to `false`, it should be possible to handle all of those errors at the
+middleware layer. Obviously this needs some tweaking, since certain errors are
+app-specific and need special care.
+
 There's so many more things you can do. Middlewares thrive at adding
 application functionality in a decoupled manner.
 

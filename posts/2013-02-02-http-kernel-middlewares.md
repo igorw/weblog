@@ -319,10 +319,6 @@ It is the rough equivalent of
 quite as feature-rich. One missing feature in particular is prefix matching.
 I'll leave that for another day.
 
-> There is one caveat here: Silex has a `terminate` method which must be
-> called after the response is sent. You need to keep a reference to the
-> original application and call that method.
-
 ## Better use cases
 
 So far I've only shown you logging and caching, which are both not very sexy

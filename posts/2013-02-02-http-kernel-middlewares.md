@@ -300,11 +300,11 @@ like pushing middlewares onto a stack?
 Ideally something like this:
 
 ~~~php
-$stack = new Stack($app);
-$stack->push('Igorw\Middleware\Logger', new Monolog\Logger('app'));
-$stack->push('Symfony\Component\HttpKernel\HttpCache\HttpCache', new Store(__DIR__.'/cache'));
+$stack = (new Stack())
+    ->push('Igorw\Middleware\Logger', new Monolog\Logger('app'))
+    ->push('Symfony\Component\HttpKernel\HttpCache\HttpCache', new Store(__DIR__.'/cache'));
 
-$app = $stack->resolve();
+$app = $stack->resolve($app);
 ~~~
 
 Well, that's easy enough to implement. [Take a look at the `Stack` on

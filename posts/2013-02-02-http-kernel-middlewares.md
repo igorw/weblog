@@ -354,6 +354,10 @@ set to `false`, it should be possible to handle all of those errors at the
 middleware layer. Obviously this needs some tweaking, since certain errors are
 app-specific and need special care.
 
+**Sessions**. Initialization of the session itself can be implemented as a
+middleware, that way it is available to all other middlewares as opposed to
+only the application itself.
+
 There's so many more things you can do. Middlewares thrive at adding
 application functionality in a decoupled manner.
 

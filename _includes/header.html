@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}igorw{% endblock %}</title>
+    <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/github.css">
@@ -14,14 +14,3 @@
 <body>
 
 <div class="container-fluid">
-    {% block body %}
-    {% endblock %}
-
-    {% include "author.html.twig" %}
-</div>
-
-<script src="/js/highlight.pack.js"></script>
-<script src="/js/main.js"></script>
-
-</body>
-</html>

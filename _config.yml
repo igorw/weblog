@@ -1,0 +1,6 @@
+markdown: redcarpet
+tag_page_layout: index
+tag_page_dir: tags
+tag_feed_layout: feed
+tag_feed_dir: tags
+url: https://igor.io

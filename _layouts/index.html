@@ -1,0 +1,23 @@
+{% include header.html %}
+
+<h1 class="title">igorw</h1>
+
+<ul class="unstyled post-list">
+    {% for post in site.posts %}
+        {% capture year_switch %}{% endcapture %}
+        {% if post.next %}
+            {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+            {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+            {% if year != nyear %}
+                {% capture year_switch %}year-switch{% endcapture %}
+            {% endif %}
+        {% endif %}
+
+        <li class="row-fluid {{ year_switch }}">
+            <span class="span2 date" title="{{ post.date | date: '%B %e, %Y' }}">{{ post.date | date: '%b %d' }}</span>
+            <span class="span10"><a href="{{ post.url }}">{{ post.title }}</a></span>
+        </li>
+    {% endfor %}
+</ul>
+
+{% include footer.html %}

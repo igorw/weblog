@@ -5,7 +5,7 @@ function toArray(list) {
 }
 var els = document.getElementsByTagName('code');
 toArray(els).forEach(function (el) {
-    if ("" === el.className) {
+    if ("text" === el.className) {
         el.className = "no-highlight";
     }
 });

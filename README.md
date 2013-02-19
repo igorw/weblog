@@ -1,11 +1,16 @@
-# Install
+## Install
 
     bundle install
 
-# Run
+## Run
 
     bundle exec jekyll
 
 or
 
     bundle exec jekyll --server
+
+## Credits
+
+* [Subtle Patterns: Swirl pattern](http://subtlepatterns.com/swirl/)
+

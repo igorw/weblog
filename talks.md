@@ -18,16 +18,16 @@ talks: true
 
 ## React
 
-* PHPNW 2012
-* TakeOffConf 2013
-* PHPBenelux 2013
 * ConFoo 2013
+* PHPBenelux 2013
+* TakeOffConf 2013
+* PHPNW 2012
 
 ## Silex Anatomy
 
-* Symfony Live London 2012
-* ConFoo 2013
 * PHPNE 2013 (upcoming)
+* ConFoo 2013
+* Symfony Live London 2012
 
 ## Advanced Silex
 
@@ -39,13 +39,13 @@ talks: true
 
 ## WebSockets
 
-* PHPBenelux 2012
-* ConFoo 2012
-* JsDay 2012
 * Symfony Live Paris 2012
+* JsDay 2012
+* ConFoo 2012
+* PHPBenelux 2012
 
 ## Silex
 
-* Symfony Day 2011
-* ConFoo 2012
 * phpDay 2012
+* ConFoo 2012
+* Symfony Day 2011

@@ -316,7 +316,7 @@ Hooray, it works!
 * [Source code: `Igorw\Ilias\Reader`](https://github.com/igorw/ilias/blob/master/src/Igorw/Ilias/Reader.php)
 * [Source code: `Igorw\Ilias\ReaderTest`](https://github.com/igorw/ilias/blob/master/tests/Igorw/Ilias/ReaderTest.php)
 
-<hr />
+---
 
 ([sexpr](/2012/12/06/sexpr.html)
 &nbsp;[lexer](/2012/12/07/sexpr-lexer.html)

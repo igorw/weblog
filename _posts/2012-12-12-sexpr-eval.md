@@ -203,7 +203,7 @@ fix the mentioned shortcomings and introduce some new concepts.
 
 * [Source code: Ilias `examples/basic-eval.php`](https://github.com/igorw/ilias/blob/master/examples/basic-eval.php)
 
-<hr />
+---
 
 ([sexpr](/2012/12/06/sexpr.html)
 &nbsp;[lexer](/2012/12/07/sexpr-lexer.html)

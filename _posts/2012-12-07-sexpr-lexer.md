@@ -180,7 +180,7 @@ quite a few more.
 * [Source code: `Igorw\Ilias\Lexer`](https://github.com/igorw/ilias/blob/master/src/Igorw/Ilias/Lexer.php)
 * [Source code: `Igorw\Ilias\LexerTest`](https://github.com/igorw/ilias/blob/master/tests/Igorw/Ilias/LexerTest.php)
 
-<hr />
+---
 
 ([sexpr](/2012/12/06/sexpr.html)
 &nbsp;[**lexer**](/2012/12/07/sexpr-lexer.html)

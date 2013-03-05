@@ -77,6 +77,10 @@ article {
     line-height: 25px;
     text-align: justify;
     text-justify: inter-word;
+    margin-bottom: 30px;
+}
+
+article.post {
     margin-bottom: 300px;
 }
 

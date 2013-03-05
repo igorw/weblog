@@ -365,7 +365,7 @@ And now, for the very first time in history will we witness special forms...
     ![world domination](/sexpr/world-domination.png)
 </center>
 
-<hr />
+---
 
 ([sexpr](/2012/12/06/sexpr.html)
 &nbsp;[lexer](/2012/12/07/sexpr-lexer.html)

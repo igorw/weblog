@@ -302,7 +302,7 @@ like native ones.
 * [Source code: `Igorw\Ilias\SpecialOp\MacroOp`](https://github.com/igorw/ilias/blob/master/src/Igorw/Ilias/SpecialOp/MacroOp.php)
 * [Source code: `Igorw\Ilias\IntegrationTest`](https://github.com/igorw/ilias/blob/master/tests/Igorw/Ilias/IntegrationTest.php#L56)
 
-<hr />
+---
 
 ([sexpr](/2012/12/06/sexpr.html)
 &nbsp;[lexer](/2012/12/07/sexpr-lexer.html)

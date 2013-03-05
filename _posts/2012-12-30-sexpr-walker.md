@@ -338,7 +338,7 @@ strips out all of the macro calls and replaces them with the actual code.
 * [Source code: `Igorw\Ilias\WalkerTest`](https://github.com/igorw/ilias/blob/master/tests/Igorw/Ilias/WalkerTest.php)
 * [Source code: Ilias `examples/macro-expand.php`](https://github.com/igorw/ilias/blob/master/examples/macro-expand.php)
 
-<hr />
+---
 
 ([sexpr](/2012/12/06/sexpr.html)
 &nbsp;[lexer](/2012/12/07/sexpr-lexer.html)

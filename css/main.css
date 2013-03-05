@@ -137,9 +137,9 @@ nav + .hero-unit {
     margin-bottom: 20px;
 }
 
-/*nav + .hero-unit h1 {
-    margin-top: 0px;
-}*/
+.hero-unit [class^="icon-"], .hero-unit [class*=" icon-"] {
+    margin-top: 4px;
+}
 
 .icon-speakerdeck {
     background: url(/img/speakerdeck.png);

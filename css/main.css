@@ -130,3 +130,21 @@ article div.ascii-table > pre {
     background-color: inherit;
     border: none;
 }
+
+nav + .hero-unit {
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/*nav + .hero-unit h1 {
+    margin-top: 0px;
+}*/
+
+.icon-speakerdeck {
+    background: url(/img/speakerdeck.png);
+}
+
+.icon-joindin {
+    background: url(/img/joindin.png);
+}

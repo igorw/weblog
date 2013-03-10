@@ -16,7 +16,7 @@ GEM
     jekyll-tagging (0.4.0)
       ruby-nuggets
     kramdown (0.14.2)
-    liquid (2.4.1)
+    liquid (2.5.0)
     maruku (0.6.1)
       syntax (>= 1.0.0)
     posix-spawn (0.3.6)

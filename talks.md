@@ -21,17 +21,17 @@ talks: true
 * ConFoo 2013
 * PHPBenelux 2013
 * TakeOffConf 2013
-* PHPNW 2012
+* PHPNW 2012 [[video](http://blip.tv/phpnw/phpnw12-igor-wiedler-react-event-driven-php-6448332)]
 
 ### Silex Anatomy
 
 * PHPNE 2013 (upcoming)
 * ConFoo 2013
-* Symfony Live London 2012
+* Symfony Live London 2012 [[video](https://vimeo.com/51201498)]
 
 ### Advanced Silex
 
-* Symfony Live Paris 2012
+* Symfony Live Paris 2012 [[video](http://www.youtube.com/watch?v=NRJbhTa-iag)]
 
 ### Build your own webserver with PHP
 

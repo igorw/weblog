@@ -1,4 +1,4 @@
-build:
+all:
 	bundle exec jekyll
 
 web:

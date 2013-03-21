@@ -25,7 +25,7 @@ talks: true
 
 ### Silex Anatomy
 
-* PHPNE 2013 (upcoming)
+* PHPNE 2013
 * ConFoo 2013
 * Symfony Live London 2012 [[video](https://vimeo.com/51201498)]
 

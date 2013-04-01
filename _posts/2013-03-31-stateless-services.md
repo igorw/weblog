@@ -242,7 +242,7 @@ next one, and there no longer needs to be an explicit relationship between
 them.
 
 The work the Patrick Ryan has done on
-[Verband](https://github.com/CodeOtter/verband-framework/blob/master/Core.php)
+[Verband](https://github.com/CodeOtter/verband-framework)
 seems like a step in the right direction. Check it out.
 
 <center>

@@ -10,3 +10,23 @@ toArray(els).forEach(function (el) {
     }
 });
 hljs.initHighlightingOnLoad();
+
+function toggleGeoStyleUpdateStorage() {
+    localStorage.geo_style =
+        (localStorage.geo_style === undefined || localStorage.geo_style === 'true')
+        ? 'false'
+        : 'true';
+
+    toggleGeoStyle();
+}
+function toggleGeoStyle() {
+    var els = document.querySelectorAll('link[rel=stylesheet]');
+    toArray(els).forEach(function (el) {
+        el.href = (el.href.match('css2') !== null)
+            ? el.href.replace('/css2/', '/css/')
+            : el.href.replace('/css/', '/css2/');
+    });
+}
+if (localStorage.geo_style === 'true') {
+    toggleGeoStyle();
+}

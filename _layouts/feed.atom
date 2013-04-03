@@ -6,7 +6,12 @@
     <link href="{{ site.url }}/" />
     <id>igor.io</id>
     <updated>{{ site.time | date_to_xmlschema }}</updated>
-    {% for post in site.posts %}
+    {% if page.posts %}
+        {% assign posts = page.posts %}
+    {% else %}
+        {% assign posts = site.posts %}
+    {% endif %}
+    {% for post in posts %}
     <entry>
         <title>{{ post.title }}</title>
         <link rel="alternate" type="text/html" href="{{ site.url }}{{ post.url }}"/>

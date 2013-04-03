@@ -5,7 +5,13 @@
 </h1>
 
 <ul class="unstyled post-list">
-    {% for post in site.posts %}
+    {% if page.posts %}
+        {% assign posts = page.posts %}
+    {% else %}
+        {% assign posts = site.posts %}
+    {% endif %}
+
+    {% for post in posts %}
         {% capture year_switch %}{% endcapture %}
         {% if post.next %}
             {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}

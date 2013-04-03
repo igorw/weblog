@@ -201,10 +201,10 @@ class EqFunc
 ```
 
 The remaining two, `quote` and `cond`, need to be implemented as special
-forms. Quote needs to treat its argument source as data instead of evaluating
-it. Cond needs to evaluate parts conditionally.
+forms. Quote needs to treat its argument's source as data instead of
+evaluating it. Cond needs to evaluate parts conditionally.
 
-Here is `cond`, it just loops over the pairs tests the predicates:
+Here is `cond`, it just loops over the pairs and tests the predicates:
 
 ```php
 namespace Igorw\Ilias\SpecialOp;

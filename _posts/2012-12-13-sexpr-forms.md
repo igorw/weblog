@@ -13,7 +13,8 @@ tags: [php]
 &nbsp;[**forms**](/2012/12/13/sexpr-forms.html)
 &nbsp;[special-forms](/2012/12/14/sexpr-special-forms.html)
 &nbsp;[macros](/2012/12/29/sexpr-macros.html)
-&nbsp;[walker](/2012/12/30/sexpr-walker.html))
+&nbsp;[walker](/2012/12/30/sexpr-walker.html)
+&nbsp;[meta-eval](/2013/04/03/sexpr-meta-eval.html))
 
 The previous post introduced a basic implementation of evaluation that is
 lacking on many fronts. It currently only supports s-expressions which are
@@ -414,4 +415,5 @@ will allow adding more low-level building blocks to the language, such as
 &nbsp;[**forms**](/2012/12/13/sexpr-forms.html)
 &nbsp;[special-forms](/2012/12/14/sexpr-special-forms.html)
 &nbsp;[macros](/2012/12/29/sexpr-macros.html)
-&nbsp;[walker](/2012/12/30/sexpr-walker.html))
+&nbsp;[walker](/2012/12/30/sexpr-walker.html)
+&nbsp;[meta-eval](/2013/04/03/sexpr-meta-eval.html))

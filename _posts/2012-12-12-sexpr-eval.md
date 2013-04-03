@@ -13,7 +13,8 @@ tags: [php]
 &nbsp;[forms](/2012/12/13/sexpr-forms.html)
 &nbsp;[special-forms](/2012/12/14/sexpr-special-forms.html)
 &nbsp;[macros](/2012/12/29/sexpr-macros.html)
-&nbsp;[walker](/2012/12/30/sexpr-walker.html))
+&nbsp;[walker](/2012/12/30/sexpr-walker.html)
+&nbsp;[meta-eval](/2013/04/03/sexpr-meta-eval.html))
 
 So far this series has mostly been about s-expressions as a data format. I
 would like to start exploring a more advanced space now: Treating
@@ -212,4 +213,5 @@ fix the mentioned shortcomings and introduce some new concepts.
 &nbsp;[forms](/2012/12/13/sexpr-forms.html)
 &nbsp;[special-forms](/2012/12/14/sexpr-special-forms.html)
 &nbsp;[macros](/2012/12/29/sexpr-macros.html)
-&nbsp;[walker](/2012/12/30/sexpr-walker.html))
+&nbsp;[walker](/2012/12/30/sexpr-walker.html)
+&nbsp;[meta-eval](/2013/04/03/sexpr-meta-eval.html))

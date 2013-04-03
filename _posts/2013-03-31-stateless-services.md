@@ -284,8 +284,8 @@ I'm just going to leave you with a quote from Joe Armstrong:
 > S-expressions and had the semantics of the protocol written down in a formal
 > notation - then we could reuse things (more) easily.
 >
-> &mdash; Joe Armstrong, [erlang-questions mailing
-> list](http://erlang.org/pipermail/erlang-questions/2013-January/071944.html)
+> *&mdash; Joe Armstrong, [erlang-questions mailing
+> list](http://erlang.org/pipermail/erlang-questions/2013-January/071944.html)*
 
 ## Summary
 

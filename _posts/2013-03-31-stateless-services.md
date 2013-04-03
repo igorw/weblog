@@ -45,6 +45,10 @@ services are conceptually very similar to functions that have no observable
 side-effects. Absence of mutation makes it a lot easier to understand the
 effects that a particular method call has on the system.
 
+> Side note: While the examples of services in this post are mostly
+> components, application and infrastructure services (as opposed to domain
+> services), the concepts apply equally.
+
 ## Service Container
 
 A *service container*, more commonly referred to as *Dependency Injection

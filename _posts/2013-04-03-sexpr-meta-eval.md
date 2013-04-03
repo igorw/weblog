@@ -136,7 +136,7 @@ The original Lisp consists of seven primitive operators:
 * **(cdr x)**: Returns the rest of the list `x` (everything but the first
   element).
 
-* **(cons x y)**: Constructs a list where `x` is the head and `y` is the rest.
+* **(cons x y)**: Constructs a list by prepending `x` to the list `y`.
 
   `(cons (quote foo) (quote (bar)))` returns the list `(foo bar)`.
 

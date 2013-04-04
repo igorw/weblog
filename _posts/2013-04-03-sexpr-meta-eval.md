@@ -279,7 +279,8 @@ class QuoteOp implements SpecialOp
 }
 ```
 
-And with that, the seven primitive operators are implemented.
+And with that, the seven primitive operators are implemented. After adding
+them to the `Environment`, they can be called.
 
 ## Common Lispisms
 

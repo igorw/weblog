@@ -45,7 +45,7 @@ Functions of Symbolic Expressions and Their Computation by Machine, Part I*.
 This introduced not only the Lisp language but also included an implementation
 of Lisp in Lisp.
 
-Paul Graham wrote an article titled [*The Roots of
+In 2001, Paul Graham wrote an article titled [*The Roots of
 Lisp*](http://www.paulgraham.com/rootsoflisp.html), which explains McCarthy's
 paper in a more modern context and includes a Common Lisp port of McCarthy's
 original `eval`.

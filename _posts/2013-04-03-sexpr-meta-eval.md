@@ -117,8 +117,11 @@ It's a whopping 62 lines in length:
 
 Yes. That's all it takes to write Lisp in Lisp.
 
-How about running this inside of Ilias, the PHP implementation of Lisp covered
-in previous posts?
+I'm not going to explain all of the details. I highly recommend you read
+*Roots of Lisp* if you're interested.
+
+But how about running this inside of Ilias, the PHP implementation of Lisp
+covered in previous posts?
 
 ## Primitives
 

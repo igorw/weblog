@@ -22,7 +22,7 @@
         {% endif %}
 
         <li class="row-fluid {{ year_switch }}">
-            <span class="span2 date" title="{{ post.date | date: '%B %e, %Y' }}">{{ post.date | date: '%b %d' }}</span>
+            <span class="span2 date" title="{{ post.date | date: '%B %d, %Y' }}">{{ post.date | date: '%b %d' }}</span>
             <span class="span10"><a href="{{ post.url }}">{{ post.title }}</a></span>
         </li>
     {% endfor %}

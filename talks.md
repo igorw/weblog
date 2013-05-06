@@ -20,7 +20,7 @@ talks: true
 
 * ConFoo 2013
 * PHPBenelux 2013
-* TakeOffConf 2013
+* TakeOffConf 2013 [[video](www.youtube.com/watch?v=MWNcItWuKpI)]
 * PHPNW 2012 [[video](http://blip.tv/phpnw/phpnw12-igor-wiedler-react-event-driven-php-6448332)]
 
 ### Silex Anatomy

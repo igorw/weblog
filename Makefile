@@ -1,5 +1,5 @@
 all:
-	bundle exec jekyll
+	bundle exec jekyll build
 
 web:
-	bundle exec jekyll --server --auto
+	bundle exec jekyll serve --watch

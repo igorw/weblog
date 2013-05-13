@@ -3,5 +3,5 @@ tag_page_layout: index
 tag_page_dir: tags
 tag_feed_layout: feed
 tag_feed_dir: tags
-exclude: Gemfile, Gemfile.lock, README.md, fabfile.py, fabfile.pyc
+exclude: [Gemfile, Gemfile.lock, README.md, fabfile.py, fabfile.pyc]
 url: https://igor.io

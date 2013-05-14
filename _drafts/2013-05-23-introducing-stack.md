@@ -47,13 +47,17 @@ However, none of those tools are mandatory.
 You can create and use stack middlewares without using any of the provided
 tools, as long as you follow the conventions.
 
-Some of the packages (inline, CallableHttpKernel) are targetted towards
-creators of middlewares. Others (session, url-map, oauth) are in fact
-middlewares that you can use with your apps.
+Some of the packages ([inline](https://github.com/stackphp/inline),
+[CallableHttpKernel](https://github.com/stackphp/CallableHttpKernel)) are
+targetted towards creators of middlewares. Others
+([session](https://github.com/stackphp/session), [url-map](https://github.com/stackphp/url-map),
+[oauth](https://github.com/stackphp/oauth)) are in fact middlewares that you
+can use with your apps.
 
-The most prominent tool is the builder. *Stack\Builder* is an evolution of the
-original *Stack* object from the HttpKernel middlewares blog post. This
-ultimately makes stack usable, and provides a basis for configuration.
+The most prominent tool is the [builder](https://github.com/stackphp/builder).
+*Stack\Builder* is an evolution of the original *Stack* object from the
+HttpKernel middlewares blog post. This ultimately makes stack usable, and
+provides a basis for configuration.
 
 ## The future
 

@@ -27,6 +27,7 @@ talks: true
 
 * PHPNE 2013
 * ConFoo 2013
+* PHPBenelux 2013 [[video](http://www.youtube.com/watch?v=9VUoIruQNMg)]
 * Symfony Live London 2012 [[video](https://vimeo.com/51201498)]
 
 ### Advanced Silex

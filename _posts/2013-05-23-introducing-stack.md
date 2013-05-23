@@ -78,7 +78,7 @@ If we can prove that the concept works for HttpKernel, the broader PHP
 community might be interested in bringing that capability to PHP core. That's
 a long journey however, we'll have to take it one step at a time.
 
-## Go stack some middlewares
+<h1 style="text-align: center;">Go stack some middlewares</h1>
 
 <h1 style="text-align: center;"><a href="http://stackphp.com">stackphp.com</a></h1>
 <h1 style="text-align: center;"><a href="http://twitter.com/stackphp">@stackphp</a></h1>

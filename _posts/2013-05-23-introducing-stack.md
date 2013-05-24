@@ -9,7 +9,7 @@ tags: [php, symfony]
 # Introducing Stack
 
 In the post titled [HttpKernel
-middlewares](/2013-02-02-http-kernel-middlewares.html) I brought up the idea of
+middlewares](/2013/02/02/http-kernel-middlewares.html) I brought up the idea of
 bringing rack middlewares to Symfony2.
 
 In order to solidify this effort I would like to announce a new project:

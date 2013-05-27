@@ -5,8 +5,9 @@ function toArray(list) {
 }
 var els = document.getElementsByTagName('code');
 toArray(els).forEach(function (el) {
-    if ("text" === el.className) {
-        el.className = "no-highlight";
+    if (el.classList.contains("text")) {
+        el.classList.remove("text");
+        el.classList.add("no-highlight");
     }
 });
 hljs.initHighlightingOnLoad();

@@ -4,7 +4,7 @@ title: talks
 talks: true
 ---
 
-### Introduction to LISP
+### Introduction to Lisp
 
 * Dutch PHP Conference 2013 (upcoming)
 

@@ -386,3 +386,12 @@ they can be properly unit tested and perhaps re-used.
 
 > All of the code from this post [is available on
 > GitHub](https://github.com/igorw/middleware).
+
+<center style="margin-top: 25px;">
+    <big>
+        <a  href="/2013/05/23/introducing-stack.html"
+            style="background: white; border: 2px #d14 solid; border-radius: 5px; padding: 10px; color: #d14;">
+            Update: Introducing Stack
+        </a>
+    </big>
+</center>

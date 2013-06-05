@@ -65,7 +65,7 @@ Why HttpKernelInterface? Why limit ourselves to Symfony2? Why not target all
 of PHP?
 
 First of all, Symfony provides a nice sandbox to experiment in. The basic
-primitives are there: An HTTP request/pesponse abstraction, a widely deployed
+primitives are there: An HTTP request/response abstraction, a widely deployed
 interface for sending those requests. Lots of popular frameworks are adopting
 the HttpKernelInterface, which provides a large user base.
 

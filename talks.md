@@ -6,7 +6,7 @@ talks: true
 
 ### Introduction to Lisp
 
-* Dutch PHP Conference 2013 (upcoming)
+* Dutch PHP Conference 2013
 
 ### The HttpKernelInterface is a lie
 

@@ -178,5 +178,5 @@ proof-of-concept implementation for submission to the PHP
 ## Obligatory XKCD
 
 <center>
-    ![XKCD: Standards](http://imgs.xkcd.com/comics/standards.png)
+    ![XKCD: Standards](https://imgs.xkcd.com/comics/standards.png)
 </center>

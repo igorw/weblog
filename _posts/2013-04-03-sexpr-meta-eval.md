@@ -347,6 +347,8 @@ meta-meta-circular evaluator inside of it.
 > Note: I was not able to get recursion via Y combinator to work, so there's
 > probably still some bugs lurking somewhere.
 
+> Edit: This is due to McCarthy's eval not supporting lexical closures.
+
 ## Further reading
 
 * [John McCarthy's 1960 paper](http://www-formal.stanford.edu/jmc/recursive.html)

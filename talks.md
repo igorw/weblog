@@ -14,7 +14,7 @@ talks: true
 
 ### Silex: An implementation detail
 
-* Symfony Live Portland 2013
+* Symfony Live Portland 2013 [[video](http://www.youtube.com/watch?v=bTawx0TGIj8)]
 
 ### React
 

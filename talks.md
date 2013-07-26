@@ -10,6 +10,7 @@ talks: true
 
 ### The HttpKernelInterface is a lie
 
+* Symfony Live London 2013 (upcoming)
 * Symfony Live Portland 2013
 
 ### Silex: An implementation detail

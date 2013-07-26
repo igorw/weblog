@@ -255,7 +255,7 @@ macro](https://github.com/clojure/core.async), it's extremely hard to do. At
 that point you're almost [implementing PHP in
 PHP](https://github.com/ircmaxell/PHPPHP).
 
-And some features simply *need* the underlying engine. Anything I/O mechanism,
+And some features simply *need* the underlying engine. Any I/O mechanism,
 anything that interacts with the operating system, needs engine support.
 
 ## Conclusion

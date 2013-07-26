@@ -48,6 +48,7 @@ talks: true
 
 ### Silex
 
+* PHP Québec usergroup July 2013
 * phpDay 2012
 * ConFoo 2012
 * Symfony Day 2011

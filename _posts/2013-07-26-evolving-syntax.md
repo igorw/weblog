@@ -270,7 +270,7 @@ issue.
 
 Is PHP able to grow that way? Only to a very limited extent. The lack of
 uniform syntax makes it a lot more difficult to add new features in a safe and
-composable way. It might [kinda work](http://sweetjs.org) though.
+composable manner. It might [kinda work](http://sweetjs.org) though.
 
 Macros are extremely powerful, perhaps a little [too
 powerful](http://www.lambdassociates.org/blog/bipolar.htm).

@@ -111,7 +111,8 @@ library, and rewrite it for the older version of PHP they happen to be using.
 They will actually manually rewrite parts of it.
 
 Why not automate this? I can't be the only person who ever considered writing
-a script to make new code work on old versions. This thought crossed my mind a
+a script to make new code work on old versions ([I'm
+not](https://github.com/nikic/PHP-Backporter)). This thought crossed my mind a
 long time ago, because it seemed useful at the time.
 
 What I only recently realized is that **backporting existing features and

@@ -187,7 +187,7 @@ introduced in 5.4, it is possible to compile them down to PHP 5.3 syntax.
 
     =>
 
-    ($tmp = foo()) ? $tmp['bar'] : null;
+    ($tmp = foo()) ? $tmp['bar'] : $tmp['bar'];
     ~~~
 
 * Callable typehint:

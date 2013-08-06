@@ -37,6 +37,7 @@ talks: true
 
 ### Build your own webserver with PHP
 
+* ZendCon.eu 2013 (upcoming)
 * FrOSCon 2012
 
 ### WebSockets

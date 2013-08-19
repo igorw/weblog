@@ -1,17 +1,5 @@
 {% include header.html %}
 
-<div class="hero-unit">
-    <h1>{{ page.title }}</h1>
-    {% if page.talks %}
-    <p>
-        <i class="icon-speakerdeck"></i> <a href="https://speakerdeck.com/igorw">speakerdeck</a>
-        &nbsp;<i class="icon-joindin"></i> <a href="https://joind.in/user/view/10724">joind.in</a>
-    </p>
-    {% else if page.books %}
-        books that you must read.
-    {% endif %}
-</div>
-
 <article>
     <div class="body">
         {{ page.content | markdownify }}

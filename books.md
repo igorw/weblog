@@ -1,21 +1,12 @@
 ---
 layout: page
 title: must read
-books: true
 ---
 
-<style>
-    .book-cover {
-        float: right;
-        padding-left: 20px;
-    }
-
-    @media (max-width: 600px) {
-        .book-cover {
-            display: none;
-        }
-    }
-</style>
+<div class="hero-unit">
+    <h1>must read</h1>
+    <p>you must read these books.</p>
+</div>
 
 <div class="book-cover">
     <img src="/img/books/littleschemer.png">

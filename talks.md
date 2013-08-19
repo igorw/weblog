@@ -1,8 +1,15 @@
 ---
 layout: page
 title: talks
-talks: true
 ---
+
+<div class="hero-unit talks">
+    <h1>talks</h1>
+    <p>
+        <i class="icon-speakerdeck"></i> <a href="https://speakerdeck.com/igorw">speakerdeck</a>
+        &nbsp;<i class="icon-joindin"></i> <a href="https://joind.in/user/view/10724">joind.in</a>
+    </p>
+</div>
 
 ### Introduction to Lisp
 

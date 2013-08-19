@@ -131,10 +131,15 @@ article div.ascii-table > pre {
     border: none;
 }
 
-nav + .hero-unit {
+.hero-unit {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     padding: 10px 20px;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.hero-unit h1, .hero-unit p {
+    margin: 0;
 }
 
 .hero-unit [class^="icon-"], .hero-unit [class*=" icon-"] {
@@ -147,4 +152,15 @@ nav + .hero-unit {
 
 .icon-joindin {
     background: url(/img/joindin.png);
+}
+
+.book-cover {
+    float: right;
+    padding-left: 20px;
+}
+
+@media (max-width: 600px) {
+    .book-cover {
+        display: none;
+    }
 }

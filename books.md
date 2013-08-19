@@ -42,7 +42,7 @@ Sequel: [The Seasoned Schemer](http://mitpress.mit.edu/books/seasoned-schemer)
 
 ## The C Programming Language
 
-*Brian Kernighan and Dennis Ritchie*
+*By Brian Kernighan and Dennis Ritchie*
 
 Essential to understanding how most modern programming languages work under the hood.
 

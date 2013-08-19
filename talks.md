@@ -17,6 +17,7 @@ title: talks
 
 ### The HttpKernelInterface is a lie
 
+* Forum PHP 2013 (upcoming)
 * Symfony Live London 2013 (upcoming)
 * Symfony Live Portland 2013
 

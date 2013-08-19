@@ -9,6 +9,12 @@ books: true
         float: right;
         padding-left: 20px;
     }
+
+    @media (max-width: 600px) {
+        .book-cover {
+            display: none;
+        }
+    }
 </style>
 
 <div class="book-cover">

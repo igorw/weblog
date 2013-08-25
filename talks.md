@@ -50,8 +50,8 @@ title: talks
 
 ### WebSockets
 
-* Symfony Live Paris 2012
-* JsDay 2012
+* Symfony Live Paris 2012 [[video](https://www.youtube.com/watch?v=Y9q_uID1vMY)]
+* JsDay 2012 [[video](https://vimeo.com/49673704)]
 * ConFoo 2012
 * PHPBenelux 2012
 

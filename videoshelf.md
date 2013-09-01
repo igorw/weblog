@@ -22,7 +22,7 @@ Rich Hickey:
 
 Alan Kay:
 
-* [The computer revolution hasnt happened yet](https://www.youtube.com/watch?v=oKg1hTOQXoY)
+* [The computer revolution hasn't happened yet](https://www.youtube.com/watch?v=oKg1hTOQXoY)
 
 Rob Pike:
 

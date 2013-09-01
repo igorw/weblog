@@ -20,6 +20,10 @@ Rich Hickey:
 * [Deconstructing the Database](http://www.infoq.com/presentations/Deconstructing-Database)
 * [Simplicity Matters](https://www.youtube.com/watch?v=rI8tNMsozo0)
 
+Alan Kay:
+
+* [The computer revolution hasnt happened yet](https://www.youtube.com/watch?v=oKg1hTOQXoY)
+
 Rob Pike:
 
 * [Concurrency/message passing Newsqueak](https://www.youtube.com/watch?v=hB05UFqOtFA)

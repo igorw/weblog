@@ -29,6 +29,12 @@ Rob Pike:
 * [Concurrency/message passing Newsqueak](https://www.youtube.com/watch?v=hB05UFqOtFA)
 * [Public Static Void](https://www.youtube.com/watch?v=5kj5ApnhPAE)
 
+Bret Victor:
+
+* [Drawing Dynamic Visualizations](https://vimeo.com/66085662)
+* [Media for Thinking the Unthinkable](https://vimeo.com/67076984)
+* [The Future of Programming](https://vimeo.com/71278954)
+
 Classics:
 
 * [Douglas Engelbart: The Mother of All Demos](https://www.youtube.com/watch?v=yJDv-zdhzMY)

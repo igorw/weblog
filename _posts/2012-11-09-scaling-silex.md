@@ -103,7 +103,7 @@ PHP? It is!
 ~~~php
 function controller($shortName)
 {
-    list($shortClass, $shortMethod) = explode('/', shortName, 2);
+    list($shortClass, $shortMethod) = explode('/', $shortName, 2);
 
     return sprintf('Igorw\Shop\Controller\%sController::%sAction', ucfirst($shortClass), $shortMethod);
 }

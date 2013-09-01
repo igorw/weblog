@@ -7,30 +7,30 @@ title: videoshelf
 
 Joe Armstrong:
 
-* [Joe Armstrong: The How and Why of Fitting Things Together](https://www.youtube.com/watch?v=ed7A7r6DBsM)
-* [Joe Armstrong: Systems that Run Forever Self-heal and Scale](http://www.infoq.com/presentations/self-heal-scalable-system)
+* [The How and Why of Fitting Things Together](https://www.youtube.com/watch?v=ed7A7r6DBsM)
+* [Systems that Run Forever Self-heal and Scale](http://www.infoq.com/presentations/self-heal-scalable-system)
 
 Rich Hickey:
 
-* [Rich Hickey: Persistent Data Structures and Managed References](http://www.infoq.com/presentations/Value-Identity-State-Rich-Hickey)
-* [Rich Hickey: Are We There Yet?](http://www.infoq.com/presentations/Are-We-There-Yet-Rich-Hickey)
-* [Rich Hickey: Simple Made Easy](http://www.infoq.com/presentations/Simple-Made-Easy)
-* [Rich Hickey: The Value of Values](http://www.infoq.com/presentations/Value-Values)
-* [Rich Hickey: The Database as a Value](http://www.infoq.com/presentations/Datomic-Database-Value)
-* [Rich Hickey: Deconstructing the Database](http://www.infoq.com/presentations/Deconstructing-Database)
-* [Rich Hickey: Simplicity Matters](https://www.youtube.com/watch?v=rI8tNMsozo0)
+* [Persistent Data Structures and Managed References](http://www.infoq.com/presentations/Value-Identity-State-Rich-Hickey)
+* [Are We There Yet?](http://www.infoq.com/presentations/Are-We-There-Yet-Rich-Hickey)
+* [Simple Made Easy](http://www.infoq.com/presentations/Simple-Made-Easy)
+* [The Value of Values](http://www.infoq.com/presentations/Value-Values)
+* [The Database as a Value](http://www.infoq.com/presentations/Datomic-Database-Value)
+* [Deconstructing the Database](http://www.infoq.com/presentations/Deconstructing-Database)
+* [Simplicity Matters](https://www.youtube.com/watch?v=rI8tNMsozo0)
 
 Great Minds:
 
-* [Great Minds: Richard Feynman](https://www.youtube.com/watch?v=JIJw3OLB9sI)
-* [Great Minds: Nikola Tesla](https://www.youtube.com/watch?v=pPnGvjmIgZA)
-* [Great Minds: Alan Turing](https://www.youtube.com/watch?v=Btqro3544p8)
-* [Great Minds: Ada Lovelace](https://www.youtube.com/watch?v=uBbVbqRvqTM)
+* [Richard Feynman](https://www.youtube.com/watch?v=JIJw3OLB9sI)
+* [Nikola Tesla](https://www.youtube.com/watch?v=pPnGvjmIgZA)
+* [Alan Turing](https://www.youtube.com/watch?v=Btqro3544p8)
+* [Ada Lovelace](https://www.youtube.com/watch?v=uBbVbqRvqTM)
 
 Rob Pike:
 
-* [Rob Pike: Concurrency/message passing Newsqueak](https://www.youtube.com/watch?v=hB05UFqOtFA)
-* [Rob Pike: Public Static Void](https://www.youtube.com/watch?v=5kj5ApnhPAE)
+* [Concurrency/message passing Newsqueak](https://www.youtube.com/watch?v=hB05UFqOtFA)
+* [Public Static Void](https://www.youtube.com/watch?v=5kj5ApnhPAE)
 
 Classics:
 

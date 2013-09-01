@@ -20,13 +20,6 @@ Rich Hickey:
 * [Deconstructing the Database](http://www.infoq.com/presentations/Deconstructing-Database)
 * [Simplicity Matters](https://www.youtube.com/watch?v=rI8tNMsozo0)
 
-Great Minds:
-
-* [Richard Feynman](https://www.youtube.com/watch?v=JIJw3OLB9sI)
-* [Nikola Tesla](https://www.youtube.com/watch?v=pPnGvjmIgZA)
-* [Alan Turing](https://www.youtube.com/watch?v=Btqro3544p8)
-* [Ada Lovelace](https://www.youtube.com/watch?v=uBbVbqRvqTM)
-
 Rob Pike:
 
 * [Concurrency/message passing Newsqueak](https://www.youtube.com/watch?v=hB05UFqOtFA)
@@ -37,6 +30,13 @@ Classics:
 * [Douglas Engelbart: The Mother of All Demos](https://www.youtube.com/watch?v=yJDv-zdhzMY)
 * [Guy Steele: Growing a Language](https://www.youtube.com/watch?v=_ahvzDzKdB0)
 * [Grace Hopper: Nanoseconds](https://www.youtube.com/watch?v=JEpsKnWZrJ8)
+
+Great Minds:
+
+* [Richard Feynman](https://www.youtube.com/watch?v=JIJw3OLB9sI)
+* [Nikola Tesla](https://www.youtube.com/watch?v=pPnGvjmIgZA)
+* [Alan Turing](https://www.youtube.com/watch?v=Btqro3544p8)
+* [Ada Lovelace](https://www.youtube.com/watch?v=uBbVbqRvqTM)
 
 ## other stuff
 

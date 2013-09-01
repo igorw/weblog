@@ -59,6 +59,7 @@ Great Minds:
 * [Zed Shaw: The Web Will Die When OOP Dies](https://vimeo.com/43380467)
 * [Jack Diederich: Stop Writing Classes](https://www.youtube.com/watch?v=o9pEzgHorH0)
 * [Gerald Sussman: We Really Don't Know How To Compute!](http://www.infoq.com/presentations/We-Really-Dont-Know-How-To-Compute)
+* [How To Design A Good API and Why it Matters](https://www.youtube.com/watch?v=aAb7hSCtvGw)
 * [Language Panel at Strange Loop](http://www.infoq.com/presentations/Language-Panel)
 * [AT&T Archives: The UNIX Operating System](https://www.youtube.com/watch?v=tc4ROCJYbm0)
 * [The Blit: The first Unix graphical multi-programming terminal](https://www.youtube.com/watch?v=emh22gT5e9k)

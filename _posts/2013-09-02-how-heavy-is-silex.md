@@ -140,7 +140,7 @@ Is that more than something like slim, limonade or breeze? Yes. By a factor of
 2-4. Does that matter? I don't think so.
 
 It is still sufficiently small. I consider re-use, isolation and interop
-provided by silex better than the other listed projects.
+provided by silex better than in the other listed projects.
 
 ## Minimal interface
 

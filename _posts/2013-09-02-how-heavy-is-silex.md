@@ -139,6 +139,9 @@ Those 50 classes have a total of **4018 NCLOC**.
 Is that more than something like slim, limonade or breeze? Yes. By a factor of
 2-4. Does that matter? I don't think so.
 
+It is still sufficiently small. I consider re-use, isolation and interop
+provided by silex better than the other listed projects.
+
 ## Minimal interface
 
 For the most part you will only ever deal with the following types:

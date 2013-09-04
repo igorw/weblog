@@ -72,6 +72,20 @@ process.
 
 Third, version control. No need to litter your gitignore with random garbage.
 
+## Isolation
+
+Remember PEAR? Not only was PEAR itself installed into some global-ish
+location (if you were lucky enough to actually successfully install it), but
+all libraries installed via PEAR were global. If you had two projects
+depending on conflicting versions of the same package, you were screwed.
+
+Enough of that. That's why composer is a dependency manager and not a package
+manager. It manages deps per-project, it isolates them. It disallows sharing
+the same package directory between projects.
+
+Yes, that means you potentially get two copies, but trust me, it's totally
+worth it.
+
 ## Excuses
 
 Here are some reasons why you would need to move your packages to a specific

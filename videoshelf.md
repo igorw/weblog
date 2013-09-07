@@ -62,6 +62,7 @@ Great Minds:
 * [Joshua Bloch: How To Design A Good API and Why it Matters](https://www.youtube.com/watch?v=aAb7hSCtvGw)
 * [Tony Hoare: Null References, The Billion Dollar Mistake](http://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare)
 * [Matthew Flatt: The Racket Way](http://www.infoq.com/presentations/Racket)
+* [Donald Knuth: My advice to young people](https://www.youtube.com/watch?v=75Ju0eM5T2c)
 * [Language Panel at Strange Loop](http://www.infoq.com/presentations/Language-Panel)
 * [AT&T Archives: The UNIX Operating System](https://www.youtube.com/watch?v=tc4ROCJYbm0)
 * [The Blit: The first Unix graphical multi-programming terminal](https://www.youtube.com/watch?v=emh22gT5e9k)

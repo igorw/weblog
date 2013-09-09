@@ -17,12 +17,14 @@ title: talks
 
 ### The HttpKernelInterface is a lie
 
+* True North PHP 2013 (upcoming)
 * Forum PHP 2013 (upcoming)
 * Symfony Live London 2013 (upcoming)
 * Symfony Live Portland 2013
 
 ### Silex: An implementation detail
 
+* True North PHP 2013 (upcoming)
 * Symfony Live Portland 2013 [[video](http://www.youtube.com/watch?v=bTawx0TGIj8)]
 
 ### React

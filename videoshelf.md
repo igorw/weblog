@@ -19,6 +19,7 @@ Rich Hickey:
 * [The Database as a Value](http://www.infoq.com/presentations/Datomic-Database-Value)
 * [Deconstructing the Database](http://www.infoq.com/presentations/Deconstructing-Database)
 * [Simplicity Matters](https://www.youtube.com/watch?v=rI8tNMsozo0)
+* [The Language of the System](https://www.youtube.com/watch?v=ROor6_NGIWU)
 
 Alan Kay:
 

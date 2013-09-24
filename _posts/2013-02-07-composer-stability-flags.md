@@ -175,6 +175,20 @@ unstable packages that you do not want.
 }
 ~~~
 
+## prefer-stable
+
+Some time after this post was written, composer got a new `prefer-stable`
+feature.
+
+If you don't want to figure out the stability of your deps, you can just use
+the [`prefer-stable`](http://getcomposer.org/doc/04-schema.md#prefer-stable)
+field in your root package. Composer will try to figure out the most stable
+deps it can.
+
+This is quite convenient and often will get you something good enough. But I
+would still encourage you to think more about which stability you really want,
+and declaring it explicitly. You may be trading convenience for control.
+
 ## Conclusion
 
 Hopefully this gives you a better understanding of how composer determines

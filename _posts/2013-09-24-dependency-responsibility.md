@@ -96,6 +96,6 @@ Even popular packages can be huge piles of garbage.
 
 ## Conclusion
 
-* You are responsible for all the code you run in production
-* Keep stability, security and performance in mind
-* Think twice before you trust a package blindly
+* You are responsible for all the code you run in production.
+* Keep stability, security and performance in mind.
+* Think twice before you trust a package blindly.

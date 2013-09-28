@@ -65,6 +65,7 @@ Great Minds:
 * [Matthew Flatt: The Racket Way](http://www.infoq.com/presentations/Racket)
 * [Donald Knuth: My advice to young people](https://www.youtube.com/watch?v=75Ju0eM5T2c)
 * [Tom Stuart: Programming with Nothing](http://rubymanor.org/3/videos/programming_with_nothing/)
+* [Tim Minchin: Graduation Speech](https://www.youtube.com/watch?v=yoEezZD71sc)
 * [Language Panel at Strange Loop](http://www.infoq.com/presentations/Language-Panel)
 * [AT&T Archives: The UNIX Operating System](https://www.youtube.com/watch?v=tc4ROCJYbm0)
 * [The Blit: The first Unix graphical multi-programming terminal](https://www.youtube.com/watch?v=emh22gT5e9k)

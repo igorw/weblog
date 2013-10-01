@@ -49,7 +49,7 @@ Great Minds:
 * [Alan Turing](https://www.youtube.com/watch?v=Btqro3544p8)
 * [Ada Lovelace](https://www.youtube.com/watch?v=uBbVbqRvqTM)
 
-## other stuff
+## ungrouped
 
 * [Chris Ford: Functional Composition](http://www.infoq.com/presentations/music-functional-language)
 * [Dan Kaminsky: Introducing the Domain Key Infrastructure](https://www.youtube.com/watch?v=lo5utZoWEgo)

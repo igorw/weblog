@@ -24,7 +24,7 @@ just works.
 
 Except you're forgetting that it's software. And software breaks. How do you
 fix it? By turning it off and on again. That works most of the time, but
-eventually you will hit that moster bug that makes your system completely
+eventually you will hit that monster bug that makes your system completely
 FUBAR. And now there is nothing you can do about it, because you are not in
 charge.
 

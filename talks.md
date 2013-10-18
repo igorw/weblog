@@ -11,6 +11,10 @@ title: talks
     </p>
 </div>
 
+### Using composer correctly
+
+* ConFoo 2014 (upcoming)
+
 ### Silex Philosophy
 
 * PHP Québec usergroup July 2013 [[video](http://www.youtube.com/watch?v=RDVtnsoOysE)]
@@ -21,6 +25,7 @@ title: talks
 
 ### The HttpKernelInterface is a lie
 
+* ConFoo 2014 (upcoming)
 * True North PHP 2013 (upcoming)
 * Forum PHP 2013 (upcoming)
 * Symfony Live London 2013 [[video](https://www.youtube.com/watch?v=QY8mL6WARIE)]

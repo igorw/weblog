@@ -11,6 +11,10 @@ title: talks
     </p>
 </div>
 
+### Silex Philosophy
+
+* PHP Québec usergroup July 2013 [[video](http://www.youtube.com/watch?v=RDVtnsoOysE)]
+
 ### Introduction to Lisp
 
 * Dutch PHP Conference 2013
@@ -59,7 +63,6 @@ title: talks
 
 ### Silex
 
-* PHP Québec usergroup July 2013 [[video](http://www.youtube.com/watch?v=RDVtnsoOysE)]
 * phpDay 2012
 * ConFoo 2012
 * Symfony Day 2011

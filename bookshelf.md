@@ -16,7 +16,8 @@ title: must read
 
 *By Daniel P. Friedman and Matthias Felleisen*
 
-This book is an introduction into the world of Lisp. It teaches you to think in terms of recursion.
+This book is an introduction into the world of Lisp. It teaches you to think
+in terms of recursion.
 
 Just some of the things it contains:
 
@@ -41,7 +42,8 @@ Sequel: [The Seasoned Schemer](http://mitpress.mit.edu/books/seasoned-schemer)
 
 *By Brian Kernighan and Dennis Ritchie*
 
-Essential to understanding how most modern programming languages work under the hood.
+Essential to understanding how most modern programming languages work under
+the hood.
 
 Introduction to basic algorithms and data structures:
 
@@ -53,5 +55,31 @@ Introduction to basic algorithms and data structures:
 * Virtual stack machine
 
 <a href="http://cm.bell-labs.com/cm/cs/cbook/" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
+
+<span class="clearfix"></span>
+
+<div class="book-cover">
+    <img src="/img/books/computation.png">
+</div>
+
+## Understanding Computation
+
+*By Tom Stuart*
+
+Fundamental understanding of what computation is at its core. Computer science
+topics explained in a very approachable way, through implementing various
+simple machines in very few lines of ruby code.
+
+Just a rough sampling of what it covers:
+
+* Semantics
+* Finite state machine
+* Pushdown automata
+* Turing machine
+* Lambda calculus
+* Universality
+* Halting problem
+
+<a href="http://computationbook.com/" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
 
 <span class="clearfix"></span>

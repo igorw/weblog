@@ -156,7 +156,8 @@ article div.ascii-table > pre {
 
 .book-cover {
     float: right;
-    padding-left: 20px;
+    margin-left: 20px;
+    border: 1px solid #CDCDCD;
 }
 
 @media (max-width: 600px) {

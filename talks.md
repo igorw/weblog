@@ -19,6 +19,10 @@ title: talks
 
 * PHP Québec usergroup July 2013 [[video](http://www.youtube.com/watch?v=RDVtnsoOysE)]
 
+### ChickenVM
+
+* JSZurich usergroup August 2013
+
 ### Introduction to Lisp
 
 * Dutch PHP Conference 2013

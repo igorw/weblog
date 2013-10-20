@@ -78,8 +78,9 @@ harder for users to track which version introduced a particular feature.
 
 A workflow for contributions is usually based on topic branches. Instead of
 committing to the particular version branch directly, a separate branch is
-made for a particular feature or bugfix. That branch is then merged into the
-version branch.
+made for a particular feature or bugfix where that change can be developed in
+isolation. When ready, that topic branch is then merged into the version
+branch.
 
 <center>
     ![topic](/img/git-branching/topic.png)
@@ -89,7 +90,10 @@ If a change spans more than one commit then this allows keeping track of what
 was merged when, and also allows it to be reverted in one go if needed.
 
 More importantly, it allows new features to be prototyped independently
-without making a committment to those changes.
+without making a commitment to those changes.
+
+Topic branches are usually very short-lived and are discarded after being
+merged.
 
 ## That's it
 

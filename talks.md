@@ -15,13 +15,13 @@ title: talks
 
 * ConFoo 2014 (upcoming)
 
-### Silex Philosophy
-
-* PHP Québec usergroup July 2013 [[video](http://www.youtube.com/watch?v=RDVtnsoOysE)]
-
 ### ChickenVM
 
 * JSZurich usergroup August 2013
+
+### Silex Philosophy
+
+* PHP Québec usergroup July 2013 [[video](http://www.youtube.com/watch?v=RDVtnsoOysE)]
 
 ### Introduction to Lisp
 

@@ -84,3 +84,15 @@ version branch.
 <center>
     ![topic](/img/git-branching/topic.png)
 </center>
+
+If a change spans more than one commit then this allows keeping track of what
+was merged when, and also allows it to be reverted in one go if needed.
+
+More importantly, it allows new features to be prototyped independently
+without making a committment to those changes.
+
+## That's it
+
+This post really just documents the process that many of us have been using
+for our projects. If you have anything to add, please share it in the
+comments.

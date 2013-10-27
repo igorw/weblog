@@ -30,7 +30,8 @@ Just some of the things it contains:
 
 <a href="http://mitpress.mit.edu/books/little-schemer" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
 
-Sequel: [The Seasoned Schemer](http://mitpress.mit.edu/books/seasoned-schemer)
+Sequels: [The Seasoned Schemer](http://mitpress.mit.edu/books/seasoned-schemer),
+[The Reasoned Schemer](http://mitpress.mit.edu/books/reasoned-schemer)
 
 <hr>
 

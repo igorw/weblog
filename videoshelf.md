@@ -51,6 +51,7 @@ Great Minds:
 
 Ungrouped:
 
+* [Jen Myers: Making Software Development Make Sense to Everyone](http://www.infoq.com/presentations/software-development-everyone)
 * [Chris Ford: Functional Composition](http://www.infoq.com/presentations/music-functional-language)
 * [Dan Kaminsky: Introducing the Domain Key Infrastructure](https://www.youtube.com/watch?v=lo5utZoWEgo)
 * [Van Jacobson: The Slow-Start Algorithm](https://www.youtube.com/watch?v=QP4A6L7CEqA)

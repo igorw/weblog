@@ -41,6 +41,7 @@ Classics:
 * [Douglas Engelbart: The Mother of All Demos](https://www.youtube.com/watch?v=yJDv-zdhzMY)
 * [Guy Steele: Growing a Language](https://www.youtube.com/watch?v=_ahvzDzKdB0)
 * [Grace Hopper: Nanoseconds](https://www.youtube.com/watch?v=JEpsKnWZrJ8)
+* [Alan Kay: The computer revolution hasnt happened yet](https://www.youtube.com/watch?v=oKg1hTOQXoY)
 
 Great Minds:
 

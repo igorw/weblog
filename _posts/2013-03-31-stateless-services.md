@@ -52,7 +52,7 @@ effects that a particular method call has on the system.
 ## Service Container
 
 A *service container*, more commonly referred to as *Dependency Injection
-Container* or *Inversion of Contol Container*, is a construct that combines a
+Container* or *Inversion of Control Container*, is a construct that combines a
 few patterns in order to aid object graph construction.
 
 It is a dynamic factory that also acts as a registry, as it holds onto the

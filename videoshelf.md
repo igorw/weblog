@@ -63,6 +63,7 @@ Ungrouped:
 * [Zed Shaw: The Web Will Die When OOP Dies](https://vimeo.com/43380467)
 * [Zed Shaw: The Top 10 Ways To Scam The Modern American Programmer](https://www.youtube.com/watch?v=neI_Pj558CY)
 * [Jack Diederich: Stop Writing Classes](https://www.youtube.com/watch?v=o9pEzgHorH0)
+* [Richard Feynman: Computer Heuristics Lecture](https://www.youtube.com/watch?v=EKWGGDXe5MA)
 * [Gerald Sussman: We Really Don't Know How To Compute!](http://www.infoq.com/presentations/We-Really-Dont-Know-How-To-Compute)
 * [Hal Abelson, Gerald Sussman: Structure and Interpretation of Computer Programs](http://groups.csail.mit.edu/mac/classes/6.001/abelson-sussman-lectures/)
 * [Joshua Bloch: How To Design A Good API and Why it Matters](https://www.youtube.com/watch?v=aAb7hSCtvGw)

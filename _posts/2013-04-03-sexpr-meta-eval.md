@@ -24,7 +24,6 @@ tags: [php]
 ## Meta-circular evaluator
 
 A meta-circular evaluator is a self-interpreter of a homoiconic language.
-Makes sense, right?
 
 A self-interpreter is an interpreter written in the language it implements.
 Examples of this include [js.js](https://github.com/jterrace/js.js) or

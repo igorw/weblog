@@ -84,3 +84,29 @@ Just a rough sampling of what it covers:
 <a href="http://computationbook.com/" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
 
 <span class="clearfix"></span>
+
+<hr>
+
+<div class="book-cover">
+    <img src="/img/books/code.png">
+</div>
+
+## Code
+
+*By Charles Petzold*
+
+How computers work. Explaining all the details of how hardware operates with
+no handwaving whatsoever. A whole bunch of historical information. Finishes
+with building an actual computer from scratch.
+
+* Binary codes
+* Basic electronics
+* Logic gates
+* Binary adder
+* Flip-flops, Clocks
+* CPU
+* Assembly
+
+<a href="http://www.charlespetzold.com/code/" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
+
+<span class="clearfix"></span>

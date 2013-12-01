@@ -26,6 +26,7 @@ title: talks
 
 ### Introduction to Lisp
 
+* ZendCon.eu Uncon 2013
 * Dutch PHP Conference 2013
 
 ### The HttpKernelInterface is a lie

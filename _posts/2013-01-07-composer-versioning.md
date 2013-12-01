@@ -39,8 +39,8 @@ terms of composer's stability flags). But the bigger problem is that the
 meaning of `dev-master` can change at any time.
 
 Let's say that it represents the latest `1.0` development version. At some
-point the author of said library starts working on the `1.1` release, so he
-branches off a `1.0` branch, and `dev-master` becomes the latest `1.1` dev
+point the author of said library starts working on the `1.1` release, so they
+branch off a `1.0` branch, and `dev-master` becomes the latest `1.1` dev
 version.
 
 Unless you are tracking the development of that library very closely, you will
@@ -93,7 +93,7 @@ composer to install the unstable version, or worse yet lower their
 
 To avoid juggling around dev versions it's much better to just tag releases.
 If you are using a library that has no tagged releases, go and annoy the
-maintainer until he tags. Do it, now!
+maintainer until they tag. Do it, now!
 
 > We as the composer community need to take responsibility. We need to tag
 > releases, we should maintain CHANGELOGs. It's hard to do, but makes a huge

@@ -21,6 +21,7 @@ title: talks
 
 ### Silex Philosophy
 
+* Symfony Zürich usergroup November 2013
 * PHP Québec usergroup July 2013 [[video](http://www.youtube.com/watch?v=RDVtnsoOysE)]
 
 ### Introduction to Lisp
@@ -30,14 +31,14 @@ title: talks
 ### The HttpKernelInterface is a lie
 
 * ConFoo 2014 (upcoming)
-* True North PHP 2013 (upcoming)
-* Forum PHP 2013 (upcoming)
+* True North PHP 2013
+* Forum PHP 2013
 * Symfony Live London 2013 [[video](https://www.youtube.com/watch?v=QY8mL6WARIE)]
 * Symfony Live Portland 2013
 
 ### Silex: An implementation detail
 
-* True North PHP 2013 (upcoming)
+* True North PHP 2013
 * Symfony Live Portland 2013 [[video](http://www.youtube.com/watch?v=bTawx0TGIj8)]
 
 ### React
@@ -60,7 +61,7 @@ title: talks
 
 ### Build your own webserver with PHP
 
-* ZendCon.eu 2013 (upcoming)
+* ZendCon.eu 2013
 * FrOSCon 2012
 
 ### WebSockets

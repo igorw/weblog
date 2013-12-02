@@ -183,14 +183,14 @@ power. It is comparable to a pushdown automaton.
 
 ---
 
-1. There are some exceptions, such as stack based languages like
+1. There are some exceptions, including stack based languages such as
    *Forth*, *Factor* or *Gershwin*.
 
 2. [Mandatory XKCD](http://xkcd.com/645/).
 
 3. This implementation is roughly based on the RPN calculator from [The C
-Programming Language](http://cm.bell-labs.com/cm/cs/cbook/) by Brian W.
-Kernighan and Dennis M. Ritchie.
+   Programming Language](http://cm.bell-labs.com/cm/cs/cbook/) by Brian W.
+   Kernighan and Dennis M. Ritchie.
 
 ---
 

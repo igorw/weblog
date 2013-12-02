@@ -101,3 +101,10 @@ popped from the stack and returned.
 * A virtual stack machine consists of a stack and instructions.
 * Stack is a data structure with two operations: push and pop.
 * Instructions use the values on the stack.
+
+---
+
+&mdash;&mdash;&mdash;<br />
+[**fundamentals**](/2013/08/28/stack-machines-fundamentals.html)<br />
+[rpn-calculator](/2013/12/02/stack-machines-rpn.html)<br />
+&mdash;&mdash;&mdash;

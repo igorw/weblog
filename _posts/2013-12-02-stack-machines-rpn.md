@@ -40,12 +40,12 @@ For example:
 
 <div class="formula">1 + 1</div>
 
-This notation has also adopted by most popular programming
+This notation has also been adopted by most popular programming
 languages<sup>1</sup>.
 
 One of the downsides of infix notation is that certain expressions such as
 `1 + 2 * 3` are ambiguous and require special precedence rules and bracketing
-to interpret correctly.
+to be interpreted correctly.
 
 Two alternate notations exist that do not have this limitation. *Polish
 notation*, which is known as *prefix notation* and &mdash; you guessed it
@@ -53,10 +53,8 @@ notation*, which is known as *prefix notation* and &mdash; you guessed it
 
 ## Reverse Polish Notation
 
-**RPN** stands for reverse polish notation.
-
-Another name for it is *postfix notation*. In simple terms, the operator comes
-after the operands.
+**RPN** stands for reverse polish notation. Another name for it is *postfix
+notation*. In simple terms, the operator comes after the operands.
 
 For example:
 
@@ -88,7 +86,7 @@ The symbols are **instructions**, the list above describes the **instruction
 set**.
 
 The following drawing illustrates how the instructions affect the stack, which
-values get pushed onto the stack and which ones get popped off of the stack.
+values get pushed onto and which ones get popped off of the stack.
 
 <center>
     ![rpn instructions](/img/stack-machine-rpn/rpn.png)
@@ -112,7 +110,7 @@ another of the `1`s, add them, push `3`. The final `+` pops the `3`, pops the
 
 Now that we have the specs down, let's implement this RPN calculator. It takes
 a bunch of instructions, executes them, and returns what is on top of the
-stack.
+stack: the result.
 
 Here it is, in all its glory<sup>3</sup>:
 
@@ -193,3 +191,10 @@ power. It is comparable to a pushdown automaton.
 3. This implementation is roughly based on the RPN calculator from [The C
 Programming Language](http://cm.bell-labs.com/cm/cs/cbook/) by Brian W.
 Kernighan and Dennis M. Ritchie.
+
+---
+
+&mdash;&mdash;&mdash;<br />
+[fundamentals](/2013/08/28/stack-machines-fundamentals.html)<br />
+[**rpn-calculator**](/2013/12/02/stack-machines-rpn.html)<br />
+&mdash;&mdash;&mdash;

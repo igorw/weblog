@@ -168,8 +168,8 @@ var_dump(execute($ops));
 
 Confirms that it works! It returns the value `7` as expected.
 
-As you can see, an RPN calculator is quite a trivial piece of software. And
-yet the machanisms it uses emulate a subset of what an actual computer does.
+Nn RPN calculator is quite a trivial piece of software. And yet the machanisms
+it uses emulate a subset of what an actual computer does.
 
 Since this stack machine has no means of random access storage and no
 conditional branching instructions, it is still limited in its computational

@@ -177,8 +177,8 @@ power. It is comparable to a pushdown automaton.
 
 ## Summary
 
-* RPN is kind of backwards
-* Implementing an RPN calculator is easy
+* RPN is kind of backwards.
+* Implementing an RPN calculator is easy.
 * Hey, look! It's a little computer!
 
 ---

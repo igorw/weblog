@@ -78,7 +78,7 @@ first is `2 3 *` which produces a result.
 But that result is not just thrown away, it is stored on a stack, allowing the
 next operation to use that data, which is exactly what the `... 1 +` does.
 
-* A number just means *push this number on the stack*.
+* A number just means *push this number onto the stack*.
 * `+` means *pop 2 elements from the stack, add them, push the result back*.
 * `*` does the same as `+` but for multiplication.
 

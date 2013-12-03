@@ -191,7 +191,7 @@ power. It is comparable to a pushdown automaton.
    href="#ft-2-src">↩</a>
 
 3. <a id="ft-3"></a>This implementation is roughly based on the RPN calculator
-   from [The CProgramming Language](http://cm.bell-labs.com/cm/cs/cbook/) by
+   from [The C Programming Language](http://cm.bell-labs.com/cm/cs/cbook/) by
    Brian W. Kernighan and Dennis M. Ritchie. <a id="ft-3"
    href="#ft-3-src">↩</a>
 

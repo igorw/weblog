@@ -101,19 +101,19 @@ These must also be taken into account when interpreting an expression.
 Enough math already. Let's talk about compilers.
 
 A compiler takes a high-level language and translates it into some sort of
-low-level machine code. Mathematical expressions are a subset of many high-
-level programming languages.
+low-level machine code. Mathematical expressions are a subset of many
+high-level programming languages.
 
 In 1960, the dutch computer scientist Edsger Dijkstra was working on a
 compiler for ALGOL60. Back then he referred to it as a "translator". When
 faced with the challenge of precedence, he came up with an algorithm for
-resolving the precedence of these expressions<sup>2</sup>.
+resolving the precedence of these expressions.
 
-He named it the **shunting-yard algorithm**.
+This algorithm is known as the **shunting-yard algorithm**.
 
-What this algorithm does is translate an expression from infix notation to
-something that is easier to understand for a machine: **Reverse-polish
-notation** (postfix notation).
+What it does is translate an expression from infix notation to something that
+is easier to understand for a machine: **Reverse-polish notation**, or postfix
+notation.
 
 What this means is that we can take an expression as an input, then use
 shunting-yard to *compile* that expression into RPN, and finally use the
@@ -136,6 +136,10 @@ stashing tokens and an output queue for placing the output.
 
 Based on pre-configured precedence and associativity rules, the tokens are
 shunted from infix to postfix in a very memory efficient way.
+
+Read [the Wikipedia page](http://en.wikipedia.org/wiki/Shunting-yard_algorithm)
+or [the original paper](http://www.cs.utexas.edu/~EWD/MCReps/MR35.PDF) for a
+more thorough explanation.
 
 ## Implementation
 
@@ -222,10 +226,10 @@ $operators = [
 
 While all of those associate to the left, there are operations that commonly
 associate to the right, such as exponentiation. `2 ^ 3 ^ 4` should
-be interpreted as `(2 ^ (3 ^ 4))`<sup>3</sup>.
+be interpreted as `(2 ^ (3 ^ 4))`<sup>2</sup>.
 
 Another common right-associative operator in programming languages is the
-conditional ternary operator `?:`<sup>4</sup>.
+conditional ternary operator `?:`<sup>3</sup>.
 
 ## Compiling to RPN
 
@@ -254,8 +258,7 @@ Now we have a fully-functional infix calculator that is the composition of an
 infix-to-postfix compiler and a postfix calculator!
 
 You will find that it supports not only the operators `+`, `-`, `*`, `/` and
-`%`, but also custom parentheses that are completely removed from the
-resulting RPN.
+`%`, but also parentheses that are completely removed from the resulting RPN.
 
 In addition to that, adding support for new operators is as easy as adding an
 entry to `$operators` and an implementation to the `switch` statement in
@@ -272,13 +275,10 @@ entry to `$operators` and an implementation to the `switch` statement in
 1. Not to be confused with *commutativity* which defines whether the order of
    operands matters.
 
-2. See the second part of [the
-   paper](http://www.cs.utexas.edu/~EWD/MCReps/MR35.PDF) for a description.
-
-3. I used the `^` symbol for exponentiation, in many languages something like
+2. I used the `^` symbol for exponentiation, in many languages something like
    `**` is used instead.
 
-4. Too bad PHP messed that one up.
+3. Too bad PHP messed that one up.
 
 ---
 

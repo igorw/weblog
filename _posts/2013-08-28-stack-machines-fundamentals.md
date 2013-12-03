@@ -6,10 +6,9 @@ tags: []
 
 # Stack Machines: Fundamentals
 
-&mdash;&mdash;&mdash;<br />
-[**fundamentals**](/2013/08/28/stack-machines-fundamentals.html)<br />
-[rpn-calculator](/2013/12/02/stack-machines-rpn.html)<br />
-&mdash;&mdash;&mdash;
+[fundamentals](/2013/08/28/stack-machines-fundamentals.html) <<
+[rpn-calculator](/2013/12/02/stack-machines-rpn.html) <<
+[**shunting-yard**](/2013/12/03/shunting-yard.html)
 
 This series will explore design and implementation of virtual stack machines.
 That is, virtual machines whose operations are based on a stack. This post
@@ -104,7 +103,6 @@ popped from the stack and returned.
 
 ---
 
-&mdash;&mdash;&mdash;<br />
-[**fundamentals**](/2013/08/28/stack-machines-fundamentals.html)<br />
-[rpn-calculator](/2013/12/02/stack-machines-rpn.html)<br />
-&mdash;&mdash;&mdash;
+[fundamentals](/2013/08/28/stack-machines-fundamentals.html) <<
+[rpn-calculator](/2013/12/02/stack-machines-rpn.html) <<
+[**shunting-yard**](/2013/12/03/shunting-yard.html)

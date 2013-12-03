@@ -117,7 +117,7 @@ notation.
 
 What this means is that we can take an expression as an input, then use
 shunting-yard to *compile* that expression into RPN, and finally use the
-*existing* RPN calculator run it!
+*existing* RPN calculator to run it!
 
 ## Shunting yard
 

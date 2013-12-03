@@ -43,9 +43,9 @@ enclosing them in invisible parentheses.
 
 ## Associativity
 
-Another consideration is associativity<sup>1</sup>. Generally speaking,
-associativity defines the grouping of sub-expressions within the same level of
-precedence.
+Another consideration is associativity<sup><a id="ft-1-src"></a><a
+href="#ft-1">1</a></sup>. Generally speaking, associativity defines the
+grouping of sub-expressions within the same level of precedence.
 
 An example would be:
 
@@ -225,11 +225,13 @@ $operators = [
 ~~~
 
 While all of those associate to the left, there are operations that commonly
-associate to the right, such as exponentiation. `2 ^ 3 ^ 4` should
-be interpreted as `(2 ^ (3 ^ 4))`<sup>2</sup>.
+associate to the right, such as exponentiation. `2 ^ 3 ^ 4` should be
+interpreted as `(2 ^ (3 ^ 4))`<sup><a id="ft-2-src"></a><a
+href="#ft-2">2</a></sup>.
 
 Another common right-associative operator in programming languages is the
-conditional ternary operator `?:`<sup>3</sup>.
+conditional ternary operator `?:`<sup><a id="ft-3-src"></a><a
+href="#ft-3">3</a></sup>.
 
 ## Compiling to RPN
 
@@ -272,13 +274,15 @@ entry to `$operators` and an implementation to the `switch` statement in
 
 ---
 
-1. Not to be confused with *commutativity* which defines whether the order of
-   operands matters.
+1. <a id="ft-1"></a>Not to be confused with *commutativity* which defines
+   whether the order of operands matters. <a id="ft-1" href="#ft-1-src">↩</a>
 
-2. I used the `^` symbol for exponentiation, in many languages something like
-   `**` is used instead.
+2. <a id="ft-2"></a>I used the `^` symbol for exponentiation, in many
+   languages something like `**` is used instead. <a id="ft-2"
+   href="#ft-2-src">↩</a>
 
-3. Too bad PHP messed that one up.
+3. <a id="ft-3"></a>Too bad PHP messed that one up. <a id="ft-3"
+   href="#ft-3-src">↩</a>
 
 ---
 

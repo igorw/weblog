@@ -40,7 +40,7 @@ For example:
 <div class="formula">1 + 1</div>
 
 This notation has also been adopted by most popular programming
-languages<sup>1</sup>.
+languages<sup><a id="ft-1-src"></a><a href="#ft-1">1</a></sup>.
 
 One of the downsides of infix notation is that certain expressions such as
 `1 + 2 * 3` are ambiguous and require special precedence rules and bracketing
@@ -59,8 +59,9 @@ For example:
 
 <div class="formula">1 1 +</div>
 
-This may look backwards at first<sup>2</sup>, but it is so much easier to
-implement a calculator for it.
+This may look backwards at first<sup><a id="ft-2-src"></a><a
+href="#ft-2">2</a></sup>, but it is so much easier to implement a calculator
+for it.
 
 The previous example of `1 + 2 * 3` can be unambiguously represented as:
 
@@ -111,7 +112,8 @@ Now that we have the specs down, let's implement this RPN calculator. It takes
 a bunch of instructions, executes them, and returns what is on top of the
 stack: the result.
 
-Here it is, in all its glory<sup>3</sup>:
+Here it is, in all its glory<sup><a id="ft-3-src"></a><a
+href="#ft-3">3</a></sup>:
 
 ~~~php
 function execute(array $ops)
@@ -182,14 +184,16 @@ power. It is comparable to a pushdown automaton.
 
 ---
 
-1. There are some exceptions, including stack based languages such as
-   *Forth*, *Factor* or *Gershwin*.
+1. <a id="ft-1"></a>There are some exceptions, including stack based languages
+   such as *Forth*, *Factor* or *Gershwin*. <a id="ft-1" href="#ft-1-src">↩</a>
 
-2. [Mandatory XKCD](http://xkcd.com/645/).
+2. <a id="ft-2"></a>[Mandatory XKCD](http://xkcd.com/645/). <a id="ft-2"
+   href="#ft-2-src">↩</a>
 
-3. This implementation is roughly based on the RPN calculator from [The C
-   Programming Language](http://cm.bell-labs.com/cm/cs/cbook/) by Brian W.
-   Kernighan and Dennis M. Ritchie.
+3. <a id="ft-3"></a>This implementation is roughly based on the RPN calculator
+   from [The CProgramming Language](http://cm.bell-labs.com/cm/cs/cbook/) by
+   Brian W. Kernighan and Dennis M. Ritchie. <a id="ft-3"
+   href="#ft-3-src">↩</a>
 
 ---
 

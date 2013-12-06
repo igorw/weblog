@@ -200,4 +200,4 @@ should go and annoy them *right now* so they add branch-aliases and tag
 releases. And as soon as they do, you can nuke those stability flags and be
 happy again.
 
-See also: [Composer Versioning](/2013/01/07/composer-versioning.html).
+See also: [Composer Version Constraints](/2013/01/07/composer-versioning.html).

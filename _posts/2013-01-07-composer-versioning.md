@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Composer Versioning
+title: Composer Version Constraints
 tags: [php, composer, symfony]
 ---
 
-# Composer Versioning
+# Composer Version Constraints
 
 > If you don't know what composer is, [go to the composer
 > homepage](http://getcomposer.org/) and start reading.

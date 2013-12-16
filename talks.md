@@ -33,7 +33,7 @@ title: talks
 
 * ConFoo 2014 (upcoming)
 * True North PHP 2013
-* Forum PHP 2013
+* Forum PHP 2013 [[video](https://www.youtube.com/watch?v=s9CC8dKsK3s)]
 * Symfony Live London 2013 [[video](https://www.youtube.com/watch?v=QY8mL6WARIE)]
 * Symfony Live Portland 2013
 

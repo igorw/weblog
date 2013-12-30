@@ -272,6 +272,10 @@ entry to `$operators` and an implementation to the `switch` statement in
 * Implementation is quite straight-forward.
 * Hey, look! It's a little compiler!
 
+<center>
+    ![composite](/img/stack-machine-shunting-yard/composite.png)
+</center>
+
 ---
 
 1. <a id="ft-1"></a>Not to be confused with *commutativity* which defines

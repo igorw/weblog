@@ -15,6 +15,15 @@ projects pushing them. Today they dominate the way modern PHP libraries are
 written. I think it's time to stop and think for a minute about how we really
 want our code and libraries to look like.
 
+## Update (2014-01-04)
+
+The situation has improved. We now have a
+[PSR-4 specification](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md)
+and support for this new standard
+[in composer](http://seld.be/notes/psr-4-autoloading-support-in-composer).
+
+Thanks to everyone who made this happen.
+
 ## Autoloading
 
 While I believe that the creation of

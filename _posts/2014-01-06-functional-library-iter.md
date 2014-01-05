@@ -205,7 +205,11 @@ functions that are very common in functional languages. I'll list a few:
 * all
 * flatten
 
-Use them.
+---
+
+<center>
+    Use them.
+</center>
 
 ---
 

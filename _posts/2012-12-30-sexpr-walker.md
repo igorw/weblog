@@ -39,7 +39,7 @@ through the AST, finds the macro calls and expands them.
 </center>
 
 There are several possibilities as to when this compilation step should
-happen. If the LISP implementation has a notion of files and possibly
+happen. If the Lisp implementation has a notion of files and possibly
 compilation of the files to some form of bytecode, then it usually happens on
 a per-file basis. In the context of a <abbr title="read-eval-print
 loop">REPL</abbr>, compilation often occurs for each entered form before it is
@@ -148,27 +148,33 @@ This walker already handles many cases. The following is expanded correctly.
 
 Single level macro:
 
-    (defmacro plus (a b) (list '+ a b))
-    (plus 1 2)
-    =>
-    (+ 1 2)
+~~~lisp
+(defmacro plus (a b) (list '+ a b))
+(plus 1 2)
+=>
+(+ 1 2)
+~~~
 
 Two-level macro:
 
-    (defmacro plus (a b) (list '+ a b))
-    (defmacro pl (a b) (list 'plus a b))
-    (pl 1 2)
-    =>
-    (+ 1 2)
+~~~lisp
+(defmacro plus (a b) (list '+ a b))
+(defmacro pl (a b) (list 'plus a b))
+(pl 1 2)
+=>
+(+ 1 2)
+~~~
 
 ## Sub-lists
 
 Currently only top-level macro calls are expanded. That means that the
 following incomplete transformation will happen for a nested list:
 
-    (plus 1 (plus 2 3))
-    =>
-    (+ 1 (plus 2 3))
+~~~lisp
+(plus 1 (plus 2 3))
+=>
+(+ 1 (plus 2 3))
+~~~
 
 Instead of just returning non-macro list forms directly, expansion must recur
 on their sub-lists. And sure enough, with a few small changes this can be
@@ -211,15 +217,19 @@ private function expandList(Environment $env, ListForm $form)
 
 And with this adjustment in place it will correctly expand the sub-list:
 
-    (plus 1 (plus 2 3))
-    =>
-    (+ 1 (+ 2 3))
+~~~lisp
+(plus 1 (plus 2 3))
+=>
+(+ 1 (+ 2 3))
+~~~
 
 Even if it is inside a lambda expression:
 
-    (lambda (a b) (plus a b))
-    =>
-    (lambda (a b) (+ a b))
+~~~lisp
+(lambda (a b) (plus a b))
+=>
+(lambda (a b) (+ a b))
+~~~
 
 At this point almost all cases are handled. There is still one specific
 problematic case though.
@@ -230,7 +240,9 @@ Some special forms have special interpretations of their list arguments, and
 do not treat them as function applications. The most prominent example of this
 is the argument list of the `lambda` special form.
 
-    (lambda (plus a b) (plus a b 5))
+~~~lisp
+(lambda (plus a b) (plus a b 5))
+~~~
 
 This function takes a `plus` argument which is a function and two numbers `a`
 and `b`. It applies `plus` to the two numbers and the number `5`. Regardless
@@ -243,7 +255,9 @@ what a lambda form is, it just sees a list and tries to expand it.
 
 That will result in something like this:
 
-    (lambda (+ a b) (plus a b 5))
+~~~lisp
+(lambda (+ a b) (plus a b 5))
+~~~
 
 The second issue is that the walker will try to expand the body in this case,
 even though `plus` is a lexical variable of the lambda. This happens because
@@ -307,31 +321,37 @@ All that this does is:
 This will take care of those special cases and ensure that the following
 expands correctly (actually, it correctly lacks expansion):
 
-    (lambda (plus a b) (lambda () (plus a b)))
-    =>
-    (lambda (plus a b) (lambda () (plus a b)))
+~~~lisp
+(lambda (plus a b) (lambda () (plus a b)))
+=>
+(lambda (plus a b) (lambda () (plus a b)))
+~~~
 
 And because the cloned environment is passed on to sub-expansions, lexical
 scope is preserved, which means it works for nested lambdas too:
 
-    (lambda (plus a b) (lambda () (lambda () (plus a b))))
-    =>
-    (lambda (plus a b) (lambda () (lambda () (plus a b))))
+~~~lisp
+(lambda (plus a b) (lambda () (lambda () (plus a b))))
+=>
+(lambda (plus a b) (lambda () (lambda () (plus a b))))
+~~~
 
 And with that, the walker can correctly expand lambdas at compile time! It
 strips out all of the macro calls and replaces them with the actual code.
 
 ## Conclusion
 
-    (defmacro when (condition a b c)
-        (list 'if condition (list 'begin a b c)))
-    (define foo
-        (lambda (x)
-            (when (> x 10) 1 2 3)))
-    =>
-    (define foo
-        (lambda (x)
-            (if (> x 10) (begin 1 2 3))))
+~~~lisp
+(defmacro when (condition a b c)
+    (list 'if condition (list 'begin a b c)))
+(define foo
+    (lambda (x)
+        (when (> x 10) 1 2 3)))
+=>
+(define foo
+    (lambda (x)
+        (if (> x 10) (begin 1 2 3))))
+~~~
 
 ## Further reading
 

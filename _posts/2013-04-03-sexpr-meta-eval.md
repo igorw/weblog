@@ -51,68 +51,70 @@ original `eval`.
 
 It's a whopping 62 lines in length:
 
-    (defun null. (x)
-      (eq x '()))
+~~~lisp
+(defun null. (x)
+  (eq x '()))
 
-    (defun and. (x y)
-      (cond (x (cond (y 't) ('t '())))
-            ('t '())))
+(defun and. (x y)
+  (cond (x (cond (y 't) ('t '())))
+        ('t '())))
 
-    (defun not. (x)
-      (cond (x '())
-            ('t 't)))
+(defun not. (x)
+  (cond (x '())
+        ('t 't)))
 
-    (defun append. (x y)
-      (cond ((null. x) y)
-            ('t (cons (car x) (append. (cdr x) y)))))
+(defun append. (x y)
+  (cond ((null. x) y)
+        ('t (cons (car x) (append. (cdr x) y)))))
 
-    (defun list. (x y)
-      (cons x (cons y '())))
+(defun list. (x y)
+  (cons x (cons y '())))
 
-    (defun pair. (x y)
-      (cond ((and. (null. x) (null. y)) '())
-            ((and. (not. (atom x)) (not. (atom y)))
-             (cons (list. (car x) (car y))
-                   (pair. (cdr x) (cdr y))))))
+(defun pair. (x y)
+  (cond ((and. (null. x) (null. y)) '())
+        ((and. (not. (atom x)) (not. (atom y)))
+         (cons (list. (car x) (car y))
+               (pair. (cdr x) (cdr y))))))
 
-    (defun assoc. (x y)
-      (cond ((eq (caar y) x) (cadar y))
-            ('t (assoc. x (cdr y)))))
+(defun assoc. (x y)
+  (cond ((eq (caar y) x) (cadar y))
+        ('t (assoc. x (cdr y)))))
 
-    (defun eval. (e a)
-      (cond
-        ((atom e) (assoc. e a))
-        ((atom (car e))
-         (cond
-           ((eq (car e) 'quote) (cadr e))
-           ((eq (car e) 'atom)  (atom   (eval. (cadr e) a)))
-           ((eq (car e) 'eq)    (eq     (eval. (cadr e) a)
-                                        (eval. (caddr e) a)))
-           ((eq (car e) 'car)   (car    (eval. (cadr e) a)))
-           ((eq (car e) 'cdr)   (cdr    (eval. (cadr e) a)))
-           ((eq (car e) 'cons)  (cons   (eval. (cadr e) a)
-                                        (eval. (caddr e) a)))
-           ((eq (car e) 'cond)  (evcon. (cdr e) a))
-           ('t (eval. (cons (assoc. (car e) a)
-                            (cdr e))
-                      a))))
-        ((eq (caar e) 'label)
-         (eval. (cons (caddar e) (cdr e))
-                (cons (list. (cadar e) (car e)) a)))
-        ((eq (caar e) 'lambda)
-         (eval. (caddar e)
-                (append. (pair. (cadar e) (evlis. (cdr e) a))
-                         a)))))
+(defun eval. (e a)
+  (cond
+    ((atom e) (assoc. e a))
+    ((atom (car e))
+     (cond
+       ((eq (car e) 'quote) (cadr e))
+       ((eq (car e) 'atom)  (atom   (eval. (cadr e) a)))
+       ((eq (car e) 'eq)    (eq     (eval. (cadr e) a)
+                                    (eval. (caddr e) a)))
+       ((eq (car e) 'car)   (car    (eval. (cadr e) a)))
+       ((eq (car e) 'cdr)   (cdr    (eval. (cadr e) a)))
+       ((eq (car e) 'cons)  (cons   (eval. (cadr e) a)
+                                    (eval. (caddr e) a)))
+       ((eq (car e) 'cond)  (evcon. (cdr e) a))
+       ('t (eval. (cons (assoc. (car e) a)
+                        (cdr e))
+                  a))))
+    ((eq (caar e) 'label)
+     (eval. (cons (caddar e) (cdr e))
+            (cons (list. (cadar e) (car e)) a)))
+    ((eq (caar e) 'lambda)
+     (eval. (caddar e)
+            (append. (pair. (cadar e) (evlis. (cdr e) a))
+                     a)))))
 
-    (defun evcon. (c a)
-      (cond ((eval. (caar c) a)
-             (eval. (cadar c) a))
-            ('t (evcon. (cdr c) a))))
+(defun evcon. (c a)
+  (cond ((eval. (caar c) a)
+         (eval. (cadar c) a))
+        ('t (evcon. (cdr c) a))))
 
-    (defun evlis. (m a)
-      (cond ((null. m) '())
-            ('t (cons (eval.  (car m) a)
-                      (evlis. (cdr m) a)))))
+(defun evlis. (m a)
+  (cond ((null. m) '())
+        ('t (cons (eval.  (car m) a)
+                  (evlis. (cdr m) a)))))
+~~~
 
 Yes. That's all it takes to write Lisp in Lisp.
 
@@ -156,7 +158,7 @@ As it turns out, none of these have been implemented yet in Ilias.
 Most of them can easily be implemented as functions that operate on values and
 arrays:
 
-```php
+~~~php
 namespace Igorw\Ilias\Func;
 
 class AtomFunc
@@ -200,7 +202,7 @@ class EqFunc
         return $a === $b;
     }
 }
-```
+~~~
 
 The remaining two, `quote` and `cond`, need to be implemented as special
 forms. Quote needs to treat its argument's source as data instead of
@@ -208,7 +210,7 @@ evaluating it. Cond needs to evaluate parts conditionally.
 
 Here is `cond`, it just loops over the pairs and tests the predicates:
 
-```php
+~~~php
 namespace Igorw\Ilias\SpecialOp;
 
 use Igorw\Ilias\Environment;
@@ -230,7 +232,7 @@ class CondOp implements SpecialOp
         return null;
     }
 }
-```
+~~~
 
 ## Quote
 
@@ -239,21 +241,21 @@ first. Currently quoted values contain their values as a form tree.
 
 Basically, `'(foo bar)` becomes:
 
-```php
+~~~php
 new QuoteForm(
     new ListForm([
         new Symbol('foo'),
         new Symbol('bar'),
     ])
 )
-```
+~~~
 
 This makes it really hard to work with as data. It would be a lot easier if it
 were:
 
-```php
+~~~php
 new QuoteForm(['foo', 'bar'])
-```
+~~~
 
 This requires two changes. For one, the `FormTreeBuilder` should no longer
 parse the contents of quote expressions. Next, the `MacroOp` needs to properly
@@ -261,7 +263,7 @@ handle quoted values and expand them as needed.
 
 With those two changes, the implementation of `quote` is a snap:
 
-```php
+~~~php
 namespace Igorw\Ilias\SpecialOp;
 
 use Igorw\Ilias\Environment;
@@ -276,7 +278,7 @@ class QuoteOp implements SpecialOp
         return $value;
     }
 }
-```
+~~~
 
 And with that, the seven primitive operators are implemented. After adding
 them to the `Environment`, they can be called.
@@ -287,25 +289,27 @@ Paul Graham uses some Common Lisp specific functions. They are mostly
 abbreviated versions of list manipulation functions. I will just add them in
 Lisp directly:
 
-    (define caar
-      (lambda (l)
-        (car (car l))))
+~~~lisp
+(define caar
+  (lambda (l)
+    (car (car l))))
 
-    (define cadr
-      (lambda (l)
-        (car (cdr l))))
+(define cadr
+  (lambda (l)
+    (car (cdr l))))
 
-    (define cadar
-      (lambda (l)
-        (car (cdr (car l)))))
+(define cadar
+  (lambda (l)
+    (car (cdr (car l)))))
 
-    (define caddar
-      (lambda (l)
-        (car (cdr (cdr (car l))))))
+(define caddar
+  (lambda (l)
+    (car (cdr (cdr (car l))))))
 
-    (define caddr
-      (lambda (l)
-        (car (cdr (cdr l)))))
+(define caddr
+  (lambda (l)
+    (car (cdr (cdr l)))))
+~~~
 
 ## Running it
 
@@ -315,22 +319,26 @@ Now all of the missing pieces have been added. It should be possible to run
 Let's run a simple `cons`, to construct a list. The expected output is `(foo
 bar baz)`:
 
-    (cons (quote foo)
-          (quote (bar baz))
+~~~lisp
+(cons (quote foo)
+      (quote (bar baz))
+~~~
 
 Here is how you run it through `eval`. The first argument is the expression to
 be evaluated, the second argument is the environment, which is empty in this
 case.
 
-    (eval. (quote (cons (quote foo)
-                        (quote (bar baz))))
-           (quote ()))
+~~~lisp
+(eval. (quote (cons (quote foo)
+                    (quote (bar baz))))
+       (quote ()))
+~~~
 
 And the result is:
 
-```php
+~~~php
 ['foo', 'bar', 'baz']
-```
+~~~
 
 Awesome.
 

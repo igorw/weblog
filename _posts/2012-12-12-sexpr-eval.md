@@ -20,7 +20,7 @@ So far this series has mostly been about s-expressions as a data format. I
 would like to start exploring a more advanced space now: Treating
 s-expressions as code and evaluating them.
 
-In many LISP implementations this is done by two functions: *eval* and
+In many Lisp implementations this is done by two functions: *eval* and
 *apply*. Eval takes an expression and an environment and will evaluate that
 expression in the context of the env. Apply applies a function, which means
 evaluating the body of the function against a set of arguments. The arguments
@@ -34,7 +34,9 @@ we know that adding two numbers together is hard.
 So let's start with evaluating a very basic case of an s-expression. The
 addition of two numbers:
 
-    (+ 1 2)
+~~~lisp
+(+ 1 2)
+~~~
 
 In the AST, that expression is represented as:
 
@@ -45,9 +47,11 @@ In the AST, that expression is represented as:
 The resulting computation of when translating this function call to PHP would
 be:
 
-    1 + 2
+~~~php
+1 + 2
+~~~
 
-It turns out that in LISP you can pass more than two arguments to `+`, and it
+It turns out that in Lisp you can pass more than two arguments to `+`, and it
 will return the sum of all of them. With that in mind, perhaps this is a more
 accurate PHP equivalent:
 
@@ -55,7 +59,7 @@ accurate PHP equivalent:
 array_sum([1, 2])
 ~~~
 
-Which in fact maps better to the way LISP works because `+` is no longer a
+Which in fact maps better to the way Lisp works because `+` is no longer a
 special construct. It is just a function.
 
 ## Basic eval
@@ -86,7 +90,7 @@ This function application is represented as a list whose first element is a
 *symbol* referencing the function by name, all other elements are arguments to
 that function.
 
-In LISP the first element of a list is called the `car`, the rest of the list
+In Lisp the first element of a list is called the `car`, the rest of the list
 is called the `cdr` (pronounced "cudder"). These crazy names exist for
 historical reasons but are in wide use.
 
@@ -174,7 +178,7 @@ Sweet!
 ## Limitations
 
 This implementation is already quite flexible. It allows new functions to be
-added dynamically, it allows the LISP code to call any PHP function that is
+added dynamically, it allows the Lisp code to call any PHP function that is
 mapped in the environment. But overall it is very basic, and many things are
 not yet working.
 
@@ -197,7 +201,7 @@ fix the mentioned shortcomings and introduce some new concepts.
 ## Conclusion
 
 * Adding two numbers is hard.
-* Evaluating a LISP function application is easy.
+* Evaluating a Lisp function application is easy.
 * `car` and `cdr` are bad names, even worse than *sexpr*.
 
 ## Further reading

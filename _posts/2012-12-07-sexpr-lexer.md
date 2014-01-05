@@ -66,23 +66,29 @@ Before we look at the actual code for lexing, you need to understand one more
 concept about s-expressions that I shamelessly omitted in the last post:
 quoting.
 
-Since sexprs are code in LISP, non-numeric atoms are interpreted as variables
+Since sexprs are code in Lisp, non-numeric atoms are interpreted as variables
 and lists are interpreted as function calls. In order to represent data and
 have a sexpr not evaluate, you need to quote the value.
 
-    (quote foo)
-    (quote (+ 1 2))
+~~~lisp
+(quote foo)
+(quote (+ 1 2))
+~~~
 
 There is also a shortcut for this: just prepend a single quote in front of the
 expression that you want to quote.
 
-    'foo
-    '(+ 1 2)
+~~~lisp
+'foo
+'(+ 1 2)
+~~~
 
 Now you can apply the `length` function with a list of atoms, which will in
 this case return `3`:
 
-    (length '(a b c))
+~~~lisp
+(length '(a b c))
+~~~
 
 Going back to the lexer, this means that it should turn the `'` into a
 `T_QUOTE` token, which I will represent using the quote character.
@@ -100,7 +106,7 @@ Those test cases should already give a fairly complete subset of sexpr tokens.
 
 ## Lexer
 
-> Note: All of the code samples from this series are based on a very simplistic LISP
+> Note: All of the code samples from this series are based on a very simplistic Lisp
 > implementation I did in PHP: [Ilias](https://github.com/igorw/ilias).
 
 The lexer will be a class with a single `tokenize` method.

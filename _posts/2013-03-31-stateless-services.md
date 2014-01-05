@@ -166,7 +166,7 @@ is simply by passing it to the service from the controller.
 
 A very basic example:
 
-```php
+~~~php
 class BlogController
 {
     private $negotiator;
@@ -183,7 +183,7 @@ class BlogController
         ...
     }
 }
-```
+~~~
 
 The controller gets access to the request, so it is able to pass it as an
 argument to any service that needs it.
@@ -194,7 +194,7 @@ about passing things all over the place.
 
 In many cases the problem can be solved by using event listeners:
 
-```php
+~~~php
 class ContentNegotiationListener
 {
     private $negotiator;
@@ -221,7 +221,7 @@ class BlogController
         ...
     }
 }
-```
+~~~
 
 Event listeners allow you to compose small pieces of request-specific work in
 a decoupled manner. Whenever you need to do something for multiple controllers

@@ -21,7 +21,7 @@ lacking on many fronts. It currently only supports s-expressions which are
 function applications. The objective is to add support for different types of
 sexprs.
 
-In LISP lingo, a *form* is an object that can be evaluated. Based on the current
+In Lisp lingo, a *form* is an object that can be evaluated. Based on the current
 state of the AST, there are four different types of forms that it can model:
 
 * **List:** The list form represents a function application. Its elements are

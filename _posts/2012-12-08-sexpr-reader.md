@@ -20,7 +20,7 @@ The previous post discussed the first step of parsing: tokenization. Now I
 want to dive into token parsing. Usually the program that parses the tokens
 into an abstract syntax tree or AST is called a *parser*.
 
-In the context of s-expressions and LISP, it is usually refered to as a
+In the context of s-expressions and Lisp, it is usually refered to as a
 *reader*, so that is the terminology that I will use.
 
 <center>
@@ -61,9 +61,11 @@ outputs that I expect:
 Note that the AST is always an array. The reason for that is that the top
 level of the sexpr can contain many lists like so:
 
-    (foo)
-    (bar)
-    (baz)
+~~~lisp
+(foo)
+(bar)
+(baz)
+~~~
 
 Which would result in:
 

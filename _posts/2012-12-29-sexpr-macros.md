@@ -20,7 +20,7 @@ The interpreter is functioning, it is able to calculate the fibonacci sequence
 recursively. And probably almost anything else you would want to. So what is
 the next step?
 
-We have learnt that LISP programs themself consist of lists. This makes them
+We have learnt that Lisp programs themself consist of lists. This makes them
 extremely easy to parse. But apart from that, we have not really seen the
 action of "code as data". This property is also known as *Homoiconicity*.
 
@@ -35,13 +35,13 @@ the source code before it is compiled. It is a source code transformation. In
 case of C, these macros tend to get very messy, which is mostly due to the
 fact that C is hard to generate code for, especially in a dynamic manner.
 
-In LISP, macros are quite common. In fact many of the things that are
-implemented as special forms in Ilias are macros in other LISP
+In Lisp, macros are quite common. In fact many of the things that are
+implemented as special forms in Ilias are macros in other Lisp
 implementations, and reduce to a very small number of primitive special forms.
 It's a lot easier to generate valid syntax, because the syntax consists
 entirely of lists.
 
-In fact, LISP macros are not plain source transformations. They are AST
+In fact, Lisp macros are not plain source transformations. They are AST
 transformations. This means that you get the fully parsed syntax tree and can
 make changes to it before it gets compiled or evaluated.
 
@@ -77,9 +77,11 @@ The begin function takes a list of arguments and returns the last one. This
 simply allows a series of function calls to be made, and the result of the
 last one to be returned. Like this:
 
-    (begin (foo)
-           (bar)
-           (baz))
+~~~lisp
+(begin (foo)
+       (bar)
+       (baz))
+~~~
 
 That statement will call three functions: `foo`, `bar` and `baz`. And return
 the resulting value from the `baz` call.
@@ -87,10 +89,12 @@ the resulting value from the `baz` call.
 Now, the program with all of its conditional logic will have to do this all
 over the place:
 
-    (if condition?
-        (begin (foo)
-               (bar)
-               (baz)))
+~~~lisp
+(if condition?
+    (begin (foo)
+           (bar)
+           (baz)))
+~~~
 
 It must use `begin` to group the statements due to the way that `if` is
 structured. You cannot use a function for this, because some of the statements
@@ -101,10 +105,12 @@ At some point you may think: Why am I repeating myself? If only the language
 had a `when` operator that has no `else-form` but just executes all arguments
 in sequence. And it would work like this:
 
-    (when condition?
-        (foo)
-        (bar)
-        (baz))
+~~~lisp
+(when condition?
+    (foo)
+    (bar)
+    (baz))
+~~~
 
 With macros, you can add this new operator to the language yourself!
 
@@ -112,8 +118,10 @@ With macros, you can add this new operator to the language yourself!
 
 The way you can add it is by using the `defmacro` special form.
 
-    (defmacro when (condition a b c)
-        (list 'if condition (list 'begin a b c)))
+~~~lisp
+(defmacro when (condition a b c)
+    (list 'if condition (list 'begin a b c)))
+~~~
 
 It takes three arguments:
 
@@ -186,17 +194,21 @@ doing that is by expanding at runtime.
 
 Once the program execution hits this form and evaluates it:
 
-    (when condition?
-        (foo)
-        (bar)
-        (baz))
+~~~lisp
+(when condition?
+    (foo)
+    (bar)
+    (baz))
+~~~
 
 The macro operator expands it to:
 
-    (if condition?
-        (begin (foo)
-               (bar)
-               (baz)))
+~~~lisp
+(if condition?
+    (begin (foo)
+           (bar)
+           (baz)))
+~~~
 
 Then evaluates that and returns the result.
 
@@ -233,9 +245,11 @@ must also be expanded.
 
 For example:
 
-    (defmacro plus (a b) (list '+ a b))
-    (defmacro pl (a b) (list 'plus a b))
-    (pl 1 2)
+~~~lisp
+(defmacro plus (a b) (list '+ a b))
+(defmacro pl (a b) (list 'plus a b))
+(pl 1 2)
+~~~
 
 The third form of `(pl 1 2)` must be expanded once, yielding `(plus 1 2)`. And
 since `plus` is also a macro, it needs to be expanded again, producing the
@@ -285,7 +299,7 @@ are *not* the equivalent of calling `eval` in PHP.
 * Macros do not have to be expanded at runtime. (More on this in an upcoming
   blog post).
 
-* Evaluation in LISP does not mean interpretation. Many implementations will
+* Evaluation in Lisp does not mean interpretation. Many implementations will
   in fact compile the code before running it. Which could be remotely compared
   to opcode caching in PHP.
 

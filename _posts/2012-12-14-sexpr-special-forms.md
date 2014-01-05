@@ -21,7 +21,7 @@ tags: [php]
 
 Ilias is quite powerful at this point. It allows arbitrary variables to be
 defined in PHP. These variables can be functions. These functions can be
-called from within LISP.
+called from within Lisp.
 
 However, there are some fundamental constructs that are missing to make the
 language unstoppable, which once added will inevitably lead to world
@@ -90,8 +90,10 @@ so.
 
 `define` is used to assign a value to a symbol in the environment.
 
-    (define foo 42)
-    foo
+~~~lisp
+(define foo 42)
+foo
+~~~
 
 That's a program of two forms. The first form is a `define` special form that
 defines the symbol *foo* to represent the value *42*. The second form is a
@@ -210,32 +212,42 @@ The term lambda describes an anonymous function. It originally was introduced
 as part of *lambda calculus*, a system for representing computation through
 functions.
 
-In LISP, `lambda` is a special operator that represents a function as a value.
+In Lisp, `lambda` is a special operator that represents a function as a value.
 All functions are anonymous, the only way of naming them is by assigning them
 to a variable using `define`.
 
 Here is a lambda with no arguments that always returns 42:
 
-    (lambda () 42)
+~~~lisp
+(lambda () 42)
+~~~
 
 It could be invoked directly without giving it a name, yielding the return
 value:
 
-    ((lambda () 42))
+~~~lisp
+((lambda () 42))
+~~~
 
 And defined as `the-answer`, it can be called using that name:
 
-    (define the-answer (lambda () 42))
-    (the-answer)
+~~~lisp
+(define the-answer (lambda () 42))
+(the-answer)
+~~~
 
 Here is the identity function, it returns any argument it receives:
 
-    (define identity (lambda (x) x))
+~~~lisp
+(define identity (lambda (x) x))
+~~~
 
 Here is an increment function, it returns the increment of the argument it
 receives:
 
-    (define increment (lambda (x) (+ x 1)))
+~~~lisp
+(define increment (lambda (x) (+ x 1)))
+~~~
 
 The first argument to the `lambda` special operator is a list of symbols
 representing argument names. All the following arguments are forms to be
@@ -302,7 +314,9 @@ else-form is evaluated. The result of the evaluated form is returned.
 
 This is what an example usage looks like:
 
-    (if (= answer 42) 'correct 'wrong)
+~~~lisp
+(if (= answer 42) 'correct 'wrong)
+~~~
 
 The implementation:
 
@@ -328,7 +342,7 @@ class IfOp implements SpecialOp
 
 Easy.
 
-After adding it to the standard environment, it is available from within LISP.
+After adding it to the standard environment, it is available from within Lisp.
 
 ## Fibonacci
 
@@ -339,12 +353,14 @@ fibonacci sequence.
 I know, it's a lame example. But is based on conditional recursion which means
 it is a good test for scoping, naming and lazy evaluation of conditionals.
 
-This is the (terribly inefficient) implementation of `fib` in LISP:
+This is the (terribly inefficient) implementation of `fib` in Lisp:
 
-    (define fib (lambda (n)
-        (if (< n 2)
-            n
-            (+ (fib (- n 1)) (fib (- n 2))))))
+~~~lisp
+(define fib (lambda (n)
+    (if (< n 2)
+        n
+        (+ (fib (- n 1)) (fib (- n 2))))))
+~~~
 
 As you can see, I have added a `-` in addition to the `+` function.
 
@@ -352,7 +368,9 @@ And now, for the very first time in history will we witness special forms...
 
 \**drumroll*\*
 
-    (fib 23)
+~~~lisp
+(fib 23)
+~~~
 
 *And it takes 4 seconds to compute the result which is...*
 

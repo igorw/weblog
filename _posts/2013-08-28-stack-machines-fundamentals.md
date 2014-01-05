@@ -34,7 +34,7 @@ gets incremented and decremented as elements are pushed and popped.
 
 Here is a basic implementation in C:
 
-```c
+~~~c
 int sp = 0;
 double val[MAXVAL];
 
@@ -47,7 +47,7 @@ double pop(void)
 {
     return val[--sp];
 }
-```
+~~~
 
 Many languages already have such a data structure built in. PHP has
 `array_push` and `array_pop` functions and an `SplStack` class. ECMAScript has

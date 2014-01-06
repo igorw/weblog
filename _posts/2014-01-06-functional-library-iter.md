@@ -42,7 +42,7 @@ of it in memory at a time (reducing overall memory consumption).
 > best solution. For example, disk seeks tend to take some time. So batching
 > reads in large enough chunks is still important for overall performance.
 
-Now. One problem is that once you use `foreach`, it will consume the entire
+Now. One problem is that once you use `foreach`, it will start consuming the
 iterator on the spot. And thus you instantly lose the laziness. It is possible
 to retain it though, and I will show you how.
 

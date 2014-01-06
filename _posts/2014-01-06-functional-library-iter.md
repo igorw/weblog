@@ -113,7 +113,8 @@ foreach ($users as $user) {
 
 Have you ever thought to yourself *there must be a better way*?
 
-There is a better way.
+There is a better way.<sup><a id="ft-2-src"></a><a
+href="#ft-2">2</a></sup>
 
 ~~~php
 use function iter\filter;
@@ -216,3 +217,7 @@ functions that are very common in functional languages. I'll list a few:
 
 1. <a id="ft-1"></a>The **use function** awesomeness requires PHP 5.6. You can
    refer to namespaced functions though. <a id="ft-1" href="#ft-1-src">↩</a>
+
+2. <a id="ft-2"></a>This repetition is partially inspired by [Larry
+   Garfield](https://twitter.com/Crell)'s "Functional PHP" talk. <a id="ft-2"
+   href="#ft-2-src">↩</a>

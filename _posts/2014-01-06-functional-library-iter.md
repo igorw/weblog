@@ -42,8 +42,9 @@ of it in memory at a time (reducing overall memory consumption).
 > best solution. For example, disk seeks tend to take some time. So batching
 > reads in large enough chunks is still important for overall performance.
 
-Now. One problem is that once you use `foreach`, you instantly lose the
-laziness. It is possible to retain it though, and I will show you how.
+Now. One problem is that once you use `foreach`, it will consume the entire
+iterator on the spot. And thus you instantly lose the laziness. It is possible
+to retain it though, and I will show you how.
 
 ## Map
 
@@ -117,7 +118,7 @@ There is a better way.
 ~~~php
 use function iter\filter;
 
-$admins = filter('acme\is_admin', $users);
+$admins = filter('project\user\is_admin', $users);
 ~~~
 
 All of the boilerplate is gone. It is now just one single line that describes

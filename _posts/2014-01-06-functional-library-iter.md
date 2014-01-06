@@ -185,7 +185,7 @@ All of the examples above are based on [Nikita
 Popov](https://twitter.com/nikita_ppv)'s most excellent
 [iter](https://github.com/nikic/iter) library.
 
-Is makes heavy use of a new feature introduced in PHP 5.5 by Nikita himself:
+It makes heavy use of a new feature introduced in PHP 5.5 by Nikita himself:
 Generators. Generators are the magic sauce that make everything lazy. You can
 think of them as a sane way of writing iterators by suspending execution.
 

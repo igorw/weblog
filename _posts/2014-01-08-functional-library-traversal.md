@@ -89,7 +89,7 @@ In case you are wondering about the name, it is based on the `get-in` function
 present in [clojure](http://clojure.org).
 
 This library is quite tiny, by design. It solves one small problem. Next time
-you are about to put in a monster `isset` statement, remember `get-in`.
+you are about to put in a monster `isset`, remember `get-in`.
 
 ---
 

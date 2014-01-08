@@ -72,9 +72,10 @@ $baz = get_in($data, ['foo', 'bar', 'baz']);
 All of the duplication is gone. It is now just one single array that describes
 the traversal.
 
-**get-in** is a function takes a associative structure and a list of keys that
-represent the nested traversal. Optionally, you can provide a default value
-for non-existent keys, if none is provided it will return `null` in that case.
+**get-in** is a function that takes an associative structure and a list of
+keys that represent the nested traversal. Optionally, you can provide a
+default value for non-existent keys, if none is provided it will return `null`
+in that case.
 
 <center>
     ![get-in](/img/funlib-traversal/get_in.png)

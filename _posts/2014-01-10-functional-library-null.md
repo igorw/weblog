@@ -214,9 +214,10 @@ consume Option, look at the `Option` class if you're interested.
 
 The above example is based on [Johannes
 Schmitt](https://twitter.com/schmittjoh)'s impressive
-[PhpOption](https://github.com/schmittjoh/php-option) library. The
-implementation appears to be inspired by the option type available in
-[Scala](http://scala-lang.org).
+[PhpOption](https://github.com/schmittjoh/php-option) library. Take a look at
+the [blog post](http://jmsyst.com/blog/simplifying-algorithms-with-options) he
+published yesterday. The implementation of the library appears to be inspired
+by the option type available in [Scala](http://scala-lang.org).
 
 A very common problem in programming is that of null references. We often
 forget to check if a value is null. In dynamically typed languages, we have

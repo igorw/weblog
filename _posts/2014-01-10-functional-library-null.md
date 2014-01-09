@@ -147,11 +147,31 @@ $foo->map('fn');
 Since the function is now being passed in, it will only be called if there
 actually *is* a value. It will only be called if `$foo` is a `Some`.
 
+## Method
+
+Just as a little side-note, the `method` function in the original code sample
+is this little helper (also present in `nikic/iter`):
+
+~~~php
+function method($name)
+{
+    return function ($obj) use ($name) {
+        return $obj->$name();
+    }
+}
+~~~
+
+It creates a callable that will call the given method on any object it
+receives.
+
 ## Get
 
-However, `map` will return a new Option. So in order to get the actual value
-out, you need to use `get` or one of its variants. This means that you can use
-Option in most of the code, and then just call `get` at the very end.
+`map` is used to transform an Option.
+
+However, it will return a new Option object. So in order to get the actual
+value out, you need to use `get` or one of its variants. This means that you
+can use Option in most of the code internally, and then just call `get` at the
+very end.
 
 Going back to the original example, suppose that code were the body of a
 `getAddressTextForId` function. The caller of that function will get an

@@ -158,8 +158,17 @@ containing the transformed value.
 
 ---
 
-In the case of **None**, map will not call the provided function at all. It
-will just return another **None** instead.
+However, if the provided function returns `null`, then instead of **Some** of
+`null` you will get **None**.
+
+<center>
+    ![map some none](/img/funlib-null/map-some-none.png)
+</center>
+
+---
+
+In the case of calling `map` on **None**, map will not call the provided
+function at all. It will just return another **None** instead.
 
 <center>
     ![map none](/img/funlib-null/map-none.png)

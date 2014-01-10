@@ -101,8 +101,8 @@ function find($id)
 }
 ~~~
 
-Now it turns out that such a construction is a rather common thing. So there
-is a shortcut to achieve the same thing.
+Now it turns out that such a construction rather common. So there is a
+shortcut to achieve the same thing.
 
 ~~~php
 use PhpOption\Option;

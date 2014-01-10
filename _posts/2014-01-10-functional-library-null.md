@@ -195,7 +195,7 @@ Therefore, `reject(null)` will turn `null` values into **None**. At least it's
 one way of doing that conversion.
 
 > Note: Another way of dealing with this is to make `getAddress` return a
-> **None** directly and using `flatMap` instead of `map`.
+> **Some** or **None** directly and using `flatMap` instead of `map`.
 
 ## Get
 

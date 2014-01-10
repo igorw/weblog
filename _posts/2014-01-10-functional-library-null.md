@@ -43,7 +43,7 @@ if (!$address) {
     return null;
 }
 
-return $address->renderText();
+return $address->asText();
 ~~~
 
 Have you ever thought to yourself *there must be a better way*?
@@ -53,7 +53,8 @@ There is a better way.
 ~~~php
 return $repo->find($id)
              ->map(method('getAddress'))
-             ->map(method('renderText'));
+             ->reject(null)
+             ->map(method('asText'));
 ~~~
 
 All of the null checks are gone. It is now just one single expression that
@@ -72,7 +73,7 @@ similar to returning `null`. However, because everything is wrapped in an
 
 The previous example needs a bit of explanation. First of all,
 `Repository::find()` is no longer returning `User|null`, it is now returning
-`Some<User>|None`.
+`Option<User>`.
 
 Some and None are subtypes of Option. These are the two possible types that
 an Option can be.
@@ -158,15 +159,6 @@ containing the transformed value.
 
 ---
 
-However, if the provided function returns `null`, then instead of **Some** of
-`null` you will get **None**.
-
-<center>
-    ![map some none](/img/funlib-null/map-some-none.png)
-</center>
-
----
-
 In the case of calling `map` on **None**, map will not call the provided
 function at all. It will just return another **None** instead.
 
@@ -187,12 +179,23 @@ function method($name)
 {
     return function ($obj) use ($name) {
         return $obj->$name();
-    }
+    };
 }
 ~~~
 
 It creates a callable that will call the given method on any object it
 receives.
+
+## Reject
+
+The `reject` call is a negative filter. If the Option's value matches the
+rejected value, it returns **None**.
+
+Therefore, `reject(null)` will turn `null` values into **None**. At least it's
+one way of doing that conversion.
+
+> Note: Another way of dealing with this is to make `getAddress` return a
+> **None** directly and using `flatMap` instead of `map`.
 
 ## Get
 
@@ -254,8 +257,8 @@ The above example is based on [Johannes
 Schmitt](https://twitter.com/schmittjoh)'s impressive
 [PhpOption](https://github.com/schmittjoh/php-option) library. Take a look at
 the [blog post](http://jmsyst.com/blog/simplifying-algorithms-with-options) he
-published yesterday. The implementation of the library appears to be inspired
-by the option type available in [Scala](http://scala-lang.org).
+published yesterday. The implementation of the library is strongly inspired by
+the option type available in [Scala](http://scala-lang.org).
 
 A very common problem in programming is that of null references. We often
 forget to check if a value is null. In dynamically typed languages, we have
@@ -275,4 +278,5 @@ to propagate without any problems.
 ---
 
 The **Option** type is the same thing as the **Maybe** monad in Haskell. If
-you're interested: [Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html).
+you're interested: [Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html),
+[Taking Monads to OOP PHP](http://blog.ircmaxell.com/2013/07/taking-monads-to-oop-php.html).

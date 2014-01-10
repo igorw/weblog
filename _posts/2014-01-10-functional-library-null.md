@@ -202,6 +202,10 @@ Option, and will have to unwrap it.
 $addressText = getAddressTextForId($id)->get();
 ~~~
 
+<center>
+    ![get](/img/funlib-null/get.png)
+</center>
+
 However, if this is a None, you will get a `RuntimeException` with message:
 *None has no value*. In most cases, this is not a very nice way to fail.
 
@@ -212,6 +216,10 @@ a default value to use in case of None.
 $addressText = getAddressTextForId($id)
                 ->getOrElse('No address provided.');
 ~~~
+
+<center>
+    ![get or else](/img/funlib-null/get-or-else.png)
+</center>
 
 `getOrCall`, which takes a function that produces a value in case of None.
 

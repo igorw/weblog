@@ -65,7 +65,7 @@ similar to returning `null`. However, because everything is wrapped in an
 `Option` object, you no longer need to have null checks everywhere.
 
 <center>
-    ![option](/img/funlib-null/option.png)
+    ![map option](/img/funlib-null/map-option.png)
 </center>
 
 ## Some wraps a value
@@ -117,6 +117,10 @@ function find($id)
 
 This is how you produce an Option.
 
+<center>
+    ![produce](/img/funlib-null/produce.png)
+</center>
+
 ## Map
 
 A common way to *consume* an option is to use `map`. If you read the previous
@@ -129,7 +133,7 @@ a container for a bunch of values.
 
 An Option is just a container for an *optional* value. Just as you can map
 over a sequence to create a new sequence, you can map over an Option to create
-a new Option.
+a *new* Option.
 
 A different way of thinking about it is this. Instead of calling a function on
 a value:
@@ -144,8 +148,25 @@ You ask the Option container to apply a function for you:
 $foo->map('fn');
 ~~~
 
-Since the function is now being passed in, it will only be called if there
-actually *is* a value. It will only be called if `$foo` is a `Some`.
+In case of **Some**, `map` takes the value out of the container, runs it
+through the function that was passed in, then returns a new **Some**
+containing the transformed value.
+
+<center>
+    ![map some](/img/funlib-null/map-some.png)
+</center>
+
+---
+
+In the case of **None**, map will not call the provided function at all. It
+will just return another **None** instead.
+
+<center>
+    ![map none](/img/funlib-null/map-none.png)
+</center>
+
+This means you can call `map` on **None** as many times as you want, it will
+just ignore you.
 
 ## Method
 

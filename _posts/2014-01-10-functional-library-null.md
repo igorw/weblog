@@ -115,7 +115,7 @@ function find($id)
 }
 ~~~
 
-That's is how you produce an Option object.
+That's how you produce an Option object.
 
 <center>
     ![produce](/img/funlib-null/produce.png)

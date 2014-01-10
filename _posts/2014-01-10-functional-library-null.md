@@ -125,7 +125,7 @@ That's how you produce an Option object.
 
 A common way to *consume* an option is to use `map`. If you read the previous
 post on iteration you may be confused at this point. Doesn't map refer to
-mapping a function over a sequence?
+mapping a function over a *sequence*?
 
 Well, it turns out that many of the things that apply for sequences can be
 generalized to support other types of containers too. Yes, a sequence is just
@@ -133,7 +133,7 @@ a container for a bunch of values.
 
 An Option is just a container for an *optional* value. Just as you can map
 over a sequence to create a new sequence, you can map over an Option to create
-a *new* Option.
+a new Option.
 
 A different way of thinking about it is this. Instead of calling a function on
 a value:
@@ -175,7 +175,7 @@ function at all. It will just return another **None** instead.
 </center>
 
 This means you can call `map` on **None** as many times as you want, it will
-just ignore you.
+just ignore the calls.
 
 ## Method
 
@@ -198,7 +198,7 @@ receives.
 
 `map` is used to transform an Option.
 
-However, it will return a new Option object. So in order to get the actual
+However, that will return a new Option object. So in order to get the actual
 value out, you need to use `get` or one of its variants. This means that you
 can use Option in most of the code internally, and then just call `get` at the
 very end.

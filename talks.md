@@ -18,7 +18,7 @@ title: talks
 ### Abstract Machines
 
 * Nomad PHP April 2014 (upcoming)
-* PHP Berlin usergroup February 2014
+* Berlin PHP usergroup February 2014
 
 ### ChickenVM
 

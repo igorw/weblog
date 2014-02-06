@@ -15,6 +15,11 @@ title: talks
 
 * ConFoo 2014 (upcoming)
 
+### Abstract Machines
+
+* Nomad PHP April 2014 (upcoming)
+* PHP Berlin usergroup February 2014
+
 ### ChickenVM
 
 * JSZurich usergroup August 2013

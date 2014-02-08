@@ -52,7 +52,7 @@ title: talks
 * ConFoo 2013
 * PHPBenelux 2013
 * TakeOffConf 2013 [[video](http://www.youtube.com/watch?v=MWNcItWuKpI)]
-* PHPNW 2012 [[video](http://blip.tv/phpnw/phpnw12-igor-wiedler-react-event-driven-php-6448332)]
+* PHPNW 2012 [[video](https://www.youtube.com/watch?v=6E074UCJgvA)]
 
 ### Silex Anatomy
 

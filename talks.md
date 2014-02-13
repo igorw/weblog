@@ -17,6 +17,7 @@ title: talks
 
 ### Abstract Machines
 
+* Laracon 2014 (upcoming)
 * Nomad PHP April 2014 (upcoming)
 * Berlin PHP usergroup February 2014
 

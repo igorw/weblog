@@ -67,6 +67,7 @@ Ungrouped:
 * [Gerald Sussman: We Really Don't Know How To Compute!](http://www.infoq.com/presentations/We-Really-Dont-Know-How-To-Compute)
 * [Hal Abelson, Gerald Sussman: Structure and Interpretation of Computer Programs](http://groups.csail.mit.edu/mac/classes/6.001/abelson-sussman-lectures/)
 * [Joshua Bloch: How To Design A Good API and Why it Matters](https://www.youtube.com/watch?v=aAb7hSCtvGw)
+* [Cory Doctorow: The coming war on general computation](https://www.youtube.com/watch?v=HUEvRyemKSg)
 * [Tony Hoare: Null References, The Billion Dollar Mistake](http://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare)
 * [Matthew Flatt: The Racket Way](http://www.infoq.com/presentations/Racket)
 * [Donald Knuth: My advice to young people](https://www.youtube.com/watch?v=75Ju0eM5T2c)

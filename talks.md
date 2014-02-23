@@ -41,7 +41,7 @@ title: talks
 * True North PHP 2013
 * Forum PHP 2013 [[video](https://www.youtube.com/watch?v=s9CC8dKsK3s)]
 * Symfony Live London 2013 [[video](https://www.youtube.com/watch?v=QY8mL6WARIE)]
-* Symfony Live Portland 2013
+* Symfony Live Portland 2013 [[video](https://www.youtube.com/watch?v=edYfS5Ult2o)]
 
 ### Silex: An implementation detail
 

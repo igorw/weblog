@@ -13,12 +13,13 @@ title: talks
 
 ### Using composer correctly
 
-* ConFoo 2014 (upcoming)
+* ConFoo 2014
 
 ### Abstract Machines
 
 * Laracon 2014 (upcoming)
 * Nomad PHP April 2014 (upcoming)
+* ConFoo 2014 (lightning talk)
 * Berlin PHP usergroup February 2014
 
 ### ChickenVM
@@ -37,7 +38,7 @@ title: talks
 
 ### The HttpKernelInterface is a lie
 
-* ConFoo 2014 (upcoming)
+* ConFoo 2014
 * True North PHP 2013
 * Forum PHP 2013 [[video](https://www.youtube.com/watch?v=s9CC8dKsK3s)]
 * Symfony Live London 2013 [[video](https://www.youtube.com/watch?v=QY8mL6WARIE)]

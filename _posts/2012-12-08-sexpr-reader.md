@@ -78,7 +78,7 @@ looks like a number, it will be represented as an integer.
 
 ## Basic reader
 
-The interface of the reader is what you would expect. It has a single *parse*
+The interface of the reader is very straight-forward. It has a single *parse*
 method which takes the token stream as an argument and returns the AST.
 
 Usage:

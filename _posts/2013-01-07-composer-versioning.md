@@ -45,7 +45,7 @@ version.
 
 Unless you are tracking the development of that library very closely, you will
 not notice this until you run `composer update`, it blows up in your face, and
-ruins your day. So obviously referencing branch names directly is not a
+ruins your day. That's why referencing branch names directly is not a
 sustainable solution. Luckily composer is here to help with branch aliases.
 
 ## Branch alias

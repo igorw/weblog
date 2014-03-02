@@ -256,8 +256,8 @@ And that's it, the reader is now correctly parsing quoted values as well.
 
 ## Problems
 
-This implementation is obviously quite naïve, a lot of stuff is missing. The
-biggest problem is the complete lack of error handling.
+This implementation is quite naïve, a lot of stuff is missing. The biggest
+problem is the complete lack of error handling.
 
 A parser should validate its input correctly. It should expect valid follow-up
 tokens to the current one and throw an exception in your face if you feed it

@@ -58,6 +58,7 @@ Ungrouped:
 * [Van Jacobson: The Slow-Start Algorithm](https://www.youtube.com/watch?v=QP4A6L7CEqA)
 * [Jeremie Miller: A P2P Digital Self with TeleHash](http://www.infoq.com/presentations/A-P2P-Digital-Self-with-TeleHash)
 * [Daniel Friedman, William Byrd: Relational Programming in miniKanren](http://www.infoq.com/presentations/miniKanren)
+* [William Byrd: On Logic and Relational Programming, miniKanren](http://www.infoq.com/interviews/byrd-relational-programming-minikanren)
 * [David Nolen: Everything I Have Learned I Have Learned From Someone Else](http://www.infoq.com/presentations/learning-developer)
 * [Matthew Flatt: The Racket Way](http://www.infoq.com/presentations/Racket)
 * [Zed Shaw: The Web Will Die When OOP Dies](https://vimeo.com/43380467)

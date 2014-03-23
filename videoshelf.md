@@ -74,6 +74,7 @@ Ungrouped:
 * [Matthew Flatt: The Racket Way](http://www.infoq.com/presentations/Racket)
 * [Donald Knuth: My advice to young people](https://www.youtube.com/watch?v=75Ju0eM5T2c)
 * [Tom Stuart: Programming with Nothing](http://rubymanor.org/3/videos/programming_with_nothing/)
+* [Kyle Kingsbury: Partitions for Everyone](http://www.infoq.com/presentations/partitioning-comparison)
 * [Jordan Mechner: Making Prince of Persia](https://vimeo.com/53918011)
 * [Barbara Liskov: Programming the Turing Machine](https://www.youtube.com/watch?v=ibRar7sWulM)
 * [Tim Minchin: Graduation Speech](https://www.youtube.com/watch?v=yoEezZD71sc)

@@ -11,6 +11,10 @@ title: talks
     </p>
 </div>
 
+### Concrete Machines
+
+* Berlin PHP usergroup April 2014
+
 ### Using composer correctly
 
 * ConFoo 2014

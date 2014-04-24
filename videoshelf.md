@@ -75,6 +75,7 @@ Ungrouped:
 * [Matthew Flatt: The Racket Way](http://www.infoq.com/presentations/Racket)
 * [Donald Knuth: My advice to young people](https://www.youtube.com/watch?v=75Ju0eM5T2c)
 * [Tom Stuart: Programming with Nothing](http://rubymanor.org/3/videos/programming_with_nothing/)
+* [Michael Bernstein: A Uniﬁed Theory of Garbage Collection](https://www.youtube.com/watch?v=XtUtfARSIv8)
 * [Kyle Kingsbury: Partitions for Everyone](http://www.infoq.com/presentations/partitioning-comparison)
 * [Douglas Hofstadter: What Is a Strange Loop and What Is It Like to Be One?](http://www.infoq.com/presentations/strange-loop-keynote)
 * [Jordan Mechner: Making Prince of Persia](https://vimeo.com/53918011)

@@ -110,3 +110,34 @@ Finishes with building an actual computer from scratch.
 <a href="http://www.charlespetzold.com/code/" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
 
 <span class="clearfix"></span>
+
+<hr>
+
+<div class="book-cover">
+    <img src="/img/books/geb.png">
+</div>
+
+## Gödel, Escher, Bach
+
+*By Douglas Hofstadter*
+
+A beautiful journey through formal systems, levels of abstraction, recursion,
+attempting to describe how consciousness can arise from lower levels. Decent
+introduction to propositional logic. Punny dialogues.
+
+* Strange loops
+* Formal systems
+* Recursion
+* Intelligence
+* Levels of abstraction
+* Meaning
+* Propositional logic
+* The brain
+* Consciousness
+* Computation
+* Genetics
+* Artificial intelligence
+
+<a href="http://www.amazon.com/G%C3%B6del-Escher-Bach-Eternal-Golden/dp/0465026567" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
+
+<span class="clearfix"></span>

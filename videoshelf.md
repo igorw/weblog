@@ -86,3 +86,4 @@ Ungrouped:
 * [The Blit: The first Unix graphical multi-programming terminal](https://www.youtube.com/watch?v=emh22gT5e9k)
 * [Ivan Godard: The Mill CPU Architecture - The Belt](https://www.youtube.com/watch?v=QGw-cy0ylCc)
 * [Dan Piponi: Commutative Monads, Diagrams and Knots](https://vimeo.com/6590617)
+* [Thrown for a Loop: a Carnival of Consciousness](https://vimeo.com/76886746)

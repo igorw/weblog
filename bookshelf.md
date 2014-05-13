@@ -33,6 +33,8 @@ Just some of the things it contains:
 Sequels: [The Seasoned Schemer](http://mitpress.mit.edu/books/seasoned-schemer),
 [The Reasoned Schemer](http://mitpress.mit.edu/books/reasoned-schemer)
 
+<span class="clearfix"></span>
+
 <hr>
 
 <div class="book-cover">
@@ -56,6 +58,8 @@ Introduction to basic algorithms and data structures:
 * Virtual stack machine
 
 <a href="http://cm.bell-labs.com/cm/cs/cbook/" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
+
+<span class="clearfix"></span>
 
 <hr>
 

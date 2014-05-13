@@ -99,8 +99,8 @@ Just a rough sampling of what it covers:
 
 *By Charles Petzold*
 
-How computers work. Explains all the details of how hardware operates with no
-handwaving whatsoever, including a whole bunch of historical information.
+How computers work. Explains all the details of how hardware operates with
+almost no handwaving, including a whole bunch of historical information.
 Finishes with building an actual computer from scratch.
 
 * Binary codes

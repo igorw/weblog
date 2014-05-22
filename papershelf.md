@@ -22,9 +22,9 @@ make this an excellent starting point for building a miniKanren system in a
 non-lisp.
 
 Basically, Dan Friedman spent the last 10 or so years building logic
-programming systems in scheme. The distilled product is μKanren. These are the
-magical few lines of code one must type in order to build a relational
-machine.
+programming systems in scheme. The distilled product (Jason Hemann being the
+distiller) is μKanren. These are the magical few lines of code one must type
+in order to build a relational machine.
 
 <a href="http://webyrd.net/scheme-2013/papers/HemannMuKanren2013.pdf" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Read it</a>
 

@@ -145,3 +145,29 @@ introduction to propositional logic. Punny dialogues.
 <a href="http://www.amazon.com/G%C3%B6del-Escher-Bach-Eternal-Golden/dp/0465026567" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
 
 <span class="clearfix"></span>
+
+<hr>
+
+<div class="book-cover">
+    <img src="/img/books/annotated_turing.png">
+</div>
+
+## The Annotated Turing
+
+*By Charles Petzold and Alan Turing*
+
+A very heavy but authentic description of turing machines and the
+unsolvability to the Entscheidungsproblem. Requires some understanding of
+turing machines and propositional logic to grasp. Lots of little historical
+notes.
+
+* Number theory
+* Turing's machine
+* Universal machine
+* Propositional logic
+* Entscheidungsproblem
+* Equivalence to lambda calculus
+
+<a href="http://www.theannotatedturing.com/" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
+
+<span class="clearfix"></span>

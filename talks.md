@@ -22,7 +22,7 @@ title: talks
 ### Abstract Machines
 
 * Dutch PHP Conference 2014 (upcoming)
-* Laracon 2014 (upcoming)
+* Laracon 2014
 * Nomad PHP April 2014
 * ConFoo 2014 (lightning talk)
 * Berlin PHP usergroup February 2014

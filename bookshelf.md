@@ -167,6 +167,7 @@ notes.
 * Propositional logic
 * Entscheidungsproblem
 * Equivalence to lambda calculus
+* Intuitionistic logic
 
 <a href="http://www.theannotatedturing.com/" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
 

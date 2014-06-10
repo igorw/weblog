@@ -172,3 +172,27 @@ notes.
 <a href="http://www.theannotatedturing.com/" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
 
 <span class="clearfix"></span>
+
+<hr>
+
+<div class="book-cover">
+    <img src="/img/books/unlocking_clubhouse.png">
+</div>
+
+## Unlocking the Clubhouse
+
+*By Jane Margolis and Allan Fisher*
+
+> Boys invent things and girls use things boys invent.
+
+We have a diversity problem. It's a cultural problem. This book sheds some
+light on why women and other minorities are "out of the loop" of computing,
+and how we might fix the leaky pipeline.
+
+While the presented research focuses mostly on the computer science department
+at CMU, a lot of the culture in our industry is an amplified reflection of the
+culture that is forged in schools and universities.
+
+<a href="http://mitpress.mit.edu/books/unlocking-clubhouse" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
+
+<span class="clearfix"></span>

@@ -79,6 +79,7 @@ Ungrouped:
 * [Tom Stuart: Programming with Nothing](http://rubymanor.org/3/videos/programming_with_nothing/)
 * [Michael Bernstein: A Uniﬁed Theory of Garbage Collection](https://www.youtube.com/watch?v=XtUtfARSIv8)
 * [Kyle Kingsbury: Partitions for Everyone](http://www.infoq.com/presentations/partitioning-comparison)
+* [James Mickens: Computers are Sadness, I am the Cure](https://vimeo.com/95066828)
 * [Douglas Hofstadter: What Is a Strange Loop and What Is It Like to Be One?](http://www.infoq.com/presentations/strange-loop-keynote)
 * [Jordan Mechner: Making Prince of Persia](https://vimeo.com/53918011)
 * [Barbara Liskov: Programming the Turing Machine](https://www.youtube.com/watch?v=ibRar7sWulM)

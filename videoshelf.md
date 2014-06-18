@@ -54,6 +54,7 @@ Ungrouped:
 
 * [Jen Myers: Making Software Development Make Sense to Everyone](http://www.infoq.com/presentations/software-development-everyone)
 * [Nathalie Silvanovich: Many Tamagotchis Were Harmed in the Making of this Presentation](https://www.youtube.com/watch?v=WOJfUcCOhJ0)
+* [Camille Fournier: How to Stay in Love with Programming](https://www.youtube.com/watch?v=sc8sc-ELMhA)
 * [Greg Baugues: Devs and Depression](https://www.youtube.com/watch?v=yFIa-Mc2KSk)
 * [Nada Amin, William Byrd: From Greek to Clojure](https://www.youtube.com/watch?v=7kPMFkNm2dw)
 * [Jessica Kerr: Functional Principles for OO Development](https://www.youtube.com/watch?v=tq5SQ4W3gRI)
@@ -78,6 +79,8 @@ Ungrouped:
 * [Donald Knuth: My advice to young people](https://www.youtube.com/watch?v=75Ju0eM5T2c)
 * [Tom Stuart: Programming with Nothing](http://rubymanor.org/3/videos/programming_with_nothing/)
 * [Michael Bernstein: A Uniﬁed Theory of Garbage Collection](https://www.youtube.com/watch?v=XtUtfARSIv8)
+* [Michael Bernstein: Distributed Systems Archeology](https://www.youtube.com/watch?v=Wp08EmQtP44)
+* [Michael Bernstein: The Art of Obsession](https://www.youtube.com/watch?v=yJgwrk6_zGY)
 * [Kyle Kingsbury: Partitions for Everyone](http://www.infoq.com/presentations/partitioning-comparison)
 * [James Mickens: Computers are Sadness, I am the Cure](https://vimeo.com/95066828)
 * [Douglas Hofstadter: What Is a Strange Loop and What Is It Like to Be One?](http://www.infoq.com/presentations/strange-loop-keynote)

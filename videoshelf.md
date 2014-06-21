@@ -55,6 +55,7 @@ Ungrouped:
 * [Jen Myers: Making Software Development Make Sense to Everyone](http://www.infoq.com/presentations/software-development-everyone)
 * [Nathalie Silvanovich: Many Tamagotchis Were Harmed in the Making of this Presentation](https://www.youtube.com/watch?v=WOJfUcCOhJ0)
 * [Camille Fournier: How to Stay in Love with Programming](https://www.youtube.com/watch?v=sc8sc-ELMhA)
+* [Limor Fried: Why do open hardware?](https://www.youtube.com/watch?v=UYRhupdnUcY)
 * [Greg Baugues: Devs and Depression](https://www.youtube.com/watch?v=yFIa-Mc2KSk)
 * [Nada Amin, William Byrd: From Greek to Clojure](https://www.youtube.com/watch?v=7kPMFkNm2dw)
 * [Jessica Kerr: Functional Principles for OO Development](https://www.youtube.com/watch?v=tq5SQ4W3gRI)

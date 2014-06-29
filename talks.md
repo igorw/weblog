@@ -22,7 +22,7 @@ title: talks
 ### Abstract Machines
 
 * Dutch PHP Conference 2014
-* Laracon 2014
+* Laracon 2014 [[video](https://www.youtube.com/watch?v=zu_iFwD8MfI)]
 * Nomad PHP April 2014
 * ConFoo 2014 (lightning talk)
 * Berlin PHP usergroup February 2014

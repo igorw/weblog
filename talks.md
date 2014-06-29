@@ -21,7 +21,7 @@ title: talks
 
 ### Abstract Machines
 
-* Dutch PHP Conference 2014 (upcoming)
+* Dutch PHP Conference 2014
 * Laracon 2014
 * Nomad PHP April 2014
 * ConFoo 2014 (lightning talk)

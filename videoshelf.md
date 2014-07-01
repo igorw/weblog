@@ -84,6 +84,8 @@ Ungrouped:
 * [Michael Bernstein: Distributed Systems Archeology](https://www.youtube.com/watch?v=Wp08EmQtP44)
 * [Michael Bernstein: The Art of Obsession](https://www.youtube.com/watch?v=yJgwrk6_zGY)
 * [Kyle Kingsbury: Partitions for Everyone](http://www.infoq.com/presentations/partitioning-comparison)
+* [Kyle Kingsbury: Jepsen II: Linearizable Boogaloo](https://www.youtube.com/watch?v=XiXZOF6dZuE)
+* [Peter Bailis: Coordination and Consistency in Distributed Databases](https://www.youtube.com/watch?v=_rAdJkAbGls)
 * [Chuck Moore: Programming a 144-computer Chip to Minimize Power](http://www.infoq.com/presentations/power-144-chip)
 * [James Mickens: Computers are Sadness, I am the Cure](https://vimeo.com/95066828)
 * [Douglas Hofstadter: What Is a Strange Loop and What Is It Like to Be One?](http://www.infoq.com/presentations/strange-loop-keynote)

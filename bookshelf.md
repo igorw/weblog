@@ -193,8 +193,8 @@ This case study at CMU showed that by changing culture and mindset, computer
 science education *can* be made more accessible, so that future generations of
 makers will be diverse enough to survive.
 
-We should probably also fix the culture in our industry to actually keep these
-diverse people.
+We should probably also fix the toxic culture in our industry to actually keep
+these diverse people.
 
 <a href="http://mitpress.mit.edu/books/unlocking-clubhouse" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
 

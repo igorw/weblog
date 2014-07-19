@@ -199,3 +199,25 @@ these diverse people.
 <a href="http://mitpress.mit.edu/books/unlocking-clubhouse" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
 
 <span class="clearfix"></span>
+
+<hr>
+
+<div class="book-cover">
+    <img src="/img/books/feminism.png">
+</div>
+
+## Feminism is for Everybody
+
+*By bell hooks*
+
+What is feminism?
+
+> Feminism is a movement to end sexism, sexist exploitation and oppression.
+>
+> Come closer. See how feminism can touch and change your life and all our
+> lives. Come closer and know firsthand what feminist movement is all about.
+> Come closer and you will see: feminism is for everybody.
+
+<a href="http://www.amazon.com/Feminism-Is-Everybody-Passionate-Politics/dp/0896086283" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
+
+<span class="clearfix"></span>

@@ -30,3 +30,27 @@ usable in practice.
 <a href="http://webyrd.net/scheme-2013/papers/HemannMuKanren2013.pdf" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Read it</a>
 
 <span class="clearfix"></span>
+
+<hr />
+
+<div class="book-cover">
+    <img src="/img/papers/propositions-as-types.png">
+</div>
+
+## Propositions as Types
+
+*Philip Wadler*
+
+Logic and computation are very closely linked. There is a correspondence
+between logical propositions and types. This means that proofs are programs
+and the normalisation of proofs is the evaluation of programs.
+
+Wadler gives a history of computation: Church and Turing. Logic: Genzen.
+Intuitionistic logic: Brouwer, Heyting, Kolmogorov.
+
+Finally, propositional logic and the simply typed lambda calculus are
+introduced and the Curry-Howard correspondence manifests itself!
+
+<a href="http://homepages.inf.ed.ac.uk/wadler/papers/propositions-as-types/propositions-as-types.pdf" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Read it</a>
+
+<span class="clearfix"></span>

@@ -60,6 +60,7 @@ Ungrouped:
 * [Greg Baugues: Devs and Depression](https://www.youtube.com/watch?v=yFIa-Mc2KSk)
 * [Nada Amin, William Byrd: From Greek to Clojure](https://www.youtube.com/watch?v=7kPMFkNm2dw)
 * [Jessica Kerr: Functional Principles for OO Development](https://www.youtube.com/watch?v=tq5SQ4W3gRI)
+* [Allie Jones: Weaving and Programming: More Related Than You (Probably) Realize!](https://www.youtube.com/watch?v=8TfKeoxtq2c)
 * [Chris Ford: Functional Composition](http://www.infoq.com/presentations/music-functional-language)
 * [Dan Kaminsky: Introducing the Domain Key Infrastructure](https://www.youtube.com/watch?v=lo5utZoWEgo)
 * [Van Jacobson: The Slow-Start Algorithm](https://www.youtube.com/watch?v=QP4A6L7CEqA)

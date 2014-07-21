@@ -54,3 +54,30 @@ introduced and the Curry-Howard correspondence manifests itself!
 <a href="http://homepages.inf.ed.ac.uk/wadler/papers/propositions-as-types/propositions-as-types.pdf" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Read it</a>
 
 <span class="clearfix"></span>
+
+<hr />
+
+<div class="book-cover">
+    <img src="/img/papers/trust.png">
+</div>
+
+## Reflections on Trusting Trust
+
+*Ken Thompson*
+
+This very beautiful and short paper first presents the possibility of quines:
+self-reproducing programs. It then introduces the idea of evolving a C
+compiler by adding features to the compiler that, once compiled, can be used
+in the source language the compiler is written in, playing with the idea of
+bootstrapping.
+
+Finally, these two ideas come together, when the compiler is attacked and a
+trojan horse is injected into a compiler, which then is able to add itself to
+any future version of the compiler. It is almost as if the compiler has been
+learnt something that is not visible from the outside.
+
+It raises some interesting questions about trusting compilers and CPUs indeed.
+
+<a href="http://www.cs.sunysb.edu/~cse509/p761-thompson.pdf" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Read it</a>
+
+<span class="clearfix"></span>

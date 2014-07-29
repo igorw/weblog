@@ -11,6 +11,10 @@ title: talks
     </p>
 </div>
 
+### Reasoned PHP
+
+* Berlin PHP usergroup August 2014
+
 ### Concrete Machines
 
 * Berlin PHP usergroup April 2014
@@ -36,8 +40,9 @@ title: talks
 * Symfony Zürich usergroup November 2013
 * PHP Québec usergroup July 2013 [[video](http://www.youtube.com/watch?v=RDVtnsoOysE)]
 
-### Introduction to Lisp
+### Lisp
 
+* Laracon Europe 2014
 * ZendCon.eu Uncon 2013
 * Dutch PHP Conference 2013
 

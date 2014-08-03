@@ -221,3 +221,22 @@ What is feminism?
 <a href="http://www.amazon.com/Feminism-Is-Everybody-Passionate-Politics/dp/0896086283" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
 
 <span class="clearfix"></span>
+
+<hr>
+
+<div class="book-cover">
+    <img src="/img/books/logicomix.png">
+</div>
+
+## Logicomix
+
+*By Apostolos Doxiadis and Christos Papadimitriou*
+
+A graphic novel telling the tale of Bertrand Russel's journey through early
+20th century mathematical logic.
+
+It is indeed an epic search for truth.
+
+<a href="http://www.logicomix.com/" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
+
+<span class="clearfix"></span>

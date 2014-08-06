@@ -230,7 +230,7 @@ memberᵒ($x, $list)
 ~~~
 
 We can now ask this relation questions, such as "is `2` a member of the list
-`[1, 2, 3]`?", to which it will respond whith `_.0` which is a strange way of
+`[1, 2, 3]`?", to which it will respond with `_.0` which is a strange way of
 saying yes.
 
 ~~~php

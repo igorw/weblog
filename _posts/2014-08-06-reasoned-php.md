@@ -60,7 +60,7 @@ the basis for most of early 20th century mathematical work.
     ![boole, frege, de morgan](/img/reasoned-php/boole-frege-demorgan.png)
 </center>
 
-In 1935 century, Gentzen created not one, but two new formulations of
+In 1935, Gentzen created not one, but two new formulations of
 logic<sup><a id="ft-1-src"></a><a href="#ft-1">1</a></sup>:
 Natural deduction and the sequent calculus. It can be described in terms of a
 few simple rules.

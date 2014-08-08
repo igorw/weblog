@@ -189,7 +189,8 @@ Another way to think about it is a bi-directional pattern match.
 ## Reasoned <span style="font-size: 0.6em;">PHP</span>
 
 This brings us to a system that I have been working on. It is called
-**Reasoned <span style="font-size: 0.7em;">PHP</span>**.
+**<a href="https://github.com/igorw/reasoned-php">Reasoned
+<span style="font-size: 0.7em;">PHP</span></a>**.
 
 Reasoned <span style="font-size: 0.7em;">PHP</span> is a logic programming
 system written in PHP. It is a port of [miniKanren](http://minikanren.org)
@@ -396,6 +397,12 @@ called *µ*Kanren.
 It consists of [~50 lines of code](https://github.com/jasonhemann/microKanren/blob/master/microKanren.scm).
 
 **It's amazing how little code is needed to build a logic programming system.**
+
+<center>
+    <a href="https://github.com/igorw/reasoned-php" class="btn btn-large btn-inverse" style="font-size: 1.3em;">
+        Go check out Reasoned <span style="font-size: 0.7em;">PHP</span>
+    </a>
+</center>
 
 ---
 

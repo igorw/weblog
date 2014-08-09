@@ -81,3 +81,26 @@ It raises some interesting questions about trusting compilers and CPUs indeed.
 <a href="http://www.cs.sunysb.edu/~cse509/p761-thompson.pdf" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Read it</a>
 
 <span class="clearfix"></span>
+
+<hr />
+
+<div class="book-cover">
+    <img src="/img/papers/lisp.png">
+</div>
+
+## Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I
+
+*John McCarthy*
+
+The incredible paper that introduced lisp.
+
+It defines functions, conditional expressions and basic data structure
+elements, then builds the lisp system from the ground up. The highlight is a
+meta-circular interpreter: A lisp interpreter written in lisp.
+
+The last few pages deal with implementation notes and casually describe mark-
+and-sweep garbage collection.
+
+<a href="http://www-formal.stanford.edu/jmc/recursive.pdf" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Read it</a>
+
+<span class="clearfix"></span>

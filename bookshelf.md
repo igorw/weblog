@@ -219,6 +219,7 @@ What is feminism?
 > Come closer and you will see: feminism is for everybody.
 
 <a href="http://www.amazon.com/Feminism-Is-Everybody-Passionate-Politics/dp/0896086283" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
+<a href="http://excoradfeminisms.files.wordpress.com/2010/03/bell_hooks-feminism_is_for_everybody.pdf" class="btn btn-large btn-success" style="width: 100px; margin-left: 10px;"><span class="icon-bookmark icon-white"></span> PDF</a>
 
 <span class="clearfix"></span>
 

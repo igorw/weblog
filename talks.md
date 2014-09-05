@@ -42,7 +42,7 @@ title: talks
 
 ### Lisp
 
-* Laracon Europe 2014
+* Laracon Europe 2014 [[video](https://www.youtube.com/watch?v=FRaNUsiD_BA)]
 * ZendCon.eu Uncon 2013
 * Dutch PHP Conference 2013
 

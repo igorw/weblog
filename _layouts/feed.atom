@@ -14,8 +14,8 @@
     {% for post in posts %}
     <entry>
         <title>{{ post.title | strip_html }}</title>
-        <link rel="alternate" type="text/html" href="{{ site.url }}{% if post.remote_url %}{{ post.remote_url }}{% else %}{{ post.url }}{% endif %}"/>
-        <id>{% if post.remote_url %}{{ post.remote_url }}{% else %}{{ post.url }}{% endif %}</id>
+        <link rel="alternate" type="text/html" href="{% if post.remote_url %}{{ post.remote_url }}{% else %}{{ site.url }}{{ post.url }}{% endif %}"/>
+        <id>{% if post.remote_url %}{{ post.remote_url }}{% else %}{{ site.url }}{{ post.url }}{% endif %}</id>
         <updated>{{ site.time | date_to_xmlschema }}</updated>
         <author>
             <name>Igor Wiedler</name>

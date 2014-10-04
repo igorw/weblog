@@ -110,7 +110,7 @@ Another benefit is that printing a whitespace program takes no ink at all! It's 
 
 In order to read a whitespace program, you simply read between the lines. Literally.
 
-## Instructions
+## Stack
 
 A stack machine is a loop with a switch statement inside. The switch statement switches between instructions. The instructions modify the stack.
 
@@ -118,7 +118,11 @@ A stack is a data structure with two operations: push and pop. Push adds stuff t
 
 The stack operations in whitespace allow you to do additional operations like duplicate, index into, and swap.
 
+## Arithmetic
+
 Once you add arithmetic operations, you can do calculations. This type of stack machine is also known as an RPN calculator.
+
+## Heap
 
 In addition to the stack, whitespace also offers a heap. The heap is a block of memory that can be indexed into. You can store values at arbitrary locations, and fetch data out as you need it.
 
@@ -127,6 +131,8 @@ It's a key-value store.
 <center>
     <img src="/img/ws/register.gif">
 </center>
+
+## Control flow
 
 But there are two really important parts missing. The first is control flow. Without control flow, this machine is not yet turing complete. That means that it will just run through the instructions linearly until it reaches the end, without any chance of going back. Being able to go back is part of what makes programs interesting in the first place!
 
@@ -141,6 +147,8 @@ Whitespace allows declaring labels and then jumping to said labels, conditionall
 <center>
     <img src="/img/ws/goto.gif">
 </center>
+
+## I/O
 
 The last missing piece is I/O. Without input/output instructions, the VM will just generate a lot of hot air. Which is awesome for cold winter days, but not very useful, as the computations are not observable.
 

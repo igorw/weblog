@@ -63,6 +63,7 @@ Ungrouped:
 * [Jessica Kerr: Functional Principles for OO Development](https://www.youtube.com/watch?v=tq5SQ4W3gRI)
 * [Allie Jones: Weaving and Programming: More Related Than You (Probably) Realize!](https://www.youtube.com/watch?v=8TfKeoxtq2c)
 * [Jenn Schiffer: What's the Harm In Sorting: Sanitizing Inputs For More Optimized JS](https://www.youtube.com/watch?v=pj4U_W0OFoE)
+* [Katie McCaffrey: Halo 4: High Demand with Low Latency and High Availability](https://www.youtube.com/watch?v=gAaXM96DNlM)
 * [Chris Ford: Functional Composition](http://www.infoq.com/presentations/music-functional-language)
 * [Chris Ford: The Hitchhiker's Guide to the Curry-Howard Correspondence](https://vimeo.com/100976695)
 * [Dan Kaminsky: Introducing the Domain Key Infrastructure](https://www.youtube.com/watch?v=lo5utZoWEgo)

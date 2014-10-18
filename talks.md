@@ -11,6 +11,11 @@ title: talks
     </p>
 </div>
 
+### End the war on tabs
+
+* Berlin PHP usergroup October 2014
+* PHPNW Uncon 2014
+
 ### Reasoned PHP
 
 * Berlin PHP usergroup August 2014

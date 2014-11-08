@@ -80,7 +80,7 @@ When you compile a C program, there is an entire compiler toolchain doing things
 
 There are different compilers, such as **gcc** or **clang**. gcc aka the GNU Compiler Collection, is probably the most widely used.
 
-One step in the compilation process is translating the high-level language (e.g. C, yeah they call that "high-level", whatever) into **assembly language**. Note that this is not yet executable machine code. It is the human readable equivalent of machine code though, that is then compiled. Also, linkers do some magic and stuff.
+One step in the compilation process is translating the high-level language (e.g. C, yeah they call that "high-level", whatever) into **assembly language**. Note that this is not yet executable machine code. It is the human readable equivalent of machine code though, that is then assembled. Also, linkers do some magic and stuff.
 
 You can get gcc to dump the assembly by providing the `-S` option. So let's try this with a program that simulates the bf `+` instruction.
 

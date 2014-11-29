@@ -17,7 +17,7 @@ We have learned that an RPN calculator is a little computer. The instructions yo
 
 Luckily, it's quite easy to introduce such an instruction to the existing machine.
 
-## Character format
+## Characters
 
 But before we can do so, we need to decide what format the characters should be stored in. This is known as a character set, and a very common one is ASCII. It stores one character per byte. Basically, any character will be represented by a number between 0 and 128.
 
@@ -32,7 +32,7 @@ h   e   l   l   o   ,     w   o   r   l   d   \n
 
 See the full list of available characters, please check [the standard](http://www.unicode.org/charts/PDF/U0000.pdf).
 
-## Output instruction
+## Output
 
 So let us introduce a new instruction that will pop a number off the stack and output its ASCII representation. The instruction will be called `.`, and placing it in a program will allow it to be executed.
 

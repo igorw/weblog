@@ -23,7 +23,8 @@ tags: []
 
 [fundamentals](/2013/08/28/stack-machines-fundamentals.html) <<
 [**rpn-calculator**](/2013/12/02/stack-machines-rpn.html) <<
-[shunting-yard](/2013/12/03/stack-machines-shunting-yard.html)
+[shunting-yard](/2013/12/03/stack-machines-shunting-yard.html) <<
+[io](/2013/12/03/stack-machines-io.html)
 
 A very simple form of stack machine is a so-called RPN calculator. It is quite
 easy to understand and implement, and uses the same model that is used by most
@@ -199,4 +200,5 @@ power. It is comparable to a pushdown automaton.
 
 [fundamentals](/2013/08/28/stack-machines-fundamentals.html) <<
 [**rpn-calculator**](/2013/12/02/stack-machines-rpn.html) <<
-[shunting-yard](/2013/12/03/stack-machines-shunting-yard.html)
+[shunting-yard](/2013/12/03/stack-machines-shunting-yard.html) <<
+[io](/2013/12/03/stack-machines-io.html)

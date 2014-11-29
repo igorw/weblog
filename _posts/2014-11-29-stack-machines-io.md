@@ -72,7 +72,9 @@ $code = '104 . 101 . 108 . 108 . 111 . 44 . 32 . 119 . 111 . 114 . 108 . 100 . 1
 $ops = explode(' ', $code);
 ~~~
 
-Quite a lot of instructions are needed. One output instruction per character. But it works! It ouputs "hello, world"!
+Quite a lot of instructions are needed. One output instruction per character. But it works!
+
+It ouputs: <em>"hello, world"</em>!
 
 ## Input
 
@@ -85,3 +87,10 @@ This is left as an exercise to the reader.
 <span style="background-color: yellow;">
     Adding I/O instructions to an RPN calculator allows it to interact with the Real World (tm).
 </span>
+
+---
+
+[fundamentals](/2013/08/28/stack-machines-fundamentals.html) <<
+[rpn-calculator](/2013/12/02/stack-machines-rpn.html) <<
+[shunting-yard](/2013/12/03/stack-machines-shunting-yard.html) <<
+[**io**](/2013/12/03/stack-machines-io.html)

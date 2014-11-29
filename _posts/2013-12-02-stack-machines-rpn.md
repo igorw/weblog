@@ -122,7 +122,7 @@ function execute(array $ops)
 
     foreach ($ops as $op) {
         if (is_numeric($op)) {
-            $stack->push((float) $op);
+            $stack->push((int) $op);
             continue;
         }
 

@@ -11,6 +11,12 @@ title: talks
     </p>
 </div>
 
+## Cute Little Interpreters (workshop)
+
+* PHPBenelux 2015
+* PHPNW Hackathon 2014
+* Dutch PHP Conference Hackathon 2014
+
 ### End the war on tabs
 
 * Berlin PHP usergroup October 2014

@@ -13,7 +13,7 @@ tags: []
 [jumps](/2014/11/30/stack-machines-jumps.html) <<
 [**conditionals**](/2014/12/01/stack-machines-conditionals.html)
 
-In previous posts, we have seen that stack machines can be extended with I/O and unconditional jumps to create infinite loops. However, it is not possible to break out of those loops.
+In previous posts, we have seen that stack machines can be extended with I/O and unconditional jumps to create infinite loops. However, it is not possible to break out of those loops. What a vicious cycle indeed.
 
 We will now take a look at conditional branching as a way of solving this issue, and creating many new ones.
 
@@ -26,10 +26,15 @@ The conditional jump is the decision maker, the control structure responsible fo
 A conditional jump will only perform a jump if a certain condition is met. The first such conditional jump instruction is **jump if zero**, also known as `jz`. It will pop a value from the stack, and if that value is zero, jump. Otherwise, it will fall through.
 
 <center>
-    <img src="/img/stack-machine-conditionals/jz-arrows.png">
+    <p><img src="/img/stack-machine-conditionals/jz.gif"></p>
+    <p><em>`jz`, Jay-Z... Get it? I'll show myself out.</em></p>
 </center>
 
-The above is a typical **do while** loop.
+And here we have a typical **do while** loop:
+
+<center>
+    <img src="/img/stack-machine-conditionals/jz-arrows.png">
+</center>
 
 Other conditional branching operations include: **jump if not zero**, **jump if equal**, **jump if not equal**, and many more.
 

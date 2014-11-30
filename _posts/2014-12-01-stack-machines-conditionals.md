@@ -80,6 +80,8 @@ It is quite easy to make this jump conditional based on a popped value:
         continue;
     }
 
+It is literally the same as `jmp`, with an added `if` statement!
+
 Here is another gif, for your viewing pleasure:
 
 <center>

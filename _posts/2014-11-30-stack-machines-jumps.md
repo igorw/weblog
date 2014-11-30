@@ -278,3 +278,5 @@ Here is the full code for a stack machine with pre-processed labels and non-cond
             // ...
         }
     }
+
+But we both know you're only here for the gifs.

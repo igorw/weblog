@@ -19,7 +19,7 @@ tags: []
 
     <p>We have seen that stack machines can be extended with I/O, enabling them to talk back at us pesky humans.</p>
 
-    <p>We shall now make a huge leap by introducing new feature: <strong>Jumps</strong>!</p>
+    <p>We shall now make a huge leap by introducing a new feature: <strong>Jumps</strong>!</p>
 
     <code>jmp(main)</code>
 </div>

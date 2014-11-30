@@ -10,7 +10,8 @@ tags: []
 [rpn-calculator](/2013/12/02/stack-machines-rpn.html) <<
 [shunting-yard](/2013/12/03/stack-machines-shunting-yard.html) <<
 [**io**](/2014/11/29/stack-machines-io.html) <<
-[jumps](/2014/11/30/stack-machines-jumps.html)
+[jumps](/2014/11/30/stack-machines-jumps.html) <<
+[conditionals](/2014/12/01/stack-machines-conditionals.html)
 
 The RPN calculator (see [previous post](/2013/12/02/stack-machines-rpn.html)) allows you to evaluate arithmetical expressions. Once the end of the instruction stream is reached, the top of the stack is returned.
 
@@ -95,4 +96,5 @@ This is left as an exercise to the reader.
 [rpn-calculator](/2013/12/02/stack-machines-rpn.html) <<
 [shunting-yard](/2013/12/03/stack-machines-shunting-yard.html) <<
 [**io**](/2014/11/29/stack-machines-io.html) <<
-[jumps](/2014/11/30/stack-machines-jumps.html)
+[jumps](/2014/11/30/stack-machines-jumps.html) <<
+[conditionals](/2014/12/01/stack-machines-conditionals.html)

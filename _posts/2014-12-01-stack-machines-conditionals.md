@@ -105,14 +105,9 @@ It can be done. First of all, all characters will be stored on the stack. Becaus
         jmp(loop)
     label(end)
 
-Which can be considered more or less equivalent to:
+This loop will output the characters on the stack until it hits a `0`, at which point the `jz` will jump out of the loop to the `end` label.
 
-~~~php
-$hello = [0, 10, 100, 108, 114, 111, 119, 32, 44, 111, 108, 108, 101, 104];
-while (end($hello)) {
-    echo chr(array_pop($hello));
-}
-~~~
+It is equivalent to a **while** loop, and as a matter of fact, compilers will compile **while** statements to assembly of roughly the same shape as the above.
 
 ## Implications
 

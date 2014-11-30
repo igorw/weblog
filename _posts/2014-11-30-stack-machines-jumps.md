@@ -10,7 +10,8 @@ tags: []
 [rpn-calculator](/2013/12/02/stack-machines-rpn.html) <<
 [shunting-yard](/2013/12/03/stack-machines-shunting-yard.html) <<
 [io](/2014/11/29/stack-machines-io.html) <<
-[**jumps**](/2014/11/30/stack-machines-jumps.html)
+[**jumps**](/2014/11/30/stack-machines-jumps.html) <<
+[conditionals](/2014/12/01/stack-machines-conditionals.html)
 
 <code>label(start)</code>
 
@@ -227,7 +228,8 @@ Conditional branching will change everything once again, but for now let us enjo
 [rpn-calculator](/2013/12/02/stack-machines-rpn.html) <<
 [shunting-yard](/2013/12/03/stack-machines-shunting-yard.html) <<
 [io](/2014/11/29/stack-machines-io.html) <<
-[**jumps**](/2014/11/30/stack-machines-jumps.html)
+[**jumps**](/2014/11/30/stack-machines-jumps.html) <<
+[conditionals](/2014/12/01/stack-machines-conditionals.html)
 
 ---
 

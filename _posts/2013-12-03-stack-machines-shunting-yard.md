@@ -18,7 +18,7 @@ tags: []
 [fundamentals](/2013/08/28/stack-machines-fundamentals.html) <<
 [rpn-calculator](/2013/12/02/stack-machines-rpn.html) <<
 [**shunting-yard**](/2013/12/03/stack-machines-shunting-yard.html) <<
-[io](/2013/12/03/stack-machines-io.html)
+[io](/2014/11/29/stack-machines-io.html)
 
 The RPN calculator (see previous post) was quite easy to implement, but in
 order to use it, everything must be written backwards. Re-gaining infix
@@ -294,4 +294,4 @@ entry to `$operators` and an implementation to the `switch` statement in
 [fundamentals](/2013/08/28/stack-machines-fundamentals.html) <<
 [rpn-calculator](/2013/12/02/stack-machines-rpn.html) <<
 [**shunting-yard**](/2013/12/03/stack-machines-shunting-yard.html) <<
-[io](/2013/12/03/stack-machines-io.html)
+[io](/2014/11/29/stack-machines-io.html)

@@ -30,7 +30,7 @@ A conditional jump will only perform a jump if a certain condition is met. The f
     <p><em>`jz`, Jay-Z... Get it? I'll show myself out.</em></p>
 </center>
 
-And here we have a typical **do while** loop:
+Here we have a typical **do while** loop, implemented using `jz`:
 
 <center>
     <img src="/img/stack-machine-conditionals/jz-arrows.png">

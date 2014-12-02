@@ -14,7 +14,7 @@ tags: []
 [conditionals](/2014/12/01/stack-machines-conditionals.html) <<
 [**comments**](/2014/12/02/stack-machines-comments.html)
 
-Most extensions to la stack machina so far have been to the execution. But there are also some improvements that can be made to the parser.
+Most extensions to la deus stack machina so far have been to the execution engine. But there are also some improvements that can be made to the parser.
 
 ## "Parser"
 

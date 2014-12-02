@@ -36,6 +36,8 @@ Once a procedure has completed its task, it is able to **return** control back t
 
 The anatomy of a procedure call will vary by language, operating system and CPU architecture. There will usually be standard conventions for the instructions involved in performing them, known as **calling conventions**.
 
+Calling conventions have everything to do with how 
+
 ## Summary
 
 <span style="background-color: yellow;">

@@ -11,7 +11,8 @@ tags: []
 [shunting-yard](/2013/12/03/stack-machines-shunting-yard.html) <<
 [io](/2014/11/29/stack-machines-io.html) <<
 [jumps](/2014/11/30/stack-machines-jumps.html) <<
-[conditionals](/2014/12/01/stack-machines-conditionals.html)
+[conditionals](/2014/12/01/stack-machines-conditionals.html) <<
+[comments](/2014/12/02/stack-machines-comments.html)
 
 This series will explore design and implementation of virtual stack machines.
 That is, virtual machines whose operations are based on a stack. This post
@@ -111,4 +112,5 @@ popped from the stack and returned.
 [shunting-yard](/2013/12/03/stack-machines-shunting-yard.html) <<
 [io](/2014/11/29/stack-machines-io.html) <<
 [jumps](/2014/11/30/stack-machines-jumps.html) <<
-[conditionals](/2014/12/01/stack-machines-conditionals.html)
+[conditionals](/2014/12/01/stack-machines-conditionals.html) <<
+[comments](/2014/12/02/stack-machines-comments.html)

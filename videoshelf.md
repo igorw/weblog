@@ -52,12 +52,14 @@ Great Minds:
 
 Ungrouped:
 
+* [Nada Amin: Programming Should Eat Itself](https://www.youtube.com/watch?v=KDchFEpJV7o)
 * [Jen Myers: Making Software Development Make Sense to Everyone](http://www.infoq.com/presentations/software-development-everyone)
 * [Nathalie Silvanovich: Many Tamagotchis Were Harmed in the Making of this Presentation](https://www.youtube.com/watch?v=WOJfUcCOhJ0)
 * [Camille Fournier: How to Stay in Love with Programming](https://www.youtube.com/watch?v=sc8sc-ELMhA)
 * [Camille Fournier: ZooKeeper for the Skeptical Architect](http://www.infoq.com/presentations/zookeeper-use-case)
 * [Limor Fried: Electronics and Computer Science](https://www.youtube.com/watch?v=LLaDIEr8cWE)
 * [Limor Fried: Why do open hardware?](https://www.youtube.com/watch?v=UYRhupdnUcY)
+* [Jean Yang: Axiomatic Basis for Computer Programming](https://www.youtube.com/watch?v=KDchFEpJV7o)
 * [Greg Baugues: Devs and Depression](https://www.youtube.com/watch?v=yFIa-Mc2KSk)
 * [Nada Amin, William Byrd: From Greek to Clojure](https://www.youtube.com/watch?v=7kPMFkNm2dw)
 * [Jessica Kerr: Functional Principles for OO Development](https://www.youtube.com/watch?v=tq5SQ4W3gRI)

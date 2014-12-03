@@ -12,7 +12,8 @@ tags: []
 [io](/2014/11/29/stack-machines-io.html) <<
 [**jumps**](/2014/11/30/stack-machines-jumps.html) <<
 [conditionals](/2014/12/01/stack-machines-conditionals.html) <<
-[comments](/2014/12/02/stack-machines-comments.html)
+[comments](/2014/12/02/stack-machines-comments.html) <<
+[calls](/2014/12/03/stack-machines-calls.html)
 
 <code>label(start)</code>
 
@@ -231,7 +232,8 @@ Conditional branching will change everything once again, but for now let us enjo
 [io](/2014/11/29/stack-machines-io.html) <<
 [**jumps**](/2014/11/30/stack-machines-jumps.html) <<
 [conditionals](/2014/12/01/stack-machines-conditionals.html) <<
-[comments](/2014/12/02/stack-machines-comments.html)
+[comments](/2014/12/02/stack-machines-comments.html) <<
+[calls](/2014/12/03/stack-machines-calls.html)
 
 ---
 

@@ -12,7 +12,8 @@ tags: []
 [io](/2014/11/29/stack-machines-io.html) <<
 [jumps](/2014/11/30/stack-machines-jumps.html) <<
 [**conditionals**](/2014/12/01/stack-machines-conditionals.html) <<
-[comments](/2014/12/02/stack-machines-comments.html)
+[comments](/2014/12/02/stack-machines-comments.html) <<
+[calls](/2014/12/03/stack-machines-calls.html)
 
 In previous posts, we have seen that stack machines can be extended with I/O and unconditional jumps to create infinite loops. However, it is not possible to break out of those loops. What a vicious cycle indeed.
 
@@ -145,4 +146,5 @@ The conditional jump goes to infinity, but only sometimes. This makes programs u
 [io](/2014/11/29/stack-machines-io.html) <<
 [jumps](/2014/11/30/stack-machines-jumps.html) <<
 [**conditionals**](/2014/12/01/stack-machines-conditionals.html) <<
-[comments](/2014/12/02/stack-machines-comments.html)
+[comments](/2014/12/02/stack-machines-comments.html) <<
+[calls](/2014/12/03/stack-machines-calls.html)

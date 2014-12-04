@@ -16,25 +16,60 @@ tags: []
 [calls](/2014/12/03/stack-machines-calls.html) <<
 [**variables**](/2014/12/04/stack-machines-variables.html)
 
-How come you have a programming language without variables? And let's admit it, the thing you send to the VM might as well be a programming language at this point. So... variables?
+The virtual machine that has been implemented so far is limited in storage, because the only data structure is a stack. While the stack can grow infinitely large, it is only possible to access the top element. There is no way to index into it.
 
-What might it take to add variables to a stack machine?
+We will introduce a notion of variables that are stored separately from the data stack.
 
-## Allocation
+## What is a variable?
 
-Allocation I hear you say? I do not care. Just give me variables god damnit. Well, In this case, we will simply put them somewhere. Stack? Heap? I don't know. Let's just add variables and see what happens.
+A variable is a name for some location in memory. This sounds super similar to labels, and as a matter of fact, variables are often compiled to labels.
 
-## Variables
+We will however look at variables as a higher level concept. A variable is a named container. It contains a value, and this value can change over time.
 
-What is a variable even? A variable is a name for a location in memory. A variable refers to some space. It names a value, and that value may change over time. The value lives somewhere in memory, and this memory location is somewhere.
+The value of a variable can be read and written. There are **load** and **store** commands.
 
-Okay, so let's just go with some hash map:
+## Load & Store
+
+In this first iteration, variables will be global and shared. There will be no explicit allocation of space. Variables will be dynamically allocated, once a **store** instruction is executed.
+
+To store a value, we will introduce a `!var(varname)` instruction. It takes the name of the variable to store to. It pops a value from the stack and stores it.
+
+    42 !var(answer)
+
+To read a value, we will introduce a `var(varname)` instruction. It pushes the value of the variable into the stack.
+
+    var(answer)
+
+## Alphabet
+
+To illustrate how variables can be used to make programs easier to understand, here is a program that prints all letters of the alphabet:
+
+    # i = 97
+    # ascii(97) is a
+    97 !var(i)
+
+    label(loop)
+        # print i
+        # i++
+        # jump if i == 123
+        # ascii(122) is z
+        var(i) .
+        var(i) 1 + !var(i)
+        var(i) 123 -
+        jnz(loop)
+
+    # print \n
+    10 .
+
+## Implementation
+
+Variables are named values. They will be stored separately from the data stack. So we will just create a separate hash map that stores all vars.
 
 ~~~php
 $vars = [];
 ~~~
 
-How about an instruction to set a variable.
+The **store** instruction pops a value from the stack and stores it in the hash map.
 
 ~~~php
 if (preg_match('/^!var\((.+)\)$/', $op, $match)) {
@@ -44,9 +79,7 @@ if (preg_match('/^!var\((.+)\)$/', $op, $match)) {
 }
 ~~~
 
-Ok, so with `val !var(foo)` it is possible to set a variable.
-
-Now let's try to read the value of a variable:
+The **load** instruction looks up the value from the hash map and push it onto the data stack.
 
 ~~~php
 if (preg_match('/^var\((.+)\)$/', $op, $match)) {
@@ -56,14 +89,28 @@ if (preg_match('/^var\((.+)\)$/', $op, $match)) {
 }
 ~~~
 
-So...
+That is all we need for now.
+
+## Print numbers literally
+
+For the next example program, we will need a way to print a number (as opposed to the ascii value of a number). The instruction to do that will be called `.num`.
+
+It just pops a number from the stack and outputs it:
+
+~~~php
+switch ($op) {
+    // ...
+    case '.num':
+        echo $stack->pop();
+        break;
+}
+~~~
 
 ## Example
 
-Now that We Have Seen Some Code, let's look at some actual usage examples. We can set vars that take a value from the stack, and read values that put stuff on the stack.
+We will now look at a slightly more complicated program, namely a fibonacci sequence generator. This will be an iterative implementation.
 
-As a matter of fact, this is a huge relief, because before this we had to play messy games with `dup`. Now we can always get values from the variables directly:
-
+It uses four variables that change over time.
 
     # define vars
     0 !var(i)
@@ -97,33 +144,30 @@ As a matter of fact, this is a huge relief, because before this we had to play m
 
     jmp(next)
 
-This is an iterative algorithm that calculates and outputs the fibonacci sequence (`.num` outputs the top of the stack as a number). Which as we all know, is the reason why programming was invented.
-
-PS: It never ends!!!
+This program is more or less equivalent to a dog race, in the same sense that it will determine the 1475's fibonacci number to be **INF** [∞].
 
 <center>
-    <img src="/img/stack-machine-variables/dogs.gif">
+    <p><img src="/img/stack-machine-variables/dogs.gif"></p>
+    <p><em>PS: It never ends!!!</em></p>
 </center>
 
 ## Globals
 
-Oh shit, these variables are global! That sucks! What could we possibly do about it?
+These variables are global. The side-effects of global variables are sometimes also referred to as "spooky action at a distance".
 
-There will be a spooky action at a distance for sure! Einstein said so. Well there is a solution.
+However, if the machine in question does not support calls, then everything is global. Or rather, everything will be local. Thus no side-effects will occur.
 
 <center>
     <p><img src="/img/stack-machine-variables/scary.gif"></p>
-    <p><em>Credits to Andrea Faulds for the spooky.gif</em></p>
+    <p><em>Credits to <a href="https://twitter.com/AndreaFaulds">@AndreaFaulds</a> for the spooky.gif</em></p>
 </center>
 
-The solution of course is to reduce the distance. That way the spooky action will no longer be at a distance.
-
-If you only have one single function, all variables will be local. Thus no side-effects will occur.
+**Side-note:** *We are approaching turing completeness.*
 
 ## Summary
 
 <span style="background-color: yellow;">
-    Adding variables to and RPN calculator makes it much easier to operate, but don't tell anyone.
+    Adding variables to an RPN calculator enables indexed storage and retrieval of values.
 </span>
 
 ---

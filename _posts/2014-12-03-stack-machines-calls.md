@@ -13,7 +13,8 @@ tags: []
 [jumps](/2014/11/30/stack-machines-jumps.html) <<
 [conditionals](/2014/12/01/stack-machines-conditionals.html) <<
 [comments](/2014/12/02/stack-machines-comments.html) <<
-[**calls**](/2014/12/03/stack-machines-calls.html)
+[**calls**](/2014/12/03/stack-machines-calls.html) <<
+[variables](/2014/12/04/stack-machines-variables.html)
 
 > Hey I just met you<br />
 > And this is crazy<br />
@@ -148,4 +149,5 @@ switch ($op) {
 [jumps](/2014/11/30/stack-machines-jumps.html) <<
 [conditionals](/2014/12/01/stack-machines-conditionals.html) <<
 [comments](/2014/12/02/stack-machines-comments.html) <<
-[**calls**](/2014/12/03/stack-machines-calls.html)
+[**calls**](/2014/12/03/stack-machines-calls.html) <<
+[variables](/2014/12/04/stack-machines-variables.html)

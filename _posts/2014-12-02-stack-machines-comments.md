@@ -15,7 +15,8 @@ tags: []
 [**comments**](/2014/12/02/stack-machines-comments.html) <<
 [calls](/2014/12/03/stack-machines-calls.html) <<
 [variables](/2014/12/04/stack-machines-variables.html) <<
-[stack-frames](/2014/12/05/stack-machines-stack-frames.html)
+[stack-frames](/2014/12/05/stack-machines-stack-frames.html) <<
+[heap](/2014/12/12/stack-machines-heap.html)
 
 Most extensions to la deus stack machina so far have been to the execution engine. But there are also some improvements that can be made to the parser.
 
@@ -90,4 +91,5 @@ $ops = preg_split('/\s/', preg_replace('/^\s*#.*$/m', '', $code), -1, PREG_SPLIT
 [**comments**](/2014/12/02/stack-machines-comments.html) <<
 [calls](/2014/12/03/stack-machines-calls.html) <<
 [variables](/2014/12/04/stack-machines-variables.html) <<
-[stack-frames](/2014/12/05/stack-machines-stack-frames.html)
+[stack-frames](/2014/12/05/stack-machines-stack-frames.html) <<
+[heap](/2014/12/12/stack-machines-heap.html)

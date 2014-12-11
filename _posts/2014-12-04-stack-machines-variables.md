@@ -14,7 +14,8 @@ tags: []
 [conditionals](/2014/12/01/stack-machines-conditionals.html) <<
 [comments](/2014/12/02/stack-machines-comments.html) <<
 [calls](/2014/12/03/stack-machines-calls.html) <<
-[**variables**](/2014/12/04/stack-machines-variables.html)
+[**variables**](/2014/12/04/stack-machines-variables.html) <<
+[stack-frames](/2014/12/05/stack-machines-stack-frames.html)
 
 The virtual machine that has been implemented so far is limited in storage, because the only data structure is a stack. While the stack can grow infinitely large, it is only possible to access the top element. There is no way to index into it.
 
@@ -180,4 +181,5 @@ However, if the machine in question does not support calls, then everything is g
 [conditionals](/2014/12/01/stack-machines-conditionals.html) <<
 [comments](/2014/12/02/stack-machines-comments.html) <<
 [calls](/2014/12/03/stack-machines-calls.html) <<
-[**variables**](/2014/12/04/stack-machines-variables.html)
+[**variables**](/2014/12/04/stack-machines-variables.html) <<
+[stack-frames](/2014/12/05/stack-machines-stack-frames.html)

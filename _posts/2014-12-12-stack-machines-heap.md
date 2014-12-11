@@ -200,6 +200,16 @@ And just like that, conditional branching is back.
     <img src="/img/stack-machine-heap/pinkie-pie.gif">
 </center>
 
+## Conclusion
+
+So what are the advantages of storing information on the heap, rather than the stack?
+
+Elements can be indexed arbitrarily. Although variables allowed this for stack machines too. At least within a stack frame.
+
+The heap becomes a lot more powerful when you want data to be available across execution contexts. This could either be for the purpose of global state or closing over state after returning from a procedure call.
+
+The heap as implemented right now allocates implicitly. The system will actually use `malloc` to dynamically allocate a block of memory, and then `free` to release that memory when it is no longer needed.
+
 ## Summary
 
 <span style="background-color: yellow;">

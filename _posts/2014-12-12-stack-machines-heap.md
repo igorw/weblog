@@ -48,7 +48,7 @@ $heap = [];
 
 Execution is still a matter of looping over instructions and making decisions in a `switch` statement. However, the format of the instructions will change significantly.
 
-Instead of implicitly addressing memory via the stack, it will not have to be done explicitly. And this means every instruction will need to be parameterised with the addresses of inputs and outputs.
+Instead of implicitly addressing memory via the stack, it will now have to be done explicitly. And this means every instruction will need to be parameterised with the addresses of inputs and outputs.
 
 For elementary operations, this will usually be up to three addresses. For a binary operation, that would be two input addresses, and one output address. For this reason, such an encoding is often called a _three-address code_.
 

@@ -63,6 +63,8 @@ Ungrouped:
 * [Greg Baugues: Devs and Depression](https://www.youtube.com/watch?v=yFIa-Mc2KSk)
 * [Nada Amin, William Byrd: From Greek to Clojure](https://www.youtube.com/watch?v=7kPMFkNm2dw)
 * [Jessica Kerr: Functional Principles for OO Development](https://www.youtube.com/watch?v=tq5SQ4W3gRI)
+* [Danielle Sucher: Debugging - The Science of Deduction](http://vimeo.com/111108891)
+* [Amy Wibowo: Sweaters as a Service - Adventures in Machine Knitting](https://www.youtube.com/watch?v=I6071MRIzCA)
 * [Allie Jones: Weaving and Programming: More Related Than You (Probably) Realize!](https://www.youtube.com/watch?v=8TfKeoxtq2c)
 * [Jenn Schiffer: What's the Harm In Sorting: Sanitizing Inputs For More Optimized JS](https://www.youtube.com/watch?v=pj4U_W0OFoE)
 * [Caitie McCaffrey: Halo 4: High Demand with Low Latency and High Availability](https://www.youtube.com/watch?v=gAaXM96DNlM)

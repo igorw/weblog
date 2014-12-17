@@ -241,3 +241,22 @@ It is indeed an epic search for truth.
 <a href="http://www.logicomix.com/" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
 
 <span class="clearfix"></span>
+
+<hr>
+
+<div class="book-cover">
+    <img src="/img/books/unspeakable-things.jpg">
+</div>
+
+## Unspeakable Things
+
+*By Laurie Penny*
+
+> I will make you a sandwich. It will be stuffed with the dust of history, and
+> I hope you choke on it.
+
+The chapter on cybersexism is particularly relevant to all nerds. Just read it.
+
+<a href="http://www.amazon.com/Unspeakable-Things-Sex-Lies-Revolution/dp/1620406896" class="btn btn-large btn-inverse" style="width: 100px;"><span class="icon-bookmark icon-white"></span> Get it</a>
+
+<span class="clearfix"></span>

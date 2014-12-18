@@ -16,7 +16,8 @@ tags: []
 [**calls**](/2014/12/03/stack-machines-calls.html) <<
 [variables](/2014/12/04/stack-machines-variables.html) <<
 [stack-frames](/2014/12/05/stack-machines-stack-frames.html) <<
-[heap](/2014/12/12/stack-machines-heap.html)
+[heap](/2014/12/12/stack-machines-heap.html) <<
+[compilers](/2014/12/18/stack-machines-compilers.html)
 
 > Hey I just met you<br />
 > And this is crazy<br />
@@ -154,4 +155,5 @@ switch ($op) {
 [**calls**](/2014/12/03/stack-machines-calls.html) <<
 [variables](/2014/12/04/stack-machines-variables.html) <<
 [stack-frames](/2014/12/05/stack-machines-stack-frames.html) <<
-[heap](/2014/12/12/stack-machines-heap.html)
+[heap](/2014/12/12/stack-machines-heap.html) <<
+[compilers](/2014/12/18/stack-machines-compilers.html)

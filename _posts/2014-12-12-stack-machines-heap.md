@@ -16,7 +16,8 @@ tags: []
 [calls](/2014/12/03/stack-machines-calls.html) <<
 [variables](/2014/12/04/stack-machines-variables.html) <<
 [stack-frames](/2014/12/05/stack-machines-stack-frames.html) <<
-[**heap**](/2014/12/12/stack-machines-heap.html)
+[**heap**](/2014/12/12/stack-machines-heap.html) <<
+[compilers](/2014/12/18/stack-machines-compilers.html)
 
 So far the machines presented have all been stack based. We will now consider an alternate memory model that will completely replace the stack. The **heap** is a sequential block of memory.
 
@@ -228,4 +229,5 @@ The heap as implemented right now allocates implicitly. The system will actually
 [calls](/2014/12/03/stack-machines-calls.html) <<
 [variables](/2014/12/04/stack-machines-variables.html) <<
 [stack-frames](/2014/12/05/stack-machines-stack-frames.html) <<
-[**heap**](/2014/12/12/stack-machines-heap.html)
+[**heap**](/2014/12/12/stack-machines-heap.html) <<
+[compilers](/2014/12/18/stack-machines-compilers.html)

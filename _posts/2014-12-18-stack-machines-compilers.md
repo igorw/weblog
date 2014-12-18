@@ -7,6 +7,19 @@ tags: []
 
 # Stack Machines: Compilers
 
+[fundamentals](/2013/08/28/stack-machines-fundamentals.html) <<
+[rpn-calculator](/2013/12/02/stack-machines-rpn.html) <<
+[shunting-yard](/2013/12/03/stack-machines-shunting-yard.html) <<
+[io](/2014/11/29/stack-machines-io.html) <<
+[jumps](/2014/11/30/stack-machines-jumps.html) <<
+[conditionals](/2014/12/01/stack-machines-conditionals.html) <<
+[comments](/2014/12/02/stack-machines-comments.html) <<
+[calls](/2014/12/03/stack-machines-calls.html) <<
+[variables](/2014/12/04/stack-machines-variables.html) <<
+[stack-frames](/2014/12/05/stack-machines-stack-frames.html) <<
+[heap](/2014/12/12/stack-machines-heap.html) <<
+[**compilers**](/2014/12/18/stack-machines-compilers.html)
+
 <blockquote style="background: yellow; padding: 10px 20px;">
     This is a guest post by the one and only <strong>Anthony Ferrara</strong> (<a href="https://twitter.com/ircmaxell">@ircmaxell</a>), who has a <a href="http://blog.ircmaxell.com/">blog of his own</a> and has written a <a href="https://github.com/google/recki-ct">compiler for PHP</a>!
 </blockquote>
@@ -416,3 +429,16 @@ And this is the power of these simple machines. With the right operators and glu
 <span style="background-color: yellow;">
     A compiler allows you to write in a different high level language than you run on your interpreter.
 </span>
+
+[fundamentals](/2013/08/28/stack-machines-fundamentals.html) <<
+[rpn-calculator](/2013/12/02/stack-machines-rpn.html) <<
+[shunting-yard](/2013/12/03/stack-machines-shunting-yard.html) <<
+[io](/2014/11/29/stack-machines-io.html) <<
+[jumps](/2014/11/30/stack-machines-jumps.html) <<
+[conditionals](/2014/12/01/stack-machines-conditionals.html) <<
+[comments](/2014/12/02/stack-machines-comments.html) <<
+[calls](/2014/12/03/stack-machines-calls.html) <<
+[variables](/2014/12/04/stack-machines-variables.html) <<
+[stack-frames](/2014/12/05/stack-machines-stack-frames.html) <<
+[heap](/2014/12/12/stack-machines-heap.html) <<
+[**compilers**](/2014/12/18/stack-machines-compilers.html)

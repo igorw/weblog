@@ -25,7 +25,8 @@ tags: []
 [calls](/2014/12/03/stack-machines-calls.html) <<
 [variables](/2014/12/04/stack-machines-variables.html) <<
 [stack-frames](/2014/12/05/stack-machines-stack-frames.html) <<
-[heap](/2014/12/12/stack-machines-heap.html)
+[heap](/2014/12/12/stack-machines-heap.html) <<
+[compilers](/2014/12/18/stack-machines-compilers.html)
 
 The RPN calculator (see previous post) was quite easy to implement, but in
 order to use it, everything must be written backwards. Re-gaining infix
@@ -308,4 +309,5 @@ entry to `$operators` and an implementation to the `switch` statement in
 [calls](/2014/12/03/stack-machines-calls.html) <<
 [variables](/2014/12/04/stack-machines-variables.html) <<
 [stack-frames](/2014/12/05/stack-machines-stack-frames.html) <<
-[heap](/2014/12/12/stack-machines-heap.html)
+[heap](/2014/12/12/stack-machines-heap.html) <<
+[compilers](/2014/12/18/stack-machines-compilers.html)

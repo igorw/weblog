@@ -104,7 +104,7 @@ Finally we need some way of compiling the nodes of the AST. So let's make a func
 
     function compileNodes(array $nodes, array &$state) {
         foreach ($nodes as $node) {
-            compileNode($nodes, $state);
+            compileNode($node, $state);
         }
     }
 

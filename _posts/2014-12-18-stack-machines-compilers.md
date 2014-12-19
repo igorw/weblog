@@ -430,6 +430,8 @@ And this is the power of these simple machines. With the right operators and glu
     A compiler allows you to write in a different high level language than you run on your interpreter.
 </span>
 
+---
+
 [fundamentals](/2013/08/28/stack-machines-fundamentals.html) <<
 [rpn-calculator](/2013/12/02/stack-machines-rpn.html) <<
 [shunting-yard](/2013/12/03/stack-machines-shunting-yard.html) <<

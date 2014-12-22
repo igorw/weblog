@@ -1,0 +1,10 @@
+digraph issue_regex {
+    graph [ dpi = 150 ];
+    rankdir=LR;
+
+    0, 1 [shape=circle, fontcolor=azure4];
+
+    0 -> 1 [label=a];
+    1 -> 0 [label=b];
+    1 [shape=doublecircle];
+}

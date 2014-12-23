@@ -8,7 +8,7 @@ tags: []
 
 Have you seen those twitter bots that generate fake or parody tweets? The ones that look almost legit but are pretty much complete jibberish when you read them?
 
-Quite often, such accounts use a so-called markov chain to generate the text. A markov is a state machine that has probabilistic transitions.
+Quite often, such accounts use a so-called markov chain to generate the text. A markov chain is a state machine that has probabilistic transitions.
 
 Examples include [scigen](http://pdos.csail.mit.edu/scigen/), [tiny subversions](http://tinysubversions.com/), and erikaheidi's [socialautomata](http://socialautomata.me/).
 
